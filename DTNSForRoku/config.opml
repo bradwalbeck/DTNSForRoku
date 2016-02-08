@@ -2,18 +2,16 @@
 <opml version="1.0">
 <body
 	backgroundColor="#444444"
-	leftBreadcrumbColor="#00EE00"
-	rightBreadcrumbColor="#0000EE"
-	posterScreenTitleColor="#EEEE00"
-	posterScreenSubtitleColor="#00EE00"
+	leftBreadcrumbColor="#EEEEEE"
+	rightBreadcrumbColor="#EEEEEE"
+	posterScreenTitleColor="#EEEEEE"
+	posterScreenSubtitleColor="#EEEEEE"
 	posterScreenSynopsisColor="#EEEEEE"
-	springboardScreenTitleColor="#00EE00"
+	springboardScreenTitleColor="#EEEEEE"
 	springboardScreenSynopsisColor="#EEEEEE"
-	springboardScreenActorColor="#EEEE00"
-	springboardScreenDirectorColor="#EEEE00"
-	springboardScreenDateColor="#EEEE00">
-	<outline title="TED Talks" subtitle="Ideas worth spreading" img="http://ted.streamguys.net/TEDTalksvideo_tile_144.jpg" url="http://feeds.feedburner.com/tedtalks_video" />
-	<outline title="Loaded" subtitle="powered by CNET.com" img="http://www.cnet.com/i/pod/images/podcastsHD_loaded_300x300.jpg" url="http://loadedhdpodcast.cnettv.com" />
-	<outline title="Engadget" subtitle="" img="http://www.blogsmithmedia.com/www.engadget.com/media/engadgetshow_logo.png" url="http://www.engadget.com/engadgetshow_hd.xml" />
+	springboardScreenActorColor="#EEEEEE"
+	springboardScreenDirectorColor="#EEEEEE"
+	springboardScreenDateColor="#EEEEEE">
+	<outline title="Daily Tech News Show" subtitle=" with Tom Merrit and guests" img="http://www.dailytechnewsshow.com/wp-content/uploads/2014/01/DTNS_CoverArt1400x1400-TPC.png" url="http://archive.org/services/collection-rss.php?query=title%3A%28DTNS%29%20AND%20mediatype%3A%28movies%29" />
 </body>
 </opml>

@@ -81,18 +81,6 @@ function NWM_MRSS_GetEpisodes(limit = 0)
 				newItem.hdPosterURL = ValidStr(xml.channel.image.url.GetText())
 			end if
 				
-			' categories
-			if item.GetNamedElements("media:category").Count() > 0
-				tmp = item.GetNamedElements("media:category")
-				for each category in tmp
-					newItem.categories.Push(ValidStr(category.GetText()))
-				next
-			else if item.category.Count() > 0
-				for each category in item.category
-					newItem.categories.Push(ValidStr(category.GetText()))
-				next
-			end if
-				
 			' acrtors and director
 			tmp = item.GetNamedElements("media:credit")
 			if tmp.Count() > 0
