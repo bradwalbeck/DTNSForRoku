@@ -12,6 +12,6 @@
 	springboardScreenActorColor="#EEEEEE"
 	springboardScreenDirectorColor="#EEEEEE"
 	springboardScreenDateColor="#EEEEEE">
-	<outline title="Daily Tech News Show" subtitle=" with Tom Merrit and guests" img="http://www.dailytechnewsshow.com/wp-content/uploads/2014/01/DTNS_CoverArt1400x1400-TPC.png" url="http://archive.org/services/collection-rss.php?query=title%3A%28DTNS%29%20AND%20mediatype%3A%28movies%29" />
+	<outline title="Daily Tech News Show" subtitle=" with Tom Merrit and guests" img="http://www.dailytechnewsshow.com/wp-content/uploads/2014/01/DTNS_CoverArt1400x1400-TPC.png" url="http://feeds.feedburner.com/daily_tech_news_show" />
 </body>
 </opml>
