@@ -33,36 +33,44 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".DS_Store" />
     <None Include="builds\DTNSBuild.zip" />
     <None Include="builds\mrsstemplate_orig.zip" />
-    <None Include="config.opml" />
+    <None Include="builds\privateBeta.zip" />
+    <None Include="builds\updatedRSSFeed.zip" />
+    <None Include="channel\.DS_Store" />
+    <None Include="channel\config.opml" />
+    <None Include="channel\manifest" />
+    <None Include="channel\source\appVideoScreen.brs" />
+    <None Include="channel\source\EpisodeScreen.brs" />
+    <None Include="channel\source\generalUtils.brs" />
+    <None Include="channel\source\Main.brs" />
+    <None Include="channel\source\NWM_MRSS.brs" />
+    <None Include="channel\source\NWM_Utilities.brs" />
+    <None Include="channel\source\PosterScreen.brs" />
+    <None Include="channel\source\SpringboardScreen.brs" />
+    <None Include="channel\source\urlUtils.brs" />
+    <None Include="links\Daily Tech News Show %28Video%29 - powered by FeedBurner.url" />
+    <None Include="links\DCMI Metadata Terms.url" />
     <None Include="links\https---archive.org-services-collection-rss.php-query=title%253A%2528DTNS%2529 AND mediatype%253A%2528movies%2529.url" />
     <None Include="links\Internet Archive Search- title-%28DTNS%29.url" />
-    <None Include="links\Roku Plugin Installation.url" />
+    <None Include="links\Roku Channel Installation.url" />
     <None Include="links\RSS Feeds and the Archive.url" />
-    <None Include="manifest" />
     <None Include="ReadMe.pdf" />
-    <None Include="source\appVideoScreen.brs" />
-    <None Include="source\EpisodeScreen.brs" />
-    <None Include="source\generalUtils.brs" />
-    <None Include="source\Main.brs" />
-    <None Include="source\NWM_MRSS.brs" />
-    <None Include="source\NWM_Utilities.brs" />
-    <None Include="source\PosterScreen.brs" />
-    <None Include="source\SpringboardScreen.brs" />
-    <None Include="source\urlUtils.brs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\DTNS_CoverArt1400x1400-TPC.png" />
-    <Content Include="images\mm_icon_focus_hd.png" />
-    <Content Include="images\mm_icon_focus_sd.png" />
-    <Content Include="images\mm_icon_side_hd.png" />
-    <Content Include="images\mm_icon_side_sd.png" />
-    <Content Include="images\overhang_logo_hd.png" />
-    <Content Include="images\overhang_logo_sd.png" />
-    <Content Include="images\overhang_slice_hd.png" />
-    <Content Include="images\overhang_slice_sd.png" />
+    <Content Include="channel\images\DTNS_CoverArt1400x1400-TPC.png" />
+    <Content Include="channel\images\mm_icon_focus_hd.png" />
+    <Content Include="channel\images\mm_icon_focus_sd.png" />
+    <Content Include="channel\images\mm_icon_side_hd.png" />
+    <Content Include="channel\images\mm_icon_side_sd.png" />
+    <Content Include="channel\images\overhang_logo_hd.png" />
+    <Content Include="channel\images\overhang_logo_sd.png" />
+    <Content Include="channel\images\overhang_slice_hd.png" />
+    <Content Include="channel\images\overhang_slice_sd.png" />
+    <Content Include="logos\DTNSFHDPoster214x144.png" />
+    <Content Include="logos\DTNSFHDPoster290x218.png" />
+    <Content Include="logos\DTNSFHDPoster540x405.png" />
+    <Content Include="logos\DTNS_CoverArt1400x1400-TPC.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
