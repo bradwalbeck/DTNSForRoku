@@ -35,7 +35,7 @@
   <ItemGroup>
     <None Include="builds\DTNSBuild.zip" />
     <None Include="builds\mrsstemplate_orig.zip" />
-    <None Include="builds\privateBeta.zip" />
+    <None Include="builds\privateBeta1_3.zip" />
     <None Include="builds\updatedRSSFeed.zip" />
     <None Include="channel\.DS_Store" />
     <None Include="channel\config.opml" />
@@ -55,10 +55,10 @@
     <None Include="links\Internet Archive Search- title-%28DTNS%29.url" />
     <None Include="links\Roku Channel Installation.url" />
     <None Include="links\RSS Feeds and the Archive.url" />
+    <None Include="packages\Pb8db647aface0abff53d385ec8bbf05c.pkg" />
     <None Include="ReadMe.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="channel\images\DTNS_CoverArt1400x1400-TPC.png" />
     <Content Include="channel\images\mm_icon_focus_hd.png" />
     <Content Include="channel\images\mm_icon_focus_sd.png" />
     <Content Include="channel\images\mm_icon_side_hd.png" />
@@ -71,6 +71,8 @@
     <Content Include="logos\DTNSFHDPoster290x218.png" />
     <Content Include="logos\DTNSFHDPoster540x405.png" />
     <Content Include="logos\DTNS_CoverArt1400x1400-TPC.png" />
+    <Content Include="screenshots\dev1.jpg" />
+    <Content Include="screenshots\dev2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
