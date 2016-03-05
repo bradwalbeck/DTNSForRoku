@@ -9,7 +9,7 @@ Set TODAY=%date:~4,2%-%date:~7,2%-%date:~10,4%-%hr%%time:~3,2%%time:~6,2%%time:~
 ECHO.
 ECHO Zipping all files in :.\DTNSForRoku\DTNSForRoku\ and moving archive to .\DTNSForRoku\packages\
 ECHO.
-compact /c /s:"C:\Users\User\Documents\DTNSForRoku\DTNSForRoku\" "C:\Users\User\Documents\DTNSForRoku\packages\DTNSForRoku%TODAY%.zip"
+compact /c /s:"D:\Libraries\Documents\GitHub\DTNSForRoku\DTNSForRoku\DTNSForRoku\channel" "D:\Libraries\Documents\GitHub\DTNSForRoku\DTNSForRoku\DTNSForRoku\builds\DTNSForRoku%TODAY%.zip"
 ECHO.
 
 ECHO Done.

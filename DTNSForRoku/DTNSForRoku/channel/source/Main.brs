@@ -35,14 +35,6 @@ function LoadConfig()
 		theme.posterScreenLine1Text = ValidStr(opml.body@posterScreenTitleColor)
 		theme.posterScreenLine2Text = ValidStr(opml.body@posterScreenSubtitleColor)
 		theme.episodeSynopsisText = ValidStr(opml.body@posterScreenSynopsisColor)
-		
-		theme.springboardTitleText = ValidStr(opml.body@springboardScreenTitleColor)
-		theme.springboardSynopsisColor = ValidStr(opml.body@springboardScreenSynopsisColor)
-		theme.springboardRuntimeColor = ValidStr(opml.body@springboardScreenDateColor)
-		theme.springboardDirectorColor = ValidStr(opml.body@springboardScreenDirectorColor)
-		theme.springboardDirectorLabelColor = ValidStr(opml.body@springboardScreenDirectorColor)
-		theme.springboardActorColor = ValidStr(opml.body@springboardScreenActorColor)
-		theme.springboardGenreColor = ValidStr(opml.body@springboardScreenCategoryColor)
 
 		for each category in opml.body.outline
 			result.Push(BuildCategory(category))

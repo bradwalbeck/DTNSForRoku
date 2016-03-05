@@ -47,13 +47,13 @@
     <None Include="channel\source\NWM_MRSS.brs" />
     <None Include="channel\source\NWM_Utilities.brs" />
     <None Include="channel\source\PosterScreen.brs" />
-    <None Include="channel\source\SpringboardScreen.brs" />
     <None Include="channel\source\urlUtils.brs" />
     <None Include="links\Daily Tech News Show %28Video%29 - powered by FeedBurner.url" />
     <None Include="links\DCMI Metadata Terms.url" />
     <None Include="links\https---archive.org-services-collection-rss.php-query=title%253A%2528DTNS%2529 AND mediatype%253A%2528movies%2529.url" />
     <None Include="links\Internet Archive Search- title-%28DTNS%29.url" />
     <None Include="links\Roku Channel Installation.url" />
+    <None Include="links\Roku Forums • View topic - Pre-Publishing Checklist.url" />
     <None Include="links\RSS Feeds and the Archive.url" />
     <None Include="packages\Pb8db647aface0abff53d385ec8bbf05c.pkg" />
     <None Include="ReadMe.pdf" />
