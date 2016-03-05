@@ -19,9 +19,9 @@ sub ShowEpisodeScreen(show, leftBread, rightBread)
 				exit while
 			else if msg.isListItemFocused()
 				selectedEpisode = msg.GetIndex()
-			else if msg.isListItemSelected()
-				selectedEpisode = ShowSpringboardScreen(content, selectedEpisode, leftBread, "")
-				screen.SetFocusedListItem(selectedEpisode)
+			else if msg.isListItemSelected() Then
+                ShowVideoScreen(content[selectedEpisode])
+                screen.SetFocusedListItem(selectedEpisode)
 				'screen.Show()
 			else if msg.isRemoteKeyPressed()
         if msg.GetIndex() = 13
