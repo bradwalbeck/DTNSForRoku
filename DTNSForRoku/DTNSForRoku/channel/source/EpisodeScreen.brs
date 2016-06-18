@@ -1,4 +1,6 @@
 sub ShowEpisodeScreen(show, leftBread, rightBread)
+	mp4$ = "mp4"
+	mp3$ = "mp3"
 	screen = CreateObject("roPosterScreen")
 	screen.SetMessagePort(CreateObject("roMessagePort"))
   screen.SetListStyle("flat-episodic")
@@ -20,14 +22,25 @@ sub ShowEpisodeScreen(show, leftBread, rightBread)
 			else if msg.isListItemFocused()
 				selectedEpisode = msg.GetIndex()
 			else if msg.isListItemSelected() Then
-                ShowVideoScreen(content[selectedEpisode])
-                screen.SetFocusedListItem(selectedEpisode)
-				'screen.Show()
+				if content[selectedEpisode].sdpsterurl.Right(3) = "mp4"
+				    ShowVideoScreen(content[selectedEpisode])
+				    screen.SetFocusedListItem(selectedEpisode)
+					'screen.Show()
+					PrintAA("this is an MP4")
+				else if content[selectedEpisode].sdpsterurl.Right(3) = "mp3"
+					PrintAA("this is an MP3")
+				end if
 			else if msg.isRemoteKeyPressed()
         if msg.GetIndex() = 13
-					ShowVideoScreen(content[selectedEpisode])
+					if content[selectedEpisode].sdpsterurl.Right(3) = "mp4"
+					    ShowVideoScreen(content[selectedEpisode])
+						PrintAA("this is an MP4")
+					else if content[selectedEpisode].sdpsterurl.Right(3) = "mp3"
+						PrintAA("this is an MP3")
+					end if
 				end if
 			end if
 		end if
 	end while
 end sub
+
