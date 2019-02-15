@@ -18,7 +18,6 @@ Function showVideoScreen(episode As Object)
     print "invalid data passed to showVideoScreen"
     return -1
   endif
-
   port = CreateObject("roMessagePort")
   screen = CreateObject("roVideoScreen")
   screen.SetMessagePort(port)
@@ -28,7 +27,7 @@ Function showVideoScreen(episode As Object)
   screen.Show()
 
   'Uncomment his line to dump the contents of the episode to be played
-  'PrintAA(episode)
+  PrintAA(episode)
 
   while true
     msg = wait(0, port)
