@@ -14,7 +14,7 @@
       rowLabelFont="font:LargeBoldSystemFont"
       rowLabelColor="0x333333"
       showRowCounter="[true]"
-      showRowLabel="[true]"
+      showRowLabel="[false]"
       translation="[125,200]"/>
   </children>
 
