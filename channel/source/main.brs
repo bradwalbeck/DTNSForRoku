@@ -4,9 +4,7 @@ sub Main(input as Dynamic)
   print "################"
   print "Start of Channel"
   print "################"
-  
   showHeroScreen(input)
-
 end sub
 
 ' Initializes the scene and shows the main homepage.
