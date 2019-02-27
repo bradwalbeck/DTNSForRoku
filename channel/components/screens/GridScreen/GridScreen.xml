@@ -48,12 +48,6 @@
             showRowLabel="true"
             showRowCounter="true"
             rowLabelOffset="[[147, 20]]"/>
-            
-        <Poster
-            translation="[0, 650]"
-            uri="pkg:/images/bg_darker_footer.png"
-            width="2000"
-            height="95" />
 
         <Description 
             id="Description"
