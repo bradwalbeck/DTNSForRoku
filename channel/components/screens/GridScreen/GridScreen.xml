@@ -36,7 +36,7 @@
             
         <RowList
             id="RowList"
-            focusBitmapUri="pkg:/images/focus_grid.9.png"
+            focusBitmapUri="pkg:/images/focus_grid.10.png"
             translation="[-60, 372]"
             itemSize="[1327, 218]"
             numRows="2"
@@ -51,7 +51,7 @@
             
         <Poster
             translation="[0, 650]"
-            uri="pkg:/images/BG_dark_down.png"
+            uri="pkg:/images/bg_darker_footer.png"
             width="2000"
             height="95" />
 
