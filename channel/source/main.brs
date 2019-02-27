@@ -10,11 +10,6 @@
     oneRow = GetApiArray()
     list = [
         {
-            Title:"First row"
-            ContentList : oneRow
-        }
-        {
-            Title:"Second row"
             ContentList : oneRow
         }
     ]
@@ -58,9 +53,9 @@ End Function
 Function GetApiArray()
     url = CreateObject("roUrlTransfer")
     url.SetUrl("http://feeds.feedburner.com/daily_tech_news_show")
-    rsp = url.GetToString()
+    responseRaw = url.GetToString()
 
-    responseXML = ParseXML(rsp)
+    responseXML = ParseXML(responseRaw)
     responseXML = responseXML.GetChildElements()
     responseArray = responseXML.GetChildElements()
 

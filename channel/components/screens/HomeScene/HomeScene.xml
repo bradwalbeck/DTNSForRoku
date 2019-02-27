@@ -20,16 +20,6 @@
             visible="true"
             translation="[0,0]" />
     
-        <Group
-            id="HomeSceneOverhang"
-            > <!-- -> Overhang -->
-            <Poster
-                translation="[79, 36]"
-                uri="pkg:/images/overhangLogo.png"
-                width="156"
-                height="49" />
-        </Group> <!-- <- Overhang -->
-
         <Video
             id="videoPlayer"
             visible="false"
