@@ -60,6 +60,9 @@ Function GetApiArray()
     responseArray = responseXML.GetChildElements()
 
     result = []
+    'parse needs to get the string between href=" and 
+
+
 
     for each xmlItem in responseArray
         if xmlItem.getName() = "item"
@@ -68,19 +71,25 @@ Function GetApiArray()
                 item = {}
                 for each xmlItem in itemAA
                     item[xmlItem.getName()] = xmlItem.getText()
+
+                    'xml <media:content> is addressed and populates 
                     if xmlItem.getName() = "media:content"
                         item.stream = {url : xmlItem.url}
                         item.url = xmlItem.getAttributes().url
                         item.streamFormat = "mp4"
-                        
-                        mediaContent = xmlItem.GetChildElements()
-                        for each mediaContentItem in mediaContent
-                            if mediaContentItem.getName() = "media:thumbnail"
-                                item.HDPosterUrl = mediaContentItem.getattributes().url
-                                item.hdBackgroundImageUrl = mediaContentItem.getattributes().url
-                            end if
-                        end for
                     end if
+                    
+                    'DTNS thumbnail is at <maxImgUrl> ex: <maxImgUrl>http://i.ytimg.com/vi/VGViMR6k0g4/0.jpg</maxImgUrl>
+                    if xmlItem.getName() = "maxImgUrl" 
+                        item.HDPosterUrl = xmlItem.GetText()
+                        item.hdBackgroundImageUrl = xmlItem.GetText()
+                    end if
+
+                    'DTNS episode date is at <pubDate> ex: <pubDate>Fri, 22 Feb 2019 22:19:34 GMT</pubDate>
+                    if xmlItem.getName() = "pubDate" 
+                        item.ReleaseDate = xmlItem.GetText()
+                    end if
+
                 end for
                 result.push(item)
             end if
