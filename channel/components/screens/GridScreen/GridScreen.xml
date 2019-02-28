@@ -43,7 +43,7 @@
             itemSpacing="[13, 0]"
             focusXOffset="[147]"
             rowFocusAnimationStyle="fixedFocusWrap"
-            rowItemSize="[[262, 147]]"
+            rowItemSize="[[270, 152]]"
             rowItemSpacing="[[16.5, 3]]"
             showRowLabel="true"
             showRowCounter="true"

@@ -35,7 +35,7 @@
               fadeInterval="0.5"
               spacing="20"
               imageWidth="100"
-              text="Loading..."
+              text="Beep Boop..."
               width="1280"
               height="720"
               translation="[0, 0]"

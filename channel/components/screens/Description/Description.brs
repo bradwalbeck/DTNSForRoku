@@ -1,4 +1,4 @@
-' ********** Copyright 2016 Roku Corp.  All Rights Reserved. ********** 
+
 sub Init()
     'setting top interfaces
     m.top.Title = m.top.findNode("Title")
@@ -6,8 +6,7 @@ sub Init()
     m.top.Description = m.top.findNode("Description")
 end sub
 
-' Content change handler
-' All fields population
+' Content change fields population
 sub OnContentchanged()
     item = m.top.content
 
