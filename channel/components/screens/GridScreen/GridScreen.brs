@@ -6,7 +6,6 @@ Function Init()
     ? "[GridScreen] Init"
     m.top.observeField("focusedChild", "OnChildFocused")
     m.rowList = m.top.findNode("RowList")
-
     m.Description = m.top.findNode("Description")
     m.Background = m.top.findNode("Background")
 End Function
