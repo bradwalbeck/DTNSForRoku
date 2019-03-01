@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?>
+<?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+	<channel>
+		<title><![CDATA[Daily Tech News Show (Video)]]></title>
+		<description><![CDATA[Helping each other understand.]]></description>
+		<link>http://www.dailytechnewsshow.com</link>
+		<image>
+			<url>http://dtns-video.herokuapp.com/images/DTNS_CoverArt1400x1400--video-TPC.png</url>
+			<title>Daily Tech News Show (Video)</title>
+			<link>http://www.dailytechnewsshow.com</link>
+		</image>
+		<generator>Daily Tech News Show Video Feed Generator</generator>
+		<lastBuildDate>Mon, 25 Feb 2019 05:11:54 GMT</lastBuildDate>
+		<pubDate>Sat, 23 Feb 2019 15:41:38 GMT</pubDate>
+		<language><![CDATA[en-US]]></language>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/daily_tech_news_show" />
+		<feedburner:info uri="daily_tech_news_show" />
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+		<media:copyright>Creative Commons</media:copyright>
+		<media:thumbnail url="http://dtns-video.herokuapp.com/images/DTNS_CoverArt1400x1400--video-TPC.png" />
+		<media:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</media:keywords>
+		<media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology/Tech News</media:category>
+		<itunes:owner>
+			<itunes:email>shwei@dailytechnewsshow.com</itunes:email>
+			<itunes:name>Tom Merritt</itunes:name>
+		</itunes:owner>
+		<itunes:author>Tom Merritt</itunes:author>
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:image href="http://dtns-video.herokuapp.com/images/DTNS_CoverArt1400x1400--video-TPC.png" />
+		<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+		<itunes:subtitle>Stay up to date with independent, authoritative and trustworthy tech news.</itunes:subtitle>
+		<itunes:summary>Tom Merritt's home for daily tech news. Stay up to date with independent, authoritative, and trustworthy tech news. &#xD;
+&#xD;
+This video feed is consisted of Tom's Hangouts (MP4) videos. If you like the show, want to support the effort and make the show better, please visit http://www.dailytechnewsshow.com/support. &#xD;
+&#xD;
+The video feed status is at https://twitter.com/shwei_ and iTunes link is http://goo.gl/kAJmdi</itunes:summary>
+		<itunes:category text="Technology">
+			<itunes:category text="Tech News" />
+		</itunes:category>
+		<feedburner:emailServiceId>daily_tech_news_show</feedburner:emailServiceId>
+		<feedburner:feedburnerHostname>https://feedburner.google.com</feedburner:feedburnerHostname>
+		<feedburner:browserFriendly>Tom Merritt's home for daily tech news. Stay up to date with independent, authoritative, and trustworthy tech news. &#xD;
+&#xD;
+This video feed is consisted of Tom's Hangouts (MP4) videos. If you like the show, want to support the effort and make the show better, please visit http://www.dailytechnewsshow.com/support. &#xD;
+&#xD;
+The video feed status is at https://twitter.com/shwei_ and iTunes link is http://goo.gl/kAJmdi</feedburner:browserFriendly>
+		<item>
+			<title><![CDATA[What You Don’t Know About China Tech – DTNS 3474]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601500.us.archive.org/6/items/DTNS20190222/DTNS20190222.thumbs/DTNS20190222_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/VGViMR6k0g4/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/VGViMR6k0g4/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/VGViMR6k0g4/3.jpg"/></td>       </tr>   </table><div><br>We interview Eric Olander from the &#8216;China in Africa&#8217; podcast to discuss the state of tech in China and examine where the largest non-American tech companies are choosing to do business. </p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Len Peralta.</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/whatyoudon-tknowaboutchinatech-dtns3474" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/whatyoudon-tknowaboutchinatech-dtns3474/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/VGViMR6k0g4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/VGViMR6k0g4">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190222">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=2009980542&#038;single=true">here</a>!<br />
+<span id="more-15092"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=5789445&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15092vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Fri, 22 Feb 2019 22:19:34 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/VGViMR6k0g4/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/BCmlAS4U0zo/DTNS20190222.mp4" fileSize="373420077" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>We interview Eric Olander from the &amp;#8216;China in Africa&amp;#8217; podcast to discuss the state of tech in China and examine where the largest non-American tech companies are choosing to do business. Starring Tom Merritt, Sarah Lane, Roger Chang and Len Pe</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>We interview Eric Olander from the &amp;#8216;China in Africa&amp;#8217; podcast to discuss the state of tech in China and examine where the largest non-American tech companies are choosing to do business. Starring Tom Merritt, Sarah Lane, Roger Chang and Len Peralta. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/BCmlAS4U0zo/DTNS20190222.mp4" length="373420077" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190222.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[The President is in Another Castle – DTNS 3473]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801500.us.archive.org/9/items/dtns20190221/__ia_thumb.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/OHHOWsg0xyo/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/OHHOWsg0xyo/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/OHHOWsg0xyo/3.jpg"/></td>       </tr>   </table><div><br>Apple teams up with Goldman Sachs on a MasterCard credit card that will incorporate Apple Wallet, Microsoft Edge Browser has a secret whitelist for allowing Flash video to play, and HTC announces Vive Focus Plus.</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang, and Justin Robert Young. </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/thepresidentisinanothercastle-dtns3473" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/thepresidentisinanothercastle-dtns3473/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/OHHOWsg0xyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/OHHOWsg0xyo">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/dtns20190221">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1221292059&#038;single=true">here</a>!<br />
+<span id="more-15078"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1221292059&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15078vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Thu, 21 Feb 2019 22:18:12 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/OHHOWsg0xyo/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/-2K1-6xdA64/dtns20190221.mp4" fileSize="517173679" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Apple teams up with Goldman Sachs on a MasterCard credit card that will incorporate Apple Wallet, Microsoft Edge Browser has a secret whitelist for allowing Flash video to play, and HTC announces Vive Focus Plus. Starring Tom Merritt, Sarah Lane, Roger C</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Apple teams up with Goldman Sachs on a MasterCard credit card that will incorporate Apple Wallet, Microsoft Edge Browser has a secret whitelist for allowing Flash video to play, and HTC announces Vive Focus Plus. Starring Tom Merritt, Sarah Lane, Roger Chang, and Justin Robert Young. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/-2K1-6xdA64/dtns20190221.mp4" length="517173679" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/dtns20190221.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Samsung’s Galaxy Unfolds – DTNS 3472]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601500.us.archive.org/33/items/DTNS20190220/DTNS20190220.thumbs/DTNS20190220_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/cZ8WR-3JgNM/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/cZ8WR-3JgNM/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/cZ8WR-3JgNM/3.jpg"/></td>       </tr>   </table><div><br>Samsung announces new Galaxy S10 phones and tablets. Worth the upgrade?</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/samsung-sgalaxyunfolds-dtns3472" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/samsung-sgalaxyunfolds-dtns3472/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/cZ8WR-3JgNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/cZ8WR-3JgNM">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190220">Archive.org</a></p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=676108453&#038;single=true">here</a>!<br />
+<span id="more-15066"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=676108453&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15066vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Wed, 20 Feb 2019 22:11:38 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/cZ8WR-3JgNM/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/Hub04Tip8H4/DTNS20190220.mp4" fileSize="401324022" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Samsung announces new Galaxy S10 phones and tablets. Worth the upgrade? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org Please SUBSCRIBE</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Samsung announces new Galaxy S10 phones and tablets. Worth the upgrade? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/Hub04Tip8H4/DTNS20190220.mp4" length="401324022" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190220.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[It’s Punny (in French) – DTNS 3471]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601506.us.archive.org/32/items/DTNS20190219/DTNS20190219.thumbs/DTNS20190219_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Ad2YK-ugRZU/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Ad2YK-ugRZU/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Ad2YK-ugRZU/3.jpg"/></td>       </tr>   </table><div><br>Google sent out a press invite for its Game Developers Conference keynote on March 19. Sources suggest its for the launch of a game streaming service called Project Stream. An all-you-can play cloud-based video game subscription service.</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Patrick Beja.</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/itspunny-infrench--dtns3471" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/itspunny-infrench--dtns3471/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/Ad2YK-ugRZU" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/Ad2YK-ugRZU">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190219">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1511766754&amp;single=true">here</a>!<br />
+<span id="more-15053"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1511766754&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15053vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Tue, 19 Feb 2019 22:23:09 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/Ad2YK-ugRZU/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/zsbNluMAylY/DTNS20190219.mp4" fileSize="408898644" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Google sent out a press invite for its Game Developers Conference keynote on March 19. Sources suggest its for the launch of a game streaming service called Project Stream. An all-you-can play cloud-based video game subscription service. Starring Tom Mer</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Google sent out a press invite for its Game Developers Conference keynote on March 19. Sources suggest its for the launch of a game streaming service called Project Stream. An all-you-can play cloud-based video game subscription service. Starring Tom Merritt, Sarah Lane, Roger Chang and Patrick Beja. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/zsbNluMAylY/DTNS20190219.mp4" length="408898644" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190219.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Dancing With Copyrights – DTNS 3470]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801403.us.archive.org/2/items/DTNS20190215/DTNS20190215.thumbs/DTNS20190215_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/XqN_R5fbxH4/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/XqN_R5fbxH4/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/XqN_R5fbxH4/3.jpg"/></td>       </tr>   </table><div><br>We examine the current state of Nvidia&#8217;s GPUs.</p>
+<p>Starring Tom Merritt, Sarah Lane, Len Peralta, Roger Chang, Patrick Norton</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/dancingwithcopyrights-dtns3470" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/dancingwithcopyrights-dtns3470/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/XqN_R5fbxH4" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/XqN_R5fbxH4">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190215">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=398301648&amp;single=true">here</a>!<br />
+<span id="more-15033"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=398301648&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15033vid</guid>
+			<category><![CDATA[Uncategorized]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Fri, 15 Feb 2019 22:22:07 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/XqN_R5fbxH4/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/hFUJw_XLIzg/DTNS20190215.mp4" fileSize="473931963" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>We examine the current state of Nvidia&amp;#8217;s GPUs. Starring Tom Merritt, Sarah Lane, Len Peralta, Roger Chang, Patrick Norton MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Su</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>We examine the current state of Nvidia&amp;#8217;s GPUs. Starring Tom Merritt, Sarah Lane, Len Peralta, Roger Chang, Patrick Norton MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/hFUJw_XLIzg/DTNS20190215.mp4" length="473931963" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190215.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Amazon & NY Breaks-up on V-Day – DTNS 3469]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801404.us.archive.org/2/items/DTNS20190214/DTNS20190214.thumbs/DTNS20190214_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/JYm8Wj0Gc2c/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/JYm8Wj0Gc2c/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/JYm8Wj0Gc2c/3.jpg"/></td>       </tr>   </table><div><br>Apple&#8217;s news subscription service wants newspapers to fork over half their revenue. Extortion or shrewd business sense?</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Justin Robert Young.</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/amazon-nybreaks-uponv-day-dtns3469" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/amazon-nybreaks-uponv-day-dtns3469/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/JYm8Wj0Gc2c" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/JYm8Wj0Gc2c">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190214">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=2071303084&amp;single=true">here</a>!<br />
+<span id="more-15016"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=2071303084&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15016vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Thu, 14 Feb 2019 22:16:20 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/JYm8Wj0Gc2c/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/Na-4Fur08kA/DTNS20190214.mp4" fileSize="339499086" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Apple&amp;#8217;s news subscription service wants newspapers to fork over half their revenue. Extortion or shrewd business sense? Starring Tom Merritt, Sarah Lane, Roger Chang and Justin Robert Young. MP3 Download Using a Screen Reader? Click here Multiple v</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Apple&amp;#8217;s news subscription service wants newspapers to fork over half their revenue. Extortion or shrewd business sense? Starring Tom Merritt, Sarah Lane, Roger Chang and Justin Robert Young. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/Na-4Fur08kA/DTNS20190214.mp4" length="339499086" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190214.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Called Off Duty – DTNS 3468]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801400.us.archive.org/1/items/DTNS20190213/DTNS20190213.thumbs/DTNS20190213_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/i41HVSDemeI/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/i41HVSDemeI/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/i41HVSDemeI/3.jpg"/></td>       </tr>   </table><div><br>Blizzard released its earnings results for the recent quarter, is a Sleep Pod the best way to get a good nights rest and what is Apple&#8217;s news subscription service all about?</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson.</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/calledoffduty-dtns3468" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/calledoffduty-dtns3468/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/i41HVSDemeI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/i41HVSDemeI">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190213">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=387690708&#038;single=true">here</a>!<br />
+<span id="more-15005"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=387690708&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=15005vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Wed, 13 Feb 2019 22:20:42 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/i41HVSDemeI/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/ETCBl6vJuJk/DTNS20190213.mp4" fileSize="384812703" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Blizzard released its earnings results for the recent quarter, is a Sleep Pod the best way to get a good nights rest and what is Apple&amp;#8217;s news subscription service all about? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. MP3 Downl</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Blizzard released its earnings results for the recent quarter, is a Sleep Pod the best way to get a good nights rest and what is Apple&amp;#8217;s news subscription service all about? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/ETCBl6vJuJk/DTNS20190213.mp4" length="384812703" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190213.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[I’m Old and Slow and Everyone Kills Me – DTNS 3467]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801409.us.archive.org/2/items/DTNS20190212_201902/DTNS20190212_201902.thumbs/DTNS20190212_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/-awiUlbMENE/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/-awiUlbMENE/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/-awiUlbMENE/3.jpg"/></td>       </tr>   </table><div><br>EA&#8217;s &#8216;Apex Legends&#8217; has received 25 million sign-ups in a single week besting the previous title holder &#8216;Fortnite&#8217;. Will &#8216;Apex Legends&#8217; be the next &#8220;it&#8221; game? </p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Patrick Beja.</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/i-moldandslowandeveryonekillsme-dtns3468" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/i-moldandslowandeveryonekillsme-dtns3468/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/-awiUlbMENE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/-awiUlbMENE">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190212_201902">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1893313633&#038;single=true">here</a>!<br />
+<span id="more-14992"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1893313633&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14992vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Tue, 12 Feb 2019 22:16:07 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/-awiUlbMENE/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/e2HvHRQCkZg/DTNS20190212.mp4" fileSize="415193513" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>EA&amp;#8217;s &amp;#8216;Apex Legends&amp;#8217; has received 25 million sign-ups in a single week besting the previous title holder &amp;#8216;Fortnite&amp;#8217;. Will &amp;#8216;Apex Legends&amp;#8217; be the next &amp;#8220;it&amp;#8221; game? Starring Tom Merritt, Sarah Lane, Roger C</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>EA&amp;#8217;s &amp;#8216;Apex Legends&amp;#8217; has received 25 million sign-ups in a single week besting the previous title holder &amp;#8216;Fortnite&amp;#8217;. Will &amp;#8216;Apex Legends&amp;#8217; be the next &amp;#8220;it&amp;#8221; game? Starring Tom Merritt, Sarah Lane, Roger Chang and Patrick Beja. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/e2HvHRQCkZg/DTNS20190212.mp4" length="415193513" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190212.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Apple Pairs With Veterans – DTNS 3466]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601409.us.archive.org/15/items/DTNS20190211/DTNS20190211.thumbs/DTNS20190211_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/cjMmQdlcXi4/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/cjMmQdlcXi4/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/cjMmQdlcXi4/3.jpg"/></td>       </tr>   </table><div><br>Tencent invests in China, Smartphone sales dip in China but Huawei manages to claw its way to the top and Microsoft teases a press event at Mobile World Congress.</p>
+<p>Starring Tom Merritt and Roger Chang.</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/applepairswithveterans-dtns3466" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/applepairswithveterans-dtns3466/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/cjMmQdlcXi4" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/cjMmQdlcXi4">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190211">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=784295391&amp;single=true">here</a>!<br />
+<span id="more-14981"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=784295391&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14981vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Mon, 11 Feb 2019 22:18:09 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/cjMmQdlcXi4/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/d7z2D5qviTM/DTNS20190211.mp4" fileSize="374520880" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Tencent invests in China, Smartphone sales dip in China but Huawei manages to claw its way to the top and Microsoft teases a press event at Mobile World Congress. Starring Tom Merritt and Roger Chang. MP3 Download Using a Screen Reader? Click here Multip</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Tencent invests in China, Smartphone sales dip in China but Huawei manages to claw its way to the top and Microsoft teases a press event at Mobile World Congress. Starring Tom Merritt and Roger Chang. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/d7z2D5qviTM/DTNS20190211.mp4" length="374520880" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190211.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Bezos Delivers His Package – DTNS 3465]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801502.us.archive.org/0/items/DTNS20190208/DTNS20190208.thumbs/DTNS20190208_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/clUIxHK4i1c/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/clUIxHK4i1c/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/clUIxHK4i1c/3.jpg"/></td>       </tr>   </table><div><br>Amazon&#8217;s Jeff Bezos released un-redacted emails of a conversation between Enquirer and himself that he says was used to blackmail him. What&#8217;s going on and why now?</p>
+<p>Starring Tom Merritt, Len Peralta, Roger Chang and Annalee Newitz.</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/bezosdelivershispackage-dtns3466" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/bezosdelivershispackage-dtns3466/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/clUIxHK4i1c" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/clUIxHK4i1c">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190208">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=465721837&amp;single=true">here</a>!<br />
+<span id="more-14965"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=465721837&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14965vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Fri, 08 Feb 2019 22:41:20 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/clUIxHK4i1c/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/Md4EKSB0fcU/DTNS20190208.mp4" fileSize="387568482" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Amazon&amp;#8217;s Jeff Bezos released un-redacted emails of a conversation between Enquirer and himself that he says was used to blackmail him. What&amp;#8217;s going on and why now? Starring Tom Merritt, Len Peralta, Roger Chang and Annalee Newitz. MP3 Downloa</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Amazon&amp;#8217;s Jeff Bezos released un-redacted emails of a conversation between Enquirer and himself that he says was used to blackmail him. What&amp;#8217;s going on and why now? Starring Tom Merritt, Len Peralta, Roger Chang and Annalee Newitz. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/Md4EKSB0fcU/DTNS20190208.mp4" length="387568482" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190208.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Google’s Open ClusterFuzz – DTNS 3464]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601502.us.archive.org/1/items/DTNS20190207/DTNS20190207.thumbs/DTNS20190207_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/HxXj5KxisGM/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/HxXj5KxisGM/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/HxXj5KxisGM/3.jpg"/></td>       </tr>   </table><div><br>Twitter releases numbers, Facebook explains advertisements, Google Fiber declares a mistakes and is location data more nefarious than you think?</p>
+<p>Starring Justin Robert Young, Roger Chang, and Shannon Morse.</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/googlesopenclusterfuzz-dtns3464" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/googlesopenclusterfuzz-dtns3464/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/HxXj5KxisGM" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/HxXj5KxisGM">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190207">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1766443894&#038;single=true">here</a>!<br />
+<span id="more-14948"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1766443894&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14948vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Thu, 07 Feb 2019 22:26:35 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/HxXj5KxisGM/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/oq49gIKayh0/DTNS20190207.mp4" fileSize="518818847" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Twitter releases numbers, Facebook explains advertisements, Google Fiber declares a mistakes and is location data more nefarious than you think? Starring Justin Robert Young, Roger Chang, and Shannon Morse. MP3 Download Using a Screen Reader? Click here</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Twitter releases numbers, Facebook explains advertisements, Google Fiber declares a mistakes and is location data more nefarious than you think? Starring Justin Robert Young, Roger Chang, and Shannon Morse. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/oq49gIKayh0/DTNS20190207.mp4" length="518818847" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190207.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Spotify Sets Its Anchor – DTNS 3463]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801506.us.archive.org/17/items/DTNS20190206/DTNS20190206.thumbs/DTNS20190206_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/jxiGfsbt10g/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/jxiGfsbt10g/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/jxiGfsbt10g/3.jpg"/></td>       </tr>   </table><div><br>Spotify acquires podcasters Gimlet Media and Anchor in a bid to become the premiere podcasting network. But where does the company go from here and what does it mean for the podcasting landscape?</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/spotifysetsitsanchor-dtns3463" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/spotifysetsitsanchor-dtns3463/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/jxiGfsbt10g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/jxiGfsbt10g">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190206">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=982646567&#038;single=true">here</a>!<br />
+<span id="more-14934"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=982646567&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14934vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Wed, 06 Feb 2019 22:57:46 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/jxiGfsbt10g/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/ypsOqO4W6ac/DTNS20190206.mp4" fileSize="412337509" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Spotify acquires podcasters Gimlet Media and Anchor in a bid to become the premiere podcasting network. But where does the company go from here and what does it mean for the podcasting landscape? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Jo</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Spotify acquires podcasters Gimlet Media and Anchor in a bid to become the premiere podcasting network. But where does the company go from here and what does it mean for the podcasting landscape? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/ypsOqO4W6ac/DTNS20190206.mp4" length="412337509" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190206.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[A Fortnite to Remember! – DTNS 3462]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801502.us.archive.org/20/items/DTNS20190205/DTNS20190205.thumbs/DTNS20190205_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/NXoVVUA4qvI/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/NXoVVUA4qvI/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/NXoVVUA4qvI/3.jpg"/></td>       </tr>   </table><div><br>A Microsoft report shows a small but noticeable improvement in internet civility. Will it last or is this just a statistical anomaly?</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang</p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/afortnitetoremember--dtns3462" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/afortnitetoremember--dtns3462/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/NXoVVUA4qvI" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/NXoVVUA4qvI">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190205">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1877809331&amp;single=true">here</a>!<br />
+<span id="more-14916"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1877809331&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14916vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Tue, 05 Feb 2019 22:42:40 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/NXoVVUA4qvI/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/3wzMFcGmzV8/DTNS20190205.mp4" fileSize="398781559" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>A Microsoft report shows a small but noticeable improvement in internet civility. Will it last or is this just a statistical anomaly? Starring Tom Merritt, Sarah Lane, Roger Chang MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, vid</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>A Microsoft report shows a small but noticeable improvement in internet civility. Will it last or is this just a statistical anomaly? Starring Tom Merritt, Sarah Lane, Roger Chang MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/3wzMFcGmzV8/DTNS20190205.mp4" length="398781559" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190205.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[It’s Like Eating Sugar – DTNS 3461]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801508.us.archive.org/6/items/DTNS20190204/DTNS20190204.thumbs/DTNS20190204_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Fw8bNfpY8pI/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Fw8bNfpY8pI/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Fw8bNfpY8pI/3.jpg"/></td>       </tr>   </table><div><br>Danny Crichton from TechCrunch questions why people don&#8217;t quit Google or Facebook and that current reasoning to explain that behavior is incorrect.</p>
+<p>Starring Tom Merritt, Sarah Lane, and Roger Chang.</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/it-slikeeatingsugar-dtns3461" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/it-slikeeatingsugar-dtns3461/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/Fw8bNfpY8pI" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/Fw8bNfpY8pI">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190204">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=793341436&amp;single=true">here</a>!<br />
+<span id="more-14904"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=793341436&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14904vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Mon, 04 Feb 2019 22:19:26 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/Fw8bNfpY8pI/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/3zejWNmcNrA/DTNS20190204.mp4" fileSize="436397290" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Danny Crichton from TechCrunch questions why people don&amp;#8217;t quit Google or Facebook and that current reasoning to explain that behavior is incorrect. Starring Tom Merritt, Sarah Lane, and Roger Chang. MP3 Download Using a Screen Reader? Click here Mu</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Danny Crichton from TechCrunch questions why people don&amp;#8217;t quit Google or Facebook and that current reasoning to explain that behavior is incorrect. Starring Tom Merritt, Sarah Lane, and Roger Chang. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/3zejWNmcNrA/DTNS20190204.mp4" length="436397290" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190204.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[These Boots Were Made for Tracking – DTNS 3460]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801501.us.archive.org/18/items/DTNS20190201/DTNS20190201.thumbs/DTNS20190201_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/J_zextbxwwc/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/J_zextbxwwc/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/J_zextbxwwc/3.jpg"/></td>       </tr>   </table><div><br>Apple rolled out the ban hammer on Facebook and Google apps this past week for bypassing the App Store&#8217;s vetting process. What exactly happened and what does it mean for other iOS App developers?</p>
+<p>Starring Sarah Lane, Lamarr Wilson, Roger Chang and Len Peralta.</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/thesebootsweremadefortracking-dtns3460" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/thesebootsweremadefortracking-dtns3460/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/J_zextbxwwc" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/J_zextbxwwc">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190201">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=19356944&amp;single=true">here</a>!<br />
+<span id="more-14888"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=19356944&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14888vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Fri, 01 Feb 2019 23:01:13 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/J_zextbxwwc/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/kJbtc8PCzfY/DTNS20190201.mp4" fileSize="452657285" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Apple rolled out the ban hammer on Facebook and Google apps this past week for bypassing the App Store&amp;#8217;s vetting process. What exactly happened and what does it mean for other iOS App developers? Starring Sarah Lane, Lamarr Wilson, Roger Chang and</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Apple rolled out the ban hammer on Facebook and Google apps this past week for bypassing the App Store&amp;#8217;s vetting process. What exactly happened and what does it mean for other iOS App developers? Starring Sarah Lane, Lamarr Wilson, Roger Chang and Len Peralta. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/kJbtc8PCzfY/DTNS20190201.mp4" length="452657285" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190201.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Dark Web K-Mart – DTNS 3459]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801508.us.archive.org/18/items/DTNS20190131/DTNS20190131.thumbs/DTNS20190131_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/BNBJY01k4Rs/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/BNBJY01k4Rs/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/BNBJY01k4Rs/3.jpg"/></td>       </tr>   </table><div><br>Another cache of hacked passwords and logins has been released, Apple is looking at putting a 3D camera into the iphone and Ultraviolet is closing its doors.</p>
+<p>Starring Sarah Lane, Roger Chang and Justin Robert Young</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/darkwebk-mart-dtns3459" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/darkwebk-mart-dtns3459/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/BNBJY01k4Rs" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/BNBJY01k4Rs">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190131">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=412790985&amp;single=true">here</a>!<br />
+<span id="more-14876"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=412790985&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14876vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Thu, 31 Jan 2019 23:01:00 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/BNBJY01k4Rs/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/2LbZQH_8HmQ/DTNS20190131.mp4" fileSize="468205833" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Another cache of hacked passwords and logins has been released, Apple is looking at putting a 3D camera into the iphone and Ultraviolet is closing its doors. Starring Sarah Lane, Roger Chang and Justin Robert Young MP3 Download Using a Screen Reader? Cli</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Another cache of hacked passwords and logins has been released, Apple is looking at putting a 3D camera into the iphone and Ultraviolet is closing its doors. Starring Sarah Lane, Roger Chang and Justin Robert Young MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/2LbZQH_8HmQ/DTNS20190131.mp4" length="468205833" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190131.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Should Be Against The Terms Of Wrong – DTNS 3458]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801505.us.archive.org/23/items/DTNS20190130/DTNS20190130.thumbs/DTNS20190130_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/TiI3q2q4QZU/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/TiI3q2q4QZU/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/TiI3q2q4QZU/3.jpg"/></td>       </tr>   </table><div><br>Facebook is again in the spotlight this time for a &#8220;research&#8221; program that paid teens to install VPN software that gave the company root access to decrypted network traffic. </p>
+<p>Starring Sarah Lane, Roger Chang and Allison Sheridan </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/shouldbeagainstthetermsofwrong-dtns3458" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/shouldbeagainstthetermsofwrong-dtns3458/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/TiI3q2q4QZU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/TiI3q2q4QZU">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190130">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1368977638&#038;single=true">here</a>!<br />
+<span id="more-14862"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1368977638&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14862vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Wed, 30 Jan 2019 23:05:03 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/TiI3q2q4QZU/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/TQDstRcIytU/DTNS20190130.mp4" fileSize="473960950" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Facebook is again in the spotlight this time for a &amp;#8220;research&amp;#8221; program that paid teens to install VPN software that gave the company root access to decrypted network traffic. Starring Sarah Lane, Roger Chang and Allison Sheridan MP3 Download U</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Facebook is again in the spotlight this time for a &amp;#8220;research&amp;#8221; program that paid teens to install VPN software that gave the company root access to decrypted network traffic. Starring Sarah Lane, Roger Chang and Allison Sheridan MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/TQDstRcIytU/DTNS20190130.mp4" length="473960950" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190130.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[A Bug in the Apple – DTNS 3457]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801504.us.archive.org/17/items/DTNS20190129/DTNS20190129.thumbs/DTNS20190129_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/z22vwjplzus/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/z22vwjplzus/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/z22vwjplzus/3.jpg"/></td>       </tr>   </table><div><br>A serious bug in Apple&#8217;s FaceTime allowing anyone to hear the recipient of a call&#8217;s microphone even before they accept. Is this a simple bug or sign of a deeper flaw in Apple&#8217;s software development?</p>
+<p>Starring Sarah Lane, Roger Chang and Patrick Beja. </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/abugintheapple-dtns3457" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/abugintheapple-dtns3457/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/z22vwjplzus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/z22vwjplzus">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190129">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=316149650&#038;single=true">here</a>!<br />
+<span id="more-14850"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=316149650&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14850vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Tue, 29 Jan 2019 22:51:12 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/z22vwjplzus/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/FJ6k-F_WFLY/DTNS20190129.mp4" fileSize="325430236" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>A serious bug in Apple&amp;#8217;s FaceTime allowing anyone to hear the recipient of a call&amp;#8217;s microphone even before they accept. Is this a simple bug or sign of a deeper flaw in Apple&amp;#8217;s software development? Starring Sarah Lane, Roger Chang and</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>A serious bug in Apple&amp;#8217;s FaceTime allowing anyone to hear the recipient of a call&amp;#8217;s microphone even before they accept. Is this a simple bug or sign of a deeper flaw in Apple&amp;#8217;s software development? Starring Sarah Lane, Roger Chang and Patrick Beja. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/FJ6k-F_WFLY/DTNS20190129.mp4" length="325430236" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190129.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[FOMO: Fear Of Machinery Output – DTNS 3456]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601506.us.archive.org/15/items/DTNS20190128/DTNS20190128.thumbs/DTNS20190128_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/G6aTrFxmVXk/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/G6aTrFxmVXk/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/G6aTrFxmVXk/3.jpg"/></td>       </tr>   </table><div><br>A recent report by the Brookings Institution finds 25% of US workers have high exposure to jobs that will be automated. While the US Bureau of Labor Statistics says the effects of automation will be felt unevenly with women and minorities taking a higher burden. Will higher education supply the necessary skills to compete in the future workplace or does there need to be shift in how we view jobs and labor?</p>
+<p>Starring Sarah Lane, Kiki Sanford, Roger Chang and Erin Carson. </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/fomo-fearofmachineryoutput-dtns3456" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/fomo-fearofmachineryoutput-dtns3456/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/G6aTrFxmVXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/G6aTrFxmVXk">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190128">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=516771751&#038;single=true">here</a>!<br />
+<span id="more-14837"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=516771751&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14837vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Mon, 28 Jan 2019 22:56:18 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/G6aTrFxmVXk/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/qZN6cuhB0WY/DTNS20190128.mp4" fileSize="422921402" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>A recent report by the Brookings Institution finds 25% of US workers have high exposure to jobs that will be automated. While the US Bureau of Labor Statistics says the effects of automation will be felt unevenly with women and minorities taking a higher</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>A recent report by the Brookings Institution finds 25% of US workers have high exposure to jobs that will be automated. While the US Bureau of Labor Statistics says the effects of automation will be felt unevenly with women and minorities taking a higher burden. Will higher education supply the necessary skills to compete in the future workplace or does there need to be shift in how we view jobs and labor? Starring Sarah Lane, Kiki Sanford, Roger Chang and Erin Carson. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/qZN6cuhB0WY/DTNS20190128.mp4" length="422921402" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190128.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[DTNS: It’s My Toto’s Africa! – DTNS 3455]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia801508.us.archive.org/28/items/DTNS20190125/DTNS20190125.thumbs/DTNS20190125_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/55UOAowrd8w/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/55UOAowrd8w/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/55UOAowrd8w/3.jpg"/></td>       </tr>   </table><div><br>Facebook plans on unifying the messaging infrastructure in Instagram, FB Messenger and What&#8217;s App. DeepMind&#8217;s AlphaStar AI was finally defeated in StarCraft II after defeating 10 other players. MIT&#8217;s MediaLab found Amazon&#8217;s Rekognition software misidentified the faces of darker complexioned and female faces at a higher rate than those of lighter skinned men. </p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang, Len Peralta and Robb Dunewood. </p>
+<p><iframe width="100%" height="188" src="https://embed.acast.com/dtns/dtns-itsmytotosafrica--dtns3455" scrolling="no" frameborder="0" style="border:none;overflow:hidden;"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/dtns-itsmytotosafrica--dtns3455/media.mp3">MP3 Download</a></strong></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/55UOAowrd8w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p><a href="https://youtu.be/55UOAowrd8w">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190125">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1743057933&#038;single=true">here</a>!<br />
+<span id="more-14824"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=1743057933&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14824vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Fri, 25 Jan 2019 22:17:43 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/55UOAowrd8w/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/RmrDKvIKC-I/DTNS20190125.mp4" fileSize="153072185" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>Facebook plans on unifying the messaging infrastructure in Instagram, FB Messenger and What&amp;#8217;s App. DeepMind&amp;#8217;s AlphaStar AI was finally defeated in StarCraft II after defeating 10 other players. MIT&amp;#8217;s MediaLab found Amazon&amp;#8217;s Rekogn</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>Facebook plans on unifying the messaging infrastructure in Instagram, FB Messenger and What&amp;#8217;s App. DeepMind&amp;#8217;s AlphaStar AI was finally defeated in StarCraft II after defeating 10 other players. MIT&amp;#8217;s MediaLab found Amazon&amp;#8217;s Rekognition software misidentified the faces of darker complexioned and female faces at a higher rate than those of lighter skinned men. Starring Tom Merritt, Sarah Lane, Roger Chang, Len Peralta and Robb Dunewood. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/RmrDKvIKC-I/DTNS20190125.mp4" length="153072185" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190125.mp4</feedburner:origEnclosureLink>
+		</item>
+		<item>
+			<title><![CDATA[Look Ma, No Ports! – DTNS 3453]]></title>
+			<description><![CDATA[<p><div>   <table>       <tr>           <td><img width="160" height="110" src="http://ia601506.us.archive.org/10/items/DTNS20190123/DTNS20190123.thumbs/DTNS20190123_000001.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Z1sLO4SbuE4/1.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Z1sLO4SbuE4/2.jpg"/></td>           <td><img width="160" height="110" src="http://i.ytimg.com/vi/Z1sLO4SbuE4/3.jpg"/></td>       </tr>   </table><div><br>A trio of new smartphones from LG, Xiaomi, and Meizu introduce new and novel concepts to the market segment. Are they the path forward for smartphone design in world where better cameras and larger screens aren&#8217;t enough?</p>
+<p>Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson.</p>
+<p><iframe style="border: none; overflow: hidden;" src="https://embed.acast.com/dtns/lookma-noports-dtns3453" width="100%" height="188" frameborder="0" scrolling="no"></iframe></p>
+<p><strong><a href="https://media.acast.com/dtns/lookma-noports-dtns3453/media.mp3">MP3 Download</a></strong></p>
+<p><iframe src="https://www.youtube.com/embed/Z1sLO4SbuE4" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://youtu.be/Z1sLO4SbuE4">Using a Screen Reader? Click here</a></p>
+<p>Multiple versions (ogg, video etc.) from <a href="https://archive.org/details/DTNS20190123">Archive.org</a>.</p>
+<p>Please <a href="http://feeds.feedburner.com/DailyTechNewsShow">SUBSCRIBE HERE</a>.</p>
+<p>Subscribe through <a href="https://itunes.apple.com/us/podcast/daily-tech-news-show/id790864884">Apple Podcasts</a>.</p>
+<p>A special thanks to all our supporters&#8211;without you, none of this would be possible.</p>
+<p>If you are willing to <a href="http://dailytechnewsshow.com/support/">support the show</a> or give as little as 5 cents a day on <a href="http://www.patreon.com/dtns">Patreon</a>. Thank you!</p>
+<p><a href="https://www.patreon.com/bePatron?u=39956" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<p>Big thanks to <a href="http://danlueders.com/">Dan Lueders</a> for the headlines music and <a href="http://twitter.com/martinbellmusic">Martin Bell</a> for the opening theme!</p>
+<p>Big thanks to Mustafa A. from <a href="http://thepolarcat.com">thepolarcat.com</a> for the logo!</p>
+<p>Thanks to <a href="http://ritualmisery.com/amos/amos_bio/">Anthony Lemos</a> of <a href="http://ritualmisery.com/">Ritual Misery</a> for the expanded show notes!</p>
+<p>Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the <a href="http://dailytechnewsshow.reddit.com/">subreddit</a></p>
+<p>Send to email to feedback@dailytechnewsshow.com</p>
+<p><b>Show Notes</b><br />
+To read the show notes in a separate page click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=949239961&amp;single=true">here</a>!<br />
+<span id="more-14799"></span><br />
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwPYsXxvyM06XEJjbiARmyqNZALSQu0fyi3JfD21GkaLmvLx4DF-NKENPPqh0LhsvA-Z4kR4G089vw/pubhtml?gid=949239961&amp;single=true&amp;widget=true&amp;headers=false" width="1024" height="800"></iframe></p>]]></description>
+			<guid isPermaLink="false">http://www.dailytechnewsshow.com/?p=14799vid</guid>
+			<category><![CDATA[Episode]]></category>
+			<dc:creator>shwei@dailytechnewsshow.com (Tom Merritt)</dc:creator>
+			<pubDate>Wed, 23 Jan 2019 22:13:01 GMT</pubDate>
+			<maxImgUrl>http://i.ytimg.com/vi/Z1sLO4SbuE4/0.jpg</maxImgUrl>
+			<media:content url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/CHMvSL413C8/DTNS20190123.mp4" fileSize="599960716" type="video/mp4" />
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:subtitle>A trio of new smartphones from LG, Xiaomi, and Meizu introduce new and novel concepts to the market segment. Are they the path forward for smartphone design in world where better cameras and larger screens aren&amp;#8217;t enough? Starring Tom Merritt, Sarah</itunes:subtitle>
+			<itunes:author>Tom Merritt</itunes:author>
+			<itunes:summary>A trio of new smartphones from LG, Xiaomi, and Meizu introduce new and novel concepts to the market segment. Are they the path forward for smartphone design in world where better cameras and larger screens aren&amp;#8217;t enough? Starring Tom Merritt, Sarah Lane, Roger Chang and Scott Johnson. MP3 Download Using a Screen Reader? Click here Multiple versions (ogg, video etc.) from Archive.org. Please SUBSCRIBE HERE. Subscribe through Apple Podcasts. A special thanks to all our supporters&amp;#8211;without you, none of this would be possible. If you are willing to support the show or give as little as 5 cents a day on Patreon. Thank you! Become a Patron! Big thanks to Dan Lueders for the headlines music and Martin Bell for the opening theme! Big thanks to Mustafa A. from thepolarcat.com for the logo! Thanks to Anthony Lemos of Ritual Misery for the expanded show notes! Thanks to our mods, Kylde, Jack_Shid, KAPT_Kipper, and scottierowland on the subreddit Send to email to feedback@dailytechnewsshow.com Show Notes To read the show notes in a separate page click here!</itunes:summary>
+			<itunes:keywords>Tech,News,Digest,Daily,Tom,Merritt,DTNS</itunes:keywords>
+			<enclosure url="http://feedproxy.google.com/~r/daily_tech_news_show/~5/CHMvSL413C8/DTNS20190123.mp4" length="599960716" type="video/mp4" />
+			<feedburner:origEnclosureLink>http://content.pwc-networks.com/dtns/DTNS20190123.mp4</feedburner:origEnclosureLink>
+		</item>
+		<copyright>Creative Commons</copyright>
+		<media:credit role="author">Tom Merritt</media:credit>
+		<media:rating>nonadult</media:rating>
+		<media:description type="plain">Stay up to date with independent, authoritative and trustworthy tech news.</media:description>
+	</channel>
+</rss>
