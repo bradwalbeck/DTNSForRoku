@@ -27,9 +27,8 @@
         <Label
             id="Title"
             color="0xEEEEEE"
-            text=""
-            
-            />
+            font="font:LargeBoldSystemFont"
+            text=""/>
             
         <Label
             id="ReleaseDate"
@@ -40,8 +39,8 @@
             id="Description"
             color="0xEEEEEE"
             wrap="true"
-            width="553"
-            height="145"
+            width="720"
+            height="160"
             lineSpacing="7"
             text=""/>
     </children>

@@ -90,6 +90,12 @@ Function GetApiArray()
                         item.ReleaseDate = xmlItem.GetText()
                     end if
 
+                    'DTNS episode description is at <itunes:summary> ex: <itunes:summary> Microsoft is rumored to ... Reader? Clic</itunes:summary>
+                    if xmlItem.getName() = "itunes:summary" 
+                    '    item.Description = PeriodAtTheEnd(CropMp3Down(xmlItem.GetText().Replace("&#8221;", "'").Replace("&#8211;", "'").Replace("&#8216;", "'").Replace("&#8217;", "'").Replace("&#8220;", "'").Replace("&#8221;", "'")))
+                        item.Description = DTNSDescriptionParse(xmlItem.GetText())
+                    end if
+
                 end for
                 result.push(item)
             end if
@@ -101,8 +107,74 @@ End Function
 
 
 Function ParseXML(str As String) As dynamic
-    if str = invalid return invalid
+    if str = invalid 
+        return invalid
+    end if
     xml = CreateObject("roXMLElement")
-    if not xml.Parse(str) return invalid
+    if not xml.Parse(str) 
+        return invalid
+    end if
     return xml
+End Function
+
+Function DTNSDescriptionParse(rawString As String) As dynamic
+    if rawString = invalid 
+        return invalid
+    end if
+
+    stringInProcess = CropMp3Down(rawString)
+    stringInProcess = RemoveHTMLNumbers(stringInProcess)
+    stringInProcess = RemoveLeadingSpace(stringInProcess)
+    stringInProcess = PeriodAtTheEnd(stringInProcess)
+    
+    return stringInProcess
+End Function
+
+Function CropMp3Down(rawString As String) As dynamic
+    if rawString.Instr("MP3 Down") < 0 
+        return rawString + "..."
+    end if
+    stringInProcess = rawString
+    stringInProcess = stringInProcess.Left(stringInProcess.Instr("MP3 Down"))
+    return stringInProcess
+End Function
+
+Function PeriodAtTheEnd(rawString As String) As dynamic
+    stringInProcess = rawString.Trim() 
+    if stringInProcess.Right(1) = "." 
+        return stringInProcess
+    end if
+    return stringInProcess + "."
+End Function
+
+Function RemoveLeadingSpace(rawString As String) As dynamic
+    if rawString.Instr(" ") <> 0
+        return rawString
+    end if
+    return rawString.Right((rawString.len())-1)
+End Function
+
+Function RemoveHTMLNumbers(rawString As String) As dynamic
+    'HTML Numbers known to display
+    stringInProcess = rawString.Replace("&#8211;", "-")
+    stringInProcess = stringInProcess.Replace("&#8211;", "'")
+    stringInProcess = stringInProcess.Replace("&#8216;", "'")
+    stringInProcess = stringInProcess.Replace("&#8217;", "'")
+    stringInProcess = stringInProcess.Replace("&#8220;", "'")
+    stringInProcess = stringInProcess.Replace("&#8221;", "'")
+    
+    'HTML Numbers that are predicted
+    stringInProcess = stringInProcess.Replace("&#60;", "<")
+    stringInProcess = stringInProcess.Replace("&#62;", ">")
+    stringInProcess = stringInProcess.Replace("&#38;", "&")
+    stringInProcess = stringInProcess.Replace("&#34;", "'")
+    stringInProcess = stringInProcess.Replace("&#39;", "'")
+    stringInProcess = stringInProcess.Replace("&#162;", "¢")
+    stringInProcess = stringInProcess.Replace("&#163;", "£")
+    stringInProcess = stringInProcess.Replace("&#165;", "¥")
+    stringInProcess = stringInProcess.Replace("&#8364;", "€")
+    stringInProcess = stringInProcess.Replace("&#169;", "©")
+    stringInProcess = stringInProcess.Replace("&#174;", "®")
+
+    return stringInProcess
 End Function

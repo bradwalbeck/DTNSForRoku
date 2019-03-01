@@ -12,9 +12,13 @@ sub OnContentchanged()
 
     title = item.title.toStr()
     if title <> invalid then
-        m.top.Title.text = title.toStr()
-    end if
-    
+        if title.toStr() <> "" then
+            m.top.Title.text = title.toStr()
+        else
+            m.top.Title.text = "No title"
+        end if  
+    end if        
+
     value = item.description
     if value <> invalid then
         if value.toStr() <> "" then
@@ -24,10 +28,10 @@ sub OnContentchanged()
         end if  
     end if
     
-    value = item.ReleaseDate
-    if value <> invalid then
-        if value <> ""
-            m.top.ReleaseDate.text = value.toStr()
+    releaseDate = item.ReleaseDate
+    if releaseDate <> invalid then
+        if releaseDate.toStr() <> "" then
+            m.top.ReleaseDate.text = releaseDate.toStr()
         else 
             m.top.ReleaseDate.text = "No release date"
         end if      
