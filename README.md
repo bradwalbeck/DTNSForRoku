@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+# DTNSForRoku
+DTNSForRoku is a streaming video channel for the [Roku® streaming players as well as Roku TVs™](https://www.roku.com/) that provides the [Daily Tech News Show](http://www.dailytechnewsshow.com/). 
 
-You can use the [editor on GitHub](https://github.com/bradwalbeck/DTNSForRoku/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Get DTNS for Roku, NOW!](https://my.roku.com/add/DTNS)
 
-### Markdown
+[Read about DTNS for roku first.](https://channelstore.roku.com/details/86190/dtns)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+## Daily Tech News Show
+Daily Tech News Show is hosted by Tom Merritt and Sarah Lane and does what it says in the name. Each show delivers the top stories in tech combined with analysis from regular contributors and guest perspectives from the top names in technology.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+Please [SUBSCRIBE HERE](http://feeds.feedburner.com/DailyTechNewsShow). 
+[DTNS official subreddit](http://feeds.feedburner.com/DailyTechNewsShow) 
+[IRC chatroom for DTNS](http://irc.chatrealm.net/)
+[Daily Tech News Show on DCTVpedia](http://dctvpedia.com/Daily_Tech_News_Show)
+[Buy cool DTNS merch!](http://dtns.bigcartel.com/)
 
-1. Numbered
-2. List
+## Feedback about this DTNS For Roku? 
 
-**Bold** and _Italic_ and `Code` text
+[Send Mail!](mailto:feedback+github@welloiledapps.com)
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bradwalbeck/DTNSForRoku/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
