@@ -1,5 +1,4 @@
-' ********** Copyright 2016 Roku Corp.  All Rights Reserved. ********** 
- 
+
  sub RunUserInterface()
     screen = CreateObject("roSGScreen")
     scene = screen.CreateScene("HomeScene")
@@ -67,6 +66,13 @@ Function GetApiArray()
     for each xmlItem in responseArray
         if xmlItem.getName() = "item"
             itemAA = xmlItem.GetChildElements()
+
+            mediaContentText = itemAA.Lookup("media:content").getText()
+            'if file doenst end in .mp4 then set itemAA to invalid
+            if Instr( Len(mediaContentText) - 4, LCase(mediaContentText, ".mp4") <> 1
+                itemAA = invalid
+            end if
+
             if itemAA <> invalid
                 item = {}
                 for each xmlItem in itemAA
