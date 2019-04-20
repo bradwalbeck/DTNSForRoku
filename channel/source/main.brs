@@ -59,19 +59,15 @@ Function GetApiArray()
     responseArray = responseXML.GetChildElements()
 
     result = []
-    'parse needs to get the string between href=" and 
-
-
-
     for each xmlItem in responseArray
         if xmlItem.getName() = "item"
             itemAA = xmlItem.GetChildElements()
 
-            mediaContentText = itemAA.Lookup("media:content").getText()
-            'if file doenst end in .mp4 then set itemAA to invalid
-            if Instr( Len(mediaContentText) - 4, LCase(mediaContentText, ".mp4") <> 1
-                itemAA = invalid
-            end if
+            'mediaContentText = xmlItem.Lookup("media:content").getText()
+            ''if file doenst end in .mp4 then set itemAA to invalid
+            'if instr( len(mediaContentText) - 4, LCase(mediaContentText), ".mp4") <> 1
+            '    itemAA = invalid
+            'end if
 
             if itemAA <> invalid
                 item = {}
@@ -82,7 +78,9 @@ Function GetApiArray()
                     if xmlItem.getName() = "media:content"
                         item.stream = {url : xmlItem.url}
                         item.url = xmlItem.getAttributes().url
-                        item.streamFormat = "mp4"
+                        if instr(0, LCase(item.url), ".mp4") > 0 
+                            item.streamFormat = "mp4"
+                        end if
                     end if
                     
                     'DTNS thumbnail is at <maxImgUrl> ex: <maxImgUrl>http://i.ytimg.com/vi/VGViMR6k0g4/0.jpg</maxImgUrl>
@@ -102,7 +100,9 @@ Function GetApiArray()
                     end if
 
                 end for
-                result.push(item)
+                if item.streamFormat = "mp4"
+                    result.push(item)
+                end if
             end if
         end if
     end for
