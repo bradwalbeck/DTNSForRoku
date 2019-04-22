@@ -10,7 +10,8 @@ DTNSForRoku is a streaming video channel for the [Roku® streaming players as we
 ## Daily Tech News Show
 Daily Tech News Show is hosted by Tom Merritt and Sarah Lane and does what it says in the name. Each show delivers the top stories in tech combined with analysis from regular contributors and guest perspectives from the top names in technology.
 
-##Support Daily Tech News Store
+
+## Support Daily Tech News Show
 
 Please [SUBSCRIBE HERE](http://feeds.feedburner.com/DailyTechNewsShow)
 
