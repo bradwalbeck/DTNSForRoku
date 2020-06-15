@@ -13,7 +13,13 @@
         }
     ]
     scene.gridContent = ParseXMLContent(list)
-  
+
+    while true
+        msg = wait(0, port)
+        print "------------------"
+        print "msg = "; msg
+    end while
+    
     if screen <> invalid then
         screen.Close()
         screen = invalid
@@ -56,6 +62,7 @@ Function GetApiArray()
     for each xmlItem in responseArray
         if xmlItem.getName() = "item"
             itemAA = xmlItem.GetChildElements()
+
 
             if itemAA <> invalid
                 item = {}

@@ -5,7 +5,7 @@
 title=DTNS
 major_version=4
 minor_version=2
-build_version=13
+build_version=14
 
 # Channel Assets
 mm_icon_focus_hd=pkg:/images/mm_icon_focus_hd.png
