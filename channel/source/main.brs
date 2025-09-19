@@ -51,7 +51,7 @@ End Function
 
 Function GetApiArray()
     url = CreateObject("roUrlTransfer")
-    url.SetUrl("http://feeds.feedburner.com/daily_tech_news_show")
+    url.SetUrl("https://feeds.feedburner.com/daily_tech_news_show")
     responseRaw = url.GetToString()
 
     responseXML = ParseXML(responseRaw)
@@ -63,11 +63,6 @@ Function GetApiArray()
         if xmlItem.getName() = "item"
             itemAA = xmlItem.GetChildElements()
 
-            'mediaContentText = xmlItem.Lookup("media:content").getText()
-            ''if file doenst end in .mp4 then set itemAA to invalid
-            'if instr( len(mediaContentText) - 4, LCase(mediaContentText), ".mp4") <> 1
-            '    itemAA = invalid
-            'end if
 
             if itemAA <> invalid
                 item = {}
@@ -83,7 +78,7 @@ Function GetApiArray()
                         end if
                     end if
                     
-                    'DTNS thumbnail is at <maxImgUrl> ex: <maxImgUrl>http://i.ytimg.com/vi/VGViMR6k0g4/0.jpg</maxImgUrl>
+                    'DTNS thumbnail is at <maxImgUrl> ex: <maxImgUrl>https://i.ytimg.com/vi/VGViMR6k0g4/0.jpg</maxImgUrl>
                     if xmlItem.getName() = "maxImgUrl" 
                         item.HDPosterUrl = xmlItem.GetText()
                         item.hdBackgroundImageUrl = xmlItem.GetText()

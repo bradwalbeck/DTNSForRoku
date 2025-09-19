@@ -35,10 +35,9 @@
             color="0xAAAAAA"
             ShadeOpacity="0.8"/>
             
-             <!-- rowItemSize images are 4:3 -->
+             <!-- rowItemSize images are 16:9 -->
         <RowList
             id="RowList"
-            focusBitmapUri="pkg:/images/focus_grid_10.9.png"
             translation="[-60, 372]"
             itemSize="[1327, 218]"
             numRows="2"
