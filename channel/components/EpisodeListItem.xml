@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="EpisodeListItem" extends="Group">
     <interface>
-        <field id="itemContent" type="node" onChange="onContentChange" />
+        <field id="itemContent" type="node" />
     </interface>
     <children>
         <Poster
             id="poster"
-            width="200"
-            height="120"
+            width="180"
+            height="100"
+            translation="[10, 10]"
+            uri_bind_to_field="itemContent.hdPosterUrl"
         />
         <Label
             id="title"
-            width="1580"
-            height="120"
-            font="font:MediumBoldSystemFont"
+            width="580"
+            height="100"
+            font="font:SmallBoldSystemFont"
             vertAlign="center"
-            translation="[220, 0]"
+            wrap="true"
+            translation="[210, 10]"
+            text_bind_to_field="itemContent.title"
         />
     </children>
-    <script type="text/brightscript">
-        <![CDATA[
-        sub onContentChange()
-            item = m.top.itemContent
-            m.top.findNode("poster").uri = item.hdPosterUrl
-            m.top.findNode("title").text = item.title
-        end sub
-        ]]>
-    </script>
 </component>

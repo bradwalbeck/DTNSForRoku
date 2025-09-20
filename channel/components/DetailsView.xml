@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="DetailsView" extends="Group">
     <interface>
-        <field id="content" type="assocarray" onChange="onContentChange" />
+        <field id="content" type="node" />
     </interface>
     <children>
         <Poster 
             id="poster"
             width="960"
             height="540"
+            uri_bind_to_field="content.hdPosterUrl"
         />
         <Label
             id="title"
@@ -15,6 +16,7 @@
             font="font:LargeBoldSystemFont"
             wrap="true"
             translation="[0, 560]"
+            text_bind_to_field="content.title"
         />
         <Label
             id="description"
@@ -23,18 +25,7 @@
             font="font:SmallSystemFont"
             wrap="true"
             translation="[0, 640]"
+            text_bind_to_field="content.description"
         />
     </children>
-    <script type="text/brightscript">
-        <![CDATA[
-        sub onContentChange()
-            content = m.top.content
-            if content <> invalid
-                m.top.findNode("poster").uri = content.hdPosterUrl
-                m.top.findNode("title").text = content.title
-                m.top.findNode("description").text = content.description
-            end if
-        end sub
-        ]]>
-    </script>
 </component>

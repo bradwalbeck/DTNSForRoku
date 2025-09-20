@@ -5,20 +5,27 @@
         <function name="playVideo" />
     </interface>
     <children>
-        <!-- Rotating background images -->
-        <ImageRotator id="imageRotator" />
+        <!-- Background poster, will display the focused thumbnail -->
+        <Poster id="backgroundPoster" width="1920" height="1080" />
 
         <!-- Loading indicator -->
-        <Label id="loadingLabel" text="Loading feed..." translation="[900, 540]" />
+        <Label id="loadingLabel" text="Loading feed..." translation="[900, 540]" font="font:LargeBoldSystemFont" />
 
-        <!-- Episode list, initially invisible -->
+        <!-- Episode list, on the left -->
         <RowList 
             id="episodeList"
             itemComponentName="EpisodeListItem"
             numRows="1"
-            itemSize="[1800, 150]"
-            rowItemSpacing="[0, 20]"
-            translation="[60, 150]"
+            itemSize="[800, 120]"
+            rowItemSpacing="[0, 10]"
+            translation="[50, 120]"
+            visible="false"
+        />
+
+        <!-- Details view for the focused episode, on the right -->
+        <DetailsView
+            id="detailsView"
+            translation="[900, 120]"
             visible="false"
         />
 

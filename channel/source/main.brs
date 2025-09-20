@@ -6,18 +6,12 @@ sub Main()
     scene = screen.createScene("MainScene")
     screen.show()
     
+    ' The main event loop is now only responsible for detecting when the channel exits.
+    ' All other event handling is done within the MainScene component.
     while(true)
         msg = wait(0, port)
-        msgType = type(msg)
-        
-        if msgType = "roSGScreenEvent"
-            if msg.isScreenClosed() then return
-        else if msgType = "roSGNodeEvent"
-            if msg.GetField() = "itemSelected"
-                ' An item was selected from the list, show the video player
-                selectedIndex = msg.GetData()
-                scene.callFunc("playVideo", { index: selectedIndex })
-            end if
+        if type(msg) = "roSGScreenEvent" and msg.isScreenClosed()
+            return
         end if
     end while
 end sub
