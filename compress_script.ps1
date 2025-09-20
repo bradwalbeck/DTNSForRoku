@@ -1,24 +1,30 @@
-# Set the source directory to the current directory
-$Source = Get-Location
+try {
+    #region Configuration
+    $Source = Join-Path -Path (Get-Location) -ChildPath "channel"
+    $Destination = Join-Path -Path (Get-Location) -ChildPath "builds"
+    $RandomHex = [string]::Format('{0:X4}', (Get-Random -Minimum 0 -Maximum 65535))
+    $ArchiveName = "DTNSForRoku_" + $RandomHex + ".zip"
+    $ArchivePath = Join-Path -Path $Destination -ChildPath $ArchiveName
+    #endregion
 
-# Set the destination directory
-$Destination = Join-Path -Path $Source -ChildPath "builds"
+    #region Logging
+    Write-Host "Source directory: $Source"
+    Write-Host "Destination directory: $Destination"
+    Write-Host "Archive path: $ArchivePath"
+    #endregion
 
-# Create the destination directory if it doesn't exist
-if (!(Test-Path -Path $Destination)) {
-    New-Item -ItemType Directory -Path $Destination
+    #region Compress Archive
+    Write-Host "Starting compression..."
+    try {
+        Compress-Archive -Path $Source\* -DestinationPath $ArchivePath -Force -ErrorAction Stop
+        Write-Host "Compression completed successfully. Archive saved to: $ArchivePath"
+    }
+    catch {
+        Write-Error "Compression failed: $($_.Exception.Message)"
+        throw
+    }
+    #endregion
+
+} catch {
+    Write-Host "An error occurred: $($_.Exception.Message)"
 }
-
-# Generate a random four-digit hexadecimal string
-$RandomHex = [string]::Format('{0:X4}', (Get-Random -Minimum 0 -Maximum 65535))
-
-# Set the archive file name
-$ArchiveName = "DTNSForRoku_" + $RandomHex + ".zip"
-
-# Set the full path to the archive file
-$ArchivePath = Join-Path -Path $Destination -ChildPath $ArchiveName
-
-# Compress the files and folders
-Compress-Archive -Path $Source\* -DestinationPath $ArchivePath -Force
-
-Write-Host "Successfully compressed to: $ArchivePath"
