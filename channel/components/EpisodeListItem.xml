@@ -13,7 +13,7 @@
         />
         <Label
             id="title"
-            width="580"
+            width="1070"
             height="100"
             font="font:SmallBoldSystemFont"
             vertAlign="center"

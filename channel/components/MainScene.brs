@@ -1,25 +1,22 @@
 sub init()
+    m.loadingScreen = m.top.findNode("loadingScreen")
     m.episodeList = m.top.findNode("episodeList")
-    m.detailsView = m.top.findNode("detailsView")
     m.videoPlayer = m.top.findNode("videoPlayer")
-    m.backgroundPoster = m.top.findNode("backgroundPoster")
 
-    ' Observe events directly on the nodes within the scene
-    m.episodeList.observeField("itemFocused", "onEpisodeFocusChanged")
     m.episodeList.observeField("itemSelected", "onItemSelected")
     m.videoPlayer.observeField("state", "onVideoStateChange")
 
     ' Create and run the background task to fetch content
-    m.contentTask = createObject("roSGNode", "ContentTask")
-    m.contentTask.observeField("feedData", "onContentReady")
-    m.contentTask.control = "RUN"
+    contentTask = createObject("roSGNode", "ContentTask")
+    contentTask.observeField("feedData", "onContentReady")
+    contentTask.control = "RUN"
 end sub
 
-' This function is called asynchronously when the ContentTask finishes.
-sub onContentReady()
-    m.videoData = m.contentTask.feedData
+' This function is called when the ContentTask finishes.
+sub onContentReady(event as object)
+    m.videoData = event.getData()
     if m.videoData = invalid or m.videoData.count() = 0
-        m.top.findNode("loadingLabel").text = "Error loading feed."
+        m.loadingScreen.text = "Error loading feed."
     else
         displayEpisodes()
     end if
@@ -37,51 +34,29 @@ sub displayEpisodes()
     end for
     m.episodeList.content = content
     
-    if m.videoData.count() > 0
-        m.backgroundPoster.uri = m.videoData[0].hdPosterUrl
-    end if
-
-    m.top.findNode("loadingLabel").visible = false
-    m.detailsView.visible = true
+    m.loadingScreen.visible = false
     m.episodeList.visible = true
     m.episodeList.setFocus(true)
 end sub
 
 ' This function is called when the user presses OK on a list item.
 sub onItemSelected()
-    selectedIndex = m.episodeList.itemSelected
-    playVideo({ index: selectedIndex })
-end sub
-
-' Updates the details view and background when a new episode is focused
-sub onEpisodeFocusChanged()
-    focusedIndex = m.episodeList.itemFocused
-    if focusedIndex >= 0
-        focusedItem = m.episodeList.content.getChild(focusedIndex)
-        m.detailsView.content = focusedItem
-        m.backgroundPoster.uri = focusedItem.hdPosterUrl
-    end if
+    playVideo(m.episodeList.itemSelected)
 end sub
 
 ' Plays the selected video
-function playVideo(args as object)
-    m.currentIndex = args.index
-    videoContentNode = m.episodeList.content.getChild(m.currentIndex)
+sub playVideo(index as integer)
+    videoContentNode = m.episodeList.content.getChild(index)
     m.videoPlayer.content = videoContentNode
     m.videoPlayer.control = "play"
     m.videoPlayer.visible = true
     m.videoPlayer.setFocus(true)
-end function
+end sub
 
-' Handles video state changes for continuous play
+' Handles video state changes
 sub onVideoStateChange()
     if m.videoPlayer.state = "finished"
-        m.currentIndex = m.currentIndex + 1
-        if m.currentIndex < m.videoData.count()
-            playVideo({ index: m.currentIndex })
-        else
-            m.videoPlayer.visible = false
-            m.episodeList.setFocus(true)
-        end if
+        m.videoPlayer.visible = false
+        m.episodeList.setFocus(true)
     end if
 end sub

@@ -2,46 +2,45 @@ sub init()
     m.top.functionName = "fetchAndParseFeed"
 end sub
 
-' This function runs on a background thread
-function parseFeed(feedString as string) as object
-    xml = createObject("roXMLElement")
-    videos = []
-    if xml.parse(feedString)
-        rssNode = xml.getChildElements()
-        if rssNode.count() > 0
-            channelNode = rssNode[0].getChildElements()
-            if channelNode.count() > 0
-                for each item in channelNode[0].getChildElements()
-                    if item.getName() = "item"
-                        mediaContent = item["media:content"]
-                        mediaThumbnail = item["media:thumbnail"]
-                        if mediaContent <> invalid and mediaThumbnail <> invalid
-                            video = {
-                                title: item.title.getText(),
-                                description: item.description.getText(),
-                                hdPosterUrl: mediaThumbnail.getAttributes().url,
-                                streamUrl: mediaContent.getAttributes().url
-                            }
-                            videos.push(video)
-                        end if
-                    end if
-                end for
-            end if
-        end if
-    end if
-    return videos
-end function
-
-function fetchAndParseFeed()
+sub fetchAndParseFeed()
+    print "--- [ContentTask] Task started. ---"
+    port = CreateObject("roMessagePort")
     fetcher = CreateObject("roUrlTransfer")
+    fetcher.SetMessagePort(port)
+    fetcher.SetCertificatesFile("common:/certs/ca-bundle.crt")
+    fetcher.EnablePeerVerification(true)
     fetcher.SetUrl("https://feeds.feedburner.com/daily_tech_news_show")
     
-    responseString = fetcher.GetToString()
-    responseCode = fetcher.GetResponseCode()
+    print "--- [ContentTask] Starting async download... ---"
+    if not fetcher.AsyncGetToString()
+        print "--- [ContentTask] ERROR: AsyncGetToString() failed to start. ---"
+        m.top.feedData = invalid
+        return
+    end if
 
-    if responseCode = 200
-        m.top.feedData = parseFeed(responseString)
+    msg = wait(0, port)
+    print "--- [ContentTask] Received message from port. Type: "; type(msg); " ---"
+
+    if type(msg) = "roUrlEvent"
+        responseCode = msg.GetResponseCode()
+        print "--- [ContentTask] Fetch complete. Response code: "; responseCode; " ---"
+        if responseCode = 200
+            responseString = msg.GetString()
+            print "--- [ContentTask] Response is OK. Calling ParseFeed. ---"
+            m.top.feedData = ParseFeed(responseString)
+            if m.top.feedData <> invalid
+                print "--- [ContentTask] ParseFeed finished. Data count: "; m.top.feedData.count(); " ---"
+            else
+                 print "--- [ContentTask] ParseFeed returned invalid. ---"
+            end if
+        else
+            print "--- [ContentTask] HTTP Error. Setting data to invalid. ---"
+            m.top.feedData = invalid
+        end if
     else
+        print "--- [ContentTask] ERROR: Did not receive a roUrlEvent. ---"
         m.top.feedData = invalid
     end if
-end function
+
+    print "--- [ContentTask] Task finished. ---"
+end sub

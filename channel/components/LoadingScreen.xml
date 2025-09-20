@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="LoadingScreen" extends="Group">
+    <interface>
+        <field id="text" type="string" alias="label.text" />
+    </interface>
     <children>
-        <Poster
-            id="loadingImage"
-            uri="pkg:/images/loading.png"
+        <Label
+            id="label"
             width="1920"
             height="1080"
+            horizAlign="center"
+            vertAlign="center"
+            font="font:LargeBoldSystemFont"
+            text="Loading feed..."
         />
     </children>
 </component>

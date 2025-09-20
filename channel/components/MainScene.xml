@@ -2,30 +2,19 @@
 <component name="MainScene" extends="Scene">
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <interface>
-        <function name="playVideo" />
     </interface>
     <children>
-        <!-- Background poster, will display the focused thumbnail -->
-        <Poster id="backgroundPoster" width="1920" height="1080" />
-
         <!-- Loading indicator -->
-        <Label id="loadingLabel" text="Loading feed..." translation="[900, 540]" font="font:LargeBoldSystemFont" />
+        <LoadingScreen id="loadingScreen" />
 
-        <!-- Episode list, on the left -->
+        <!-- Episode list, now wider and centered -->
         <RowList 
             id="episodeList"
             itemComponentName="EpisodeListItem"
             numRows="1"
-            itemSize="[800, 120]"
-            rowItemSpacing="[0, 10]"
-            translation="[50, 120]"
-            visible="false"
-        />
-
-        <!-- Details view for the focused episode, on the right -->
-        <DetailsView
-            id="detailsView"
-            translation="[900, 120]"
+            itemSize="[1280, 120]"
+            rowItemSpacing="[0.0, 10.0]"
+            translation="[320, 120]"
             visible="false"
         />
 
