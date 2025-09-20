@@ -1,0 +1,11 @@
+' filepath: c:\Repository\DTNSForRoku\channel\components\ImageRotator.xml
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ImageRotator" extends="Group" xmlns="http://www.rokudev.com/bsml">
+  <interface>
+    <field id="images" type="array" />
+  </interface>
+  <children>
+    <Poster id="rotatingImage" width="1920" height="1080" />
+  </children>
+  <script type="text/brightscript" uri="ImageRotator.brs" />
+</component>

@@ -1,0 +1,11 @@
+' filepath: c:\Repository\DTNSForRoku\channel\components\VideoPlayer.xml
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="VideoPlayer" extends="Scene" xmlns="http://www.rokudev.com/bsml">
+  <interface>
+    <field id="video" type="assocarray" />
+  </interface>
+  <children>
+    <Video id="videoPlayer" width="1920" height="1080" />
+  </children>
+  <script type="text/brightscript" uri="VideoPlayer.brs" />
+</component>
