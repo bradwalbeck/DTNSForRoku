@@ -15,11 +15,10 @@ sub init()
     m.contentTask.control = "RUN"
 end sub
 
-' NEW: This function is called when the ContentTask finishes.
+' This function is called asynchronously when the ContentTask finishes.
 sub onContentReady()
-    ' The blocking while loop is gone. This function is called asynchronously.
     m.videoData = m.contentTask.feedData
-    if m.videoData = invalid
+    if m.videoData = invalid or m.videoData.count() = 0
         m.top.findNode("loadingLabel").text = "Error loading feed."
     else
         displayEpisodes()
@@ -33,17 +32,15 @@ sub displayEpisodes()
         episode = content.createChild("ContentNode")
         episode.title = item.title
         episode.description = item.description
-        episode.hdPosterUrl = item.hdPosterUrl ' Thumbnail from the feed
+        episode.hdPosterUrl = item.hdPosterUrl
         episode.streamUrl = item.streamUrl
     end for
     m.episodeList.content = content
     
-    ' Set the initial background to the first episode's thumbnail
     if m.videoData.count() > 0
         m.backgroundPoster.uri = m.videoData[0].hdPosterUrl
     end if
 
-    ' Hide loading label and show the UI
     m.top.findNode("loadingLabel").visible = false
     m.detailsView.visible = true
     m.episodeList.visible = true
@@ -61,9 +58,7 @@ sub onEpisodeFocusChanged()
     focusedIndex = m.episodeList.itemFocused
     if focusedIndex >= 0
         focusedItem = m.episodeList.content.getChild(focusedIndex)
-        ' Update the details view
         m.detailsView.content = focusedItem
-        ' Update the main background poster
         m.backgroundPoster.uri = focusedItem.hdPosterUrl
     end if
 end sub
@@ -71,9 +66,7 @@ end sub
 ' Plays the selected video
 function playVideo(args as object)
     m.currentIndex = args.index
-    
     videoContentNode = m.episodeList.content.getChild(m.currentIndex)
-    
     m.videoPlayer.content = videoContentNode
     m.videoPlayer.control = "play"
     m.videoPlayer.visible = true
@@ -85,10 +78,8 @@ sub onVideoStateChange()
     if m.videoPlayer.state = "finished"
         m.currentIndex = m.currentIndex + 1
         if m.currentIndex < m.videoData.count()
-            ' Play the next video in the series
             playVideo({ index: m.currentIndex })
         else
-            ' Last video finished, return to the episode list
             m.videoPlayer.visible = false
             m.episodeList.setFocus(true)
         end if
