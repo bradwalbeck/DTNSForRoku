@@ -9,3 +9,11 @@ splash_screen_sd=pkg:/images/loading.png
 splash_color=#222222
 splash_min_time=2000
 ui_resolutions=hd
+
+
+; channel/
+;├── components/      # SceneGraph UI components
+;├── images/         # Images and assets
+;├── source/         # BrightScript source files 
+;└── manifest        # Channel manifest file
+  

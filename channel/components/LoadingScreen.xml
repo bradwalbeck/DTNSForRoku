@@ -1,7 +1,11 @@
-' filepath: c:\Repository\DTNSForRoku\channel\components\LoadingScreen.xml
 <?xml version="1.0" encoding="utf-8" ?>
-<component name="LoadingScreen" extends="Scene" xmlns="http://www.rokudev.com/bsml">
-  <children>
-    <Poster id="loadingImage" uri="pkg:/images/loading.png" width="1920" height="1080" />
-  </children>
+<component name="LoadingScreen" extends="Group">
+    <children>
+        <Poster
+            id="loadingImage"
+            uri="pkg:/images/loading.png"
+            width="1920"
+            height="1080"
+        />
+    </children>
 </component>

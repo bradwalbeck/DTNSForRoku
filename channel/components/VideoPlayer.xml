@@ -1,11 +1,36 @@
-' filepath: c:\Repository\DTNSForRoku\channel\components\VideoPlayer.xml
 <?xml version="1.0" encoding="utf-8" ?>
-<component name="VideoPlayer" extends="Scene" xmlns="http://www.rokudev.com/bsml">
-  <interface>
-    <field id="video" type="assocarray" />
-  </interface>
-  <children>
-    <Video id="videoPlayer" width="1920" height="1080" />
-  </children>
-  <script type="text/brightscript" uri="VideoPlayer.brs" />
+<component name="VideoPlayer" extends="Group">
+    <interface>
+        <field id="content" type="node" onChange="onContentChanged" />
+        <field id="control" type="string" value="none" />
+    </interface>
+    <children>
+        <Video 
+            id="videoPlayer"
+            width="1920"
+            height="1080"
+            enableUI="true"
+        />
+    </children>
+    <script type="text/brightscript">
+        <![CDATA[
+        sub init()
+            m.video = m.top.findNode("videoPlayer")
+            m.video.observeField("state", "onVideoStateChange")
+        end sub
+        
+        sub onContentChanged()
+            if m.top.content <> invalid
+                m.video.content = m.top.content
+                m.video.control = "play"
+            end if
+        end sub
+        
+        sub onVideoStateChange()
+            if m.video.state = "finished"
+                m.top.control = "next"
+            end if
+        end sub
+        ]]>
+    </script>
 </component>
