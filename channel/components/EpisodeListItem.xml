@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="EpisodeListItem" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="onContentChange" />
+    </interface>
+    <children>
+        <Poster
+            id="poster"
+            width="200"
+            height="120"
+        />
+        <Label
+            id="title"
+            width="1580"
+            height="120"
+            font="font:MediumBoldSystemFont"
+            vertAlign="center"
+            translation="[220, 0]"
+        />
+    </children>
+    <script type="text/brightscript">
+        <![CDATA[
+        sub onContentChange()
+            item = m.top.itemContent
+            m.top.findNode("poster").uri = item.hdPosterUrl
+            m.top.findNode("title").text = item.title
+        end sub
+        ]]>
+    </script>
+</component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="DetailsView" extends="Group">
+    <interface>
+        <field id="content" type="assocarray" onChange="onContentChange" />
+    </interface>
+    <children>
+        <Poster 
+            id="poster"
+            width="960"
+            height="540"
+        />
+        <Label
+            id="title"
+            width="960"
+            font="font:LargeBoldSystemFont"
+            wrap="true"
+            translation="[0, 560]"
+        />
+        <Label
+            id="description"
+            width="960"
+            height="250"
+            font="font:SmallSystemFont"
+            wrap="true"
+            translation="[0, 640]"
+        />
+    </children>
+    <script type="text/brightscript">
+        <![CDATA[
+        sub onContentChange()
+            content = m.top.content
+            if content <> invalid
+                m.top.findNode("poster").uri = content.hdPosterUrl
+                m.top.findNode("title").text = content.title
+                m.top.findNode("description").text = content.description
+            end if
+        end sub
+        ]]>
+    </script>
+</component>

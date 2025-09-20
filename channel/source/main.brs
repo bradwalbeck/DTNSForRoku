@@ -3,15 +3,21 @@ sub Main()
     port = CreateObject("roMessagePort")
     screen.setMessagePort(port)
     
-    ' Create and show the main scene
-    scene = screen.CreateScene("MainScene")
+    scene = screen.createScene("MainScene")
     screen.show()
     
-    ' Main event loop
-    while true
+    while(true)
         msg = wait(0, port)
-        if type(msg) = "roSGScreenEvent"
+        msgType = type(msg)
+        
+        if msgType = "roSGScreenEvent"
             if msg.isScreenClosed() then return
+        else if msgType = "roSGNodeEvent"
+            if msg.GetField() = "itemSelected"
+                ' An item was selected from the list, show the video player
+                selectedIndex = msg.GetData()
+                scene.callFunc("playVideo", { index: selectedIndex })
+            end if
         end if
     end while
 end sub

@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="MainScene" extends="Scene">
-    <script type="text/brightscript" uri="pkg:/source/utils.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <interface>
-        <field id="currentState" type="string" value="loading" />
+        <function name="playVideo" />
     </interface>
     <children>
-        <LoadingScreen
-            id="loadingScreen"
-            visible="true"
-        />
-        <ImageRotator
-            id="imageRotator"
+        <!-- Rotating background images -->
+        <ImageRotator id="imageRotator" />
+
+        <!-- Loading indicator -->
+        <Label id="loadingLabel" text="Loading feed..." translation="[900, 540]" />
+
+        <!-- Episode list, initially invisible -->
+        <RowList 
+            id="episodeList"
+            itemComponentName="EpisodeListItem"
+            numRows="1"
+            itemSize="[1800, 150]"
+            rowItemSpacing="[0, 20]"
+            translation="[60, 150]"
             visible="false"
         />
-        <VideoPlayer
+
+        <!-- Video player, initially invisible -->
+        <Video
             id="videoPlayer"
+            width="1920"
+            height="1080"
             visible="false"
         />
     </children>

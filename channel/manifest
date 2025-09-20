@@ -1,19 +1,15 @@
 title=DTNS Channel
-major_version=1
+major_version=5
 minor_version=0
-build_version=1
-mm_icon_focus_hd=pkg:/images/icon.png
+build_version=4
 mm_icon_focus_sd=pkg:/images/icon.png
-splash_screen_hd=pkg:/images/loading.png
+mm_icon_focus_hd=pkg:/images/icon.png
+mm_icon_focus_uhd=pkg:/images/icon_uhd.png
+
 splash_screen_sd=pkg:/images/loading.png
+splash_screen_hd=pkg:/images/loading.png
+splash_screen_uhd=pkg:/images/loading_uhd.png
+
 splash_color=#222222
 splash_min_time=2000
-ui_resolutions=hd
-
-
-; channel/
-;├── components/      # SceneGraph UI components
-;├── images/         # Images and assets
-;├── source/         # BrightScript source files 
-;└── manifest        # Channel manifest file
-  
+ui_resolutions=uhd,fhd,hd
