@@ -1,90 +1,78 @@
-function init()
-    m.loadingIndicator = m.top.findNode("loadingIndicator")
+sub init()
+    print "MainScene init() called"
+    
+    m.loadingLabel = m.top.findNode("loadingLabel")
     m.videoList = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
+    
+    print "Nodes found successfully"
     
     ' Set up event handlers
     m.videoList.observeField("itemSelected", "onVideoSelected")
     m.videoPlayer.observeField("state", "onVideoPlayerStateChanged")
     
-    ' Start loading content
+    print "Starting content load"
     loadVideoContent()
-end function
+end sub
 
-function loadVideoContent()
-    ' Create content task to fetch RSS feed
+sub loadVideoContent()
+    print "Creating ContentTask"
     m.contentTask = createObject("roSGNode", "ContentTask")
     m.contentTask.observeField("content", "onContentLoaded")
     m.contentTask.control = "RUN"
-end function
+    print "ContentTask started"
+end sub
 
-function onContentLoaded()
-    content = m.contentTask.content
-    if content <> invalid and content.count() > 0
-        ' Hide loading, show video list
-        m.loadingIndicator.visible = false
+sub onContentLoaded()
+    print "Content loaded callback"
+    contentNode = m.contentTask.content
+    
+    if contentNode <> invalid and contentNode.getChildCount() > 0
+        print "Found " + contentNode.getChildCount().toStr() + " videos"
+        
+        ' Show video list
+        m.loadingLabel.visible = false
         m.videoList.visible = true
-        m.videoList.content = createContentNode(content)
+        m.videoList.content = contentNode
         m.videoList.setFocus(true)
     else
-        ' Show error message or empty state
-        showErrorMessage("No video content available")
+        print "No content found"
+        m.loadingLabel.text = "No videos available"
     end if
-end function
+end sub
 
-function onVideoSelected()
+sub onVideoSelected()
+    print "Video selected"
     selectedIndex = m.videoList.rowItemSelected[1]
     videoContent = m.videoList.content.getChild(selectedIndex)
     
     if videoContent <> invalid
-        ' Hide video list, show video player
+        print "Playing: " + videoContent.title
         m.videoList.visible = false
         m.videoPlayer.visible = true
         m.videoPlayer.content = videoContent
         m.videoPlayer.control = "play"
         m.videoPlayer.setFocus(true)
     end if
-end function
+end sub
 
-function onVideoPlayerStateChanged()
+sub onVideoPlayerStateChanged()
     state = m.videoPlayer.state
+    print "Video player state: " + state
+    
     if state = "finished" or state = "error" or state = "stopped"
-        ' Return to video list
         m.videoPlayer.visible = false
         m.videoPlayer.control = "stop"
         m.videoList.visible = true
         m.videoList.setFocus(true)
     end if
-end function
+end sub
 
-function createContentNode(videos as object) as object
-    contentNode = createObject("roSGNode", "ContentNode")
-    
-    for each video in videos
-        videoNode = createObject("roSGNode", "ContentNode")
-        videoNode.title = video.title
-        videoNode.description = video.description
-        videoNode.hdPosterUrl = video.hdPosterUrl
-        videoNode.streamUrl = video.streamUrl
-        videoNode.streamFormat = "mp4"
-        contentNode.appendChild(videoNode)
-    end for
-    
-    return contentNode
-end function
-
-function showErrorMessage(message as string)
-    m.loadingIndicator.visible = false
-    ' Could implement error display here
-    print "Error: " + message
-end function
-
-' Handle remote control input
 function onKeyEvent(key as string, press as boolean) as boolean
     if press
         if key = "back"
             if m.videoPlayer.visible
-                ' Stop video and return to list
+                print "Back pressed, stopping video"
                 m.videoPlayer.control = "stop"
                 return true
             end if

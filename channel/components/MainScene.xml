@@ -2,17 +2,22 @@
 <component name="MainScene" extends="Scene">
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <children>
-        <LoadingIndicator 
-            id="loadingIndicator"
+        <Label 
+            id="loadingLabel"
+            text="Loading DTNS Videos..."
             translation="[640, 360]"
+            width="640"
+            height="100"
+            font="font:LargeBoldSystemFont"
+            color="0xFFFFFFFF"
+            horizAlign="center"
+            vertAlign="center"
             visible="true"
         />
         <RowList 
             id="videoList"
-            itemComponentName="VideoListItem"
             numRows="1"
             itemSize="[400, 300]"
-            rowItemSpacing="[20, 20]"
             translation="[100, 200]"
             visible="false"
         />

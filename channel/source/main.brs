@@ -6,7 +6,7 @@ sub showChannelSGScreen()
     screen = createObject("roSGScreen")
     m.port = createObject("roMessagePort")
     screen.setMessagePort(m.port)
-    scene = screen.createScene("MainScene")
+    screen.createScene("MainScene")
     screen.show()
 
     while(true)

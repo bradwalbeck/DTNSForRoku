@@ -2,6 +2,6 @@
 <component name="ContentTask" extends="Task">
     <script type="text/brightscript" uri="pkg:/components/ContentTask.brs" />
     <interface>
-        <field id="content" type="assocarray" />
+        <field id="content" type="node" />
     </interface>
 </component>

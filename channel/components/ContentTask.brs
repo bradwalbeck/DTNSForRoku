@@ -1,208 +1,241 @@
-function init()
+sub init()
     m.top.functionName = "fetchContent"
-end function
+end sub
 
-function fetchContent()
+sub fetchContent()
+    print "ContentTask: Starting fetch"
+    
     feedUrl = "https://feeds.feedburner.com/daily_tech_news_show"
     
-    ' Create HTTP request
     http = createObject("roUrlTransfer")
     http.setURL(feedUrl)
     http.setCertificatesFile("common:/certs/ca-bundle.crt")
     
-    ' Fetch the RSS feed
+    print "ContentTask: Fetching RSS feed"
     response = http.GetToString()
     
     if response <> invalid and response <> ""
-        ' Parse the RSS feed
-        videos = parseRSSFeed(response)
-        m.top.content = videos
+        print "ContentTask: Got response length: " + response.len().toStr()
+        contentNode = parseRSSFeed(response)
+        print "ContentTask: Created content node with " + contentNode.getChildCount().toStr() + " children"
+        m.top.content = contentNode
     else
-        m.top.content = []
+        print "ContentTask: No response or empty response"
+        m.top.content = createObject("roSGNode", "ContentNode")
     end if
-end function
+end sub
 
 function parseRSSFeed(xmlString as string) as object
-    videos = []
+    contentNode = createObject("roSGNode", "ContentNode")
     
-    ' Parse XML
     xml = createObject("roXMLElement")
-    if not xml.parse(xmlString) then return videos
+    if not xml.parse(xmlString)
+        print "Failed to parse XML"
+        return contentNode
+    end if
+    
+    print "XML parsed successfully"
     
     ' Navigate to channel
     channel = invalid
-    if xml.rss <> invalid and xml.rss.channel <> invalid
-        channel = xml.rss.channel
-    else if xml.channel <> invalid
+    if xml.channel <> invalid
         channel = xml.channel
+    else if xml.rss <> invalid and xml.rss.channel <> invalid
+        channel = xml.rss.channel
     end if
     
-    if channel = invalid then return videos
-    
-    ' Get channel-level image as fallback
-    channelImage = invalid
-    if channel.image <> invalid and channel.image.url <> invalid
-        channelImage = channel.image.url.getText()
+    if channel = invalid
+        print "No channel found"
+        return contentNode
     end if
     
-    ' Process items
+    print "Channel found"
+    
+    ' Get items
     items = channel.item
-    if items <> invalid
-        ' Handle both single item and array of items
-        if getInterface(items, "ifArray") = invalid
-            items = [items]
-        end if
-        
-        for each item in items
-            video = parseVideoItem(item, channelImage)
-            if video <> invalid
-                videos.push(video)
-            end if
-        end for
+    if items = invalid
+        print "No items found"
+        return contentNode
     end if
     
-    return videos
+    ' Check if items is an array or single item
+    itemCount = 0
+    if getInterface(items, "ifArray") <> invalid
+        itemCount = items.count()
+        print "Found items array with " + itemCount.toStr() + " items"
+    else
+        itemCount = 1
+        print "Found single item"
+        items = [items]
+    end if
+    
+    videoCount = 0
+    for i = 0 to itemCount - 1
+        item = items[i]
+        videoNode = parseVideoItem(item)
+        if videoNode <> invalid
+            contentNode.appendChild(videoNode)
+            videoCount = videoCount + 1
+        end if
+    end for
+    
+    print "Added " + videoCount.toStr() + " video items out of " + itemCount.toStr() + " total items"
+    
+    return contentNode
 end function
 
-function parseVideoItem(item as object, fallbackImage as dynamic) as dynamic
+function parseVideoItem(item as object) as dynamic
     if item = invalid then return invalid
     
-    ' Extract title
-    title = invalid
+    ' Extract title safely
+    title = ""
     if item.title <> invalid
-        title = item.title.getText()
+        titleText = item.title.getText()
+        if titleText <> invalid then title = titleText
     end if
-    if title = invalid or title = "" then return invalid
+    if title = "" then return invalid
     
-    ' Extract description
+    print "Processing: " + title
+    
+    ' Extract description safely
     description = ""
     if item.description <> invalid
-        description = item.description.getText()
+        descText = item.description.getText()
+        if descText <> invalid then description = descText
     end if
     
-    ' Look for video content in media:group or enclosure
+    ' Look for media content
     streamUrl = invalid
-    posterUrl = fallbackImage
+    posterUrl = ""
     
-    ' Try media:group first (preferred for video content)
-    mediaGroup = item["media:group"]
-    if mediaGroup <> invalid
-        if getInterface(mediaGroup, "ifArray") <> invalid and mediaGroup.count() > 0
-            mediaGroup = mediaGroup[0]
-        end if
+    ' Try to get media:group using getNamedElements (safer approach)
+    mediaGroups = item.getNamedElements("media:group")
+    if mediaGroups <> invalid and mediaGroups.count() > 0
+        print "  Found " + mediaGroups.count().toStr() + " media:group elements"
+        mediaGroup = mediaGroups[0]
         
-        ' Look for video content
-        mediaContent = mediaGroup["media:content"]
-        if mediaContent <> invalid
-            if getInterface(mediaContent, "ifArray") <> invalid
-                ' Multiple media:content elements, find video
-                for each content in mediaContent
-                    attrs = content.getAttributes()
-                    if attrs <> invalid and attrs.url <> invalid
-                        url = attrs.url
-                        contentType = attrs.type
-                        medium = attrs.medium
-                        
-                        ' Check if this is video content
-                        if isVideoContent(url, contentType, medium)
-                            streamUrl = url
-                            exit for
-                        end if
-                    end if
-                end for
-            else
-                ' Single media:content
+        ' Look for media:content
+        mediaContents = mediaGroup.getNamedElements("media:content")
+        if mediaContents <> invalid and mediaContents.count() > 0
+            print "  Found " + mediaContents.count().toStr() + " media:content elements"
+            
+            for each mediaContent in mediaContents
                 attrs = mediaContent.getAttributes()
                 if attrs <> invalid and attrs.url <> invalid
                     url = attrs.url
-                    contentType = attrs.type
                     medium = attrs.medium
+                    contentType = attrs.type
                     
-                    if isVideoContent(url, contentType, medium)
+                    print "    URL: " + url
+                    if medium <> invalid then print "    Medium: " + medium
+                    if contentType <> invalid then print "    Type: " + contentType
+                    
+                    ' Check if it's video
+                    isVideo = false
+                    if medium <> invalid and lcase(medium) = "video"
+                        isVideo = true
+                        print "    -> Video (medium)"
+                    else if contentType <> invalid and left(lcase(contentType), 6) = "video/"
+                        isVideo = true
+                        print "    -> Video (type)"
+                    else if url <> invalid
+                        lowerUrl = lcase(url)
+                        if right(lowerUrl, 4) = ".mp4" or instr(lowerUrl, ".m3u8") > 0 or right(lowerUrl, 4) = ".m4v"
+                            isVideo = true
+                            print "    -> Video (extension)"
+                        end if
+                    end if
+                    
+                    if isVideo and streamUrl = invalid
                         streamUrl = url
+                        print "    -> USING THIS VIDEO URL"
                     end if
                 end if
-            end if
+            end for
         end if
         
-        ' Look for thumbnail
-        mediaThumbnail = mediaGroup["media:thumbnail"]
-        if mediaThumbnail <> invalid
-            if getInterface(mediaThumbnail, "ifArray") <> invalid and mediaThumbnail.count() > 0
-                mediaThumbnail = mediaThumbnail[0]
-            end if
-            
-            attrs = mediaThumbnail.getAttributes()
+        ' Look for media:thumbnail
+        mediaThumbnails = mediaGroup.getNamedElements("media:thumbnail")
+        if mediaThumbnails <> invalid and mediaThumbnails.count() > 0
+            attrs = mediaThumbnails[0].getAttributes()
             if attrs <> invalid and attrs.url <> invalid
                 posterUrl = attrs.url
+                print "  Found thumbnail: " + posterUrl
             end if
         end if
+    else
+        print "  No media:group found"
     end if
     
-    ' Try enclosure if no media:group video found
+    ' Try enclosure if no video found
     if streamUrl = invalid and item.enclosure <> invalid
+        print "  Checking enclosures"
         enclosures = item.enclosure
-        if getInterface(enclosures, "ifArray") = invalid
-            enclosures = [enclosures]
+        
+        ' Handle single or array
+        if getInterface(enclosures, "ifArray") <> invalid
+            enclosureList = enclosures
+        else
+            enclosureList = [enclosures]
         end if
         
-        for each enclosure in enclosures
+        for each enclosure in enclosureList
             attrs = enclosure.getAttributes()
             if attrs <> invalid and attrs.url <> invalid
                 url = attrs.url
                 contentType = attrs.type
                 
-                if isVideoContent(url, contentType, invalid)
+                print "    Enclosure URL: " + url
+                if contentType <> invalid then print "    Type: " + contentType
+                
+                ' Check for video in enclosure
+                isVideo = false
+                if contentType <> invalid and left(lcase(contentType), 6) = "video/"
+                    isVideo = true
+                    print "    -> Video enclosure (type)"
+                else if url <> invalid
+                    lowerUrl = lcase(url)
+                    if right(lowerUrl, 4) = ".mp4" or instr(lowerUrl, ".m3u8") > 0 or right(lowerUrl, 4) = ".m4v"
+                        isVideo = true
+                        print "    -> Video enclosure (extension)"
+                    end if
+                end if
+                
+                if isVideo and streamUrl = invalid
                     streamUrl = url
-                    exit for
+                    print "    -> USING THIS ENCLOSURE VIDEO URL"
                 end if
             end if
         end for
     end if
     
+    ' Try itunes:image for poster if none found
+    if posterUrl = "" and item.getNamedElements("itunes:image") <> invalid
+        itunesImages = item.getNamedElements("itunes:image")
+        if itunesImages.count() > 0
+            attrs = itunesImages[0].getAttributes()
+            if attrs <> invalid and attrs.href <> invalid
+                posterUrl = attrs.href
+                print "  Found iTunes image: " + posterUrl
+            end if
+        end if
+    end if
+    
     ' Only return video content
-    if streamUrl = invalid then return invalid
-    
-    return {
-        title: title
-        description: description
-        streamUrl: streamUrl
-        hdPosterUrl: posterUrl
-    }
-end function
-
-function isVideoContent(url as string, contentType as dynamic, medium as dynamic) as boolean
-    ' Check medium attribute
-    if medium <> invalid and lcase(medium) = "video"
-        return true
+    if streamUrl = invalid
+        print "  No video content found, skipping"
+        return invalid
     end if
     
-    ' Check content type
-    if contentType <> invalid
-        lowerType = lcase(contentType)
-        if left(lowerType, 6) = "video/"
-            return true
-        end if
-        ' Reject audio types
-        if left(lowerType, 6) = "audio/"
-            return false
-        end if
-    end if
+    print "  SUCCESS: Video item created for: " + title
     
-    ' Check URL for video file extensions
-    if url <> invalid
-        lowerUrl = lcase(url)
-        if right(lowerUrl, 4) = ".mp4" or right(lowerUrl, 4) = ".m4v" or right(lowerUrl, 4) = ".mov"
-            return true
-        end if
-        if instr(lowerUrl, ".m3u8") > 0 ' HLS streams
-            return true
-        end if
-        ' Reject audio extensions
-        if right(lowerUrl, 4) = ".mp3" or right(lowerUrl, 4) = ".m4a"
-            return false
-        end if
-    end if
+    ' Create video node with correct field names
+    videoNode = createObject("roSGNode", "ContentNode")
+    videoNode.title = title
+    videoNode.description = description
+    videoNode.hdPosterUrl = posterUrl
+    videoNode.url = streamUrl          ' Changed from streamUrl to url
+    videoNode.streamFormat = "mp4"     ' Add stream format
     
-    return false
+    return videoNode
 end function
