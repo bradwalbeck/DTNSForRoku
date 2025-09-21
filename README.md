@@ -42,3 +42,43 @@ Support basic navigation: back exits playback and returns to the list.
 Handle empty/error cases gracefully (status label/logging), with minimal logging noise.
 Keep the code aligned with Roku sample channel patterns and best practices.
 Acceptance: channel installs, loads episode list (>0 items), selects, and plays a DTNS video successfully.
+
+## Build & Deploy (Windows)
+
+Prerequisites
+- Roku device in Developer Mode (Development Application Installer enabled)
+- Device IP, username (rokudev), and password
+- PowerShell 5+ (Windows 10/11 includes curl.exe)
+
+Config (create at project root)
+- File: deploy.config.json
+```json
+{
+  "deviceIP": "10.210.1.254",
+  "username": "rokudev",
+  "password": "your_dev_password"
+}
+```
+
+Build and deploy
+- From the repo root:
+```powershell
+.\tools\build_and_deploy.ps1
+```
+- Override config values if needed:
+```powershell
+.\tools\build_and_deploy.ps1 -DeviceIP 10.210.1.254 -Password your_dev_password
+```
+
+Execution policy
+- If scripts are blocked:
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\tools\build_and_deploy.ps1
+```
+
+Troubleshooting
+- Verify the installer is reachable: http://<deviceIP>/plugin_install
+- Ensure deploy.config.json is at the project root
+- If authentication fails, re-enter the device password on the Roku (Developer Settings)
+- The script uses curl with Digest auth; it will fall back to PowerShell if needed

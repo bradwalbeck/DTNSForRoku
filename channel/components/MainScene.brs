@@ -1,21 +1,9 @@
 sub init()
     m.status = m.top.findNode("status")
-    m.spinner = m.top.findNode("spinner")
     m.videoList = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
 
-    ' Fit video and place spinner near center (BusySpinner has no anchorPoint)
-    di = createObject("roDeviceInfo")
-    ui = di.GetUIResolution()
-    if ui <> invalid then
-        m.videoPlayer.translation = [0, 0]
-        m.videoPlayer.width = ui.width
-        m.videoPlayer.height = ui.height
-        if m.spinner <> invalid
-            ' approximate center
-            m.spinner.translation = [int(ui.width/2), int(ui.height/2)]
-        end if
-    end if
+    fitVideoToUI()  ' ensure perfect fit on HD/FHD/UHD
 
     m.videoList.observeField("itemSelected", "onVideoSelected")
     m.videoPlayer.observeField("state", "onVideoStateChanged")
@@ -23,11 +11,29 @@ sub init()
     startFeedLoad()
 end sub
 
+' Size the Video node to the active UI coordinate space
+sub fitVideoToUI()
+    di = createObject("roDeviceInfo")
+    ui = di.GetUIResolution()  ' { name: "hd" | "fhd" | "uhd", width: int, height: int }
+    m.videoPlayer.translation = [0, 0]
+    if ui <> invalid
+        m.videoPlayer.width = ui.width
+        m.videoPlayer.height = ui.height
+    else
+        ' Fallback
+        m.videoPlayer.width = 1920
+        m.videoPlayer.height = 1080
+    end if
+end sub
+
 sub startFeedLoad()
-    if m.spinner <> invalid then m.spinner.visible = true
-    if m.status <> invalid then m.status.visible = true
+    if m.status <> invalid then
+        m.status.visible = true
+        m.status.text = "Loading DTNS… (Press * to refresh)"
+    end if
     m.videoList.visible = false
 
+    if m.task <> invalid then m.task.control = "stop"
     m.task = createObject("roSGNode", "FeedTask")
     m.task.observeField("result", "onFeedLoaded")
     m.task.control = "RUN"
@@ -35,10 +41,11 @@ end sub
 
 sub onFeedLoaded()
     eps = m.task.result
-    if m.spinner <> invalid then m.spinner.visible = false
-
     if eps = invalid or eps.count() = 0
-        if m.status <> invalid then m.status.text = "No videos found (Press * to refresh)"
+        if m.status <> invalid then
+            m.status.visible = true
+            m.status.text = "No videos found (Press * to refresh)"
+        end if
         return
     end if
 
@@ -46,15 +53,8 @@ sub onFeedLoaded()
     for i = 0 to eps.count() - 1
         ep = eps[i]
         item = createObject("roSGNode", "ContentNode")
-        ' Append date if available
-        if ep.date <> invalid and ep.date <> ""
-            item.title = ep.title + " (" + ep.date + ")"
-        else
-            item.title = ep.title
-        end if
+        item.title = ep.title
         item.url = ep.url
-        ' Optional: keep thumb on node for future UI
-        if ep.thumb <> invalid then item.SetField("thumb", ep.thumb)
         listContent.appendChild(item)
     end for
 
@@ -107,7 +107,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
         return true
     end if
 
-    ' Options (*) to refresh feed when not playing
+    ' Options (*) to refresh when not playing
     if key = "options" and not m.videoPlayer.visible
         startFeedLoad()
         return true

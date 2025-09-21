@@ -59,17 +59,27 @@ function parseItem(n as object) as dynamic
     if t = "" then return invalid
 
     u = firstVideoUrl(n)
-    if u = invalid or u = "" then return invalid
-
-    d = ""
-    if n.pubDate <> invalid
-        pd = n.pubDate.getText()
-        if pd <> invalid then d = left(pd, 16) ' trim e.g., "Mon, 01 Jan 20"
+    if u = invalid or u = "" then
+        ' Fallbacks: feedburner:origEnclosureLink, content:encoded, description, link
+        fb = firstTextOf(n, "feedburner:origEnclosureLink")
+        if fb <> invalid and fb <> "" then u = scanTextForMediaUrl(fb)
+    end if
+    if (u = invalid or u = "") then
+        ce = firstTextOf(n, "content:encoded")
+        if ce <> invalid and ce <> "" then u = scanTextForMediaUrl(ce)
+    end if
+    if (u = invalid or u = "") and n.description <> invalid
+        d = n.description.getText()
+        if d <> invalid then u = scanTextForMediaUrl(d)
+    end if
+    if (u = invalid or u = "") and n.link <> invalid
+        lk = n.link.getText()
+        if lk <> invalid then u = scanTextForMediaUrl(lk)
     end if
 
-    thumb = firstImageUrl(n)
+    if u = invalid or u = "" then return invalid
 
-    return { title: t, url: u, date: d, thumb: thumb }
+    return { title: t, url: u }
 end function
 
 function firstVideoUrl(item as object) as dynamic
@@ -77,23 +87,22 @@ function firstVideoUrl(item as object) as dynamic
     kids = item.GetChildElements()
     if kids = invalid then return invalid
 
-    ' enclosure or media:content
+    ' 1) enclosure, media:content
     for i = 0 to kids.count() - 1
         c = kids[i]
         n = lcase(c.getName())
         if n = "enclosure" or n = "media:content"
             a = c.getAttributes()
             if a <> invalid and a.url <> invalid
-                u = a.url : mt = invalid
+                u = a.url
+                mt = invalid
                 if a.type <> invalid then mt = lcase(a.type)
-                if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4"
-                    return u
-                end if
+                if (mt <> invalid and left(mt, 5) = "video") or hasMediaExt(u) then return u
             end if
         end if
     end for
 
-    ' media:group -> media:content
+    ' 2) media:group -> media:content
     for i = 0 to kids.count() - 1
         if lcase(kids[i].getName()) = "media:group"
             inner = kids[i].GetChildElements()
@@ -102,11 +111,10 @@ function firstVideoUrl(item as object) as dynamic
                     if lcase(inner[j].getName()) = "media:content"
                         a = inner[j].getAttributes()
                         if a <> invalid and a.url <> invalid
-                            u = a.url : mt = invalid
+                            u = a.url
+                            mt = invalid
                             if a.type <> invalid then mt = lcase(a.type)
-                            if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4"
-                                return u
-                            end if
+                            if (mt <> invalid and left(mt, 5) = "video") or hasMediaExt(u) then return u
                         end if
                     end if
                 end for
@@ -117,26 +125,74 @@ function firstVideoUrl(item as object) as dynamic
     return invalid
 end function
 
-function firstImageUrl(item as object) as dynamic
-    if item = invalid then return invalid
-    kids = item.GetChildElements()
+' Get first child text by element name (case-insensitive, supports namespaced like "content:encoded")
+function firstTextOf(parent as object, tagName as string) as dynamic
+    if parent = invalid then return invalid
+    kids = parent.GetChildElements()
     if kids = invalid then return invalid
-
-    ' media:thumbnail url=...
+    tgt = lcase(tagName)
     for i = 0 to kids.count() - 1
-        if lcase(kids[i].getName()) = "media:thumbnail"
-            a = kids[i].getAttributes()
-            if a <> invalid and a.url <> invalid then return a.url
+        if lcase(kids[i].getName()) = tgt
+            txt = kids[i].getText()
+            if txt <> invalid then return txt
         end if
     end for
-
-    ' itunes:image href=...
-    for i = 0 to kids.count() - 1
-        if lcase(kids[i].getName()) = "itunes:image"
-            a = kids[i].getAttributes()
-            if a <> invalid and a.href <> invalid then return a.href
-        end if
-    end for
-
     return invalid
+end function
+
+' Return true if URL string looks like mp4 or m3u8
+function hasMediaExt(u as dynamic) as boolean
+    if u = invalid then return false
+    ul = lcase(u)
+    if right(ul, 4) = ".mp4" then return true
+    if instr(1, ul, ".m3u8") > 0 then return true
+    return false
+end function
+
+' Scan arbitrary text for the first http/https URL containing .mp4 or .m3u8
+function scanTextForMediaUrl(s as dynamic) as dynamic
+    if s = invalid then return invalid
+    txt = s
+    tl  = lcase(s)
+    start = instr(1, tl, "http")
+    while start > 0
+        ' find end at first whitespace or common delimiter
+        e1 = findFirstOf(tl, start, " ")
+        e2 = findFirstOf(tl, start, "`t")  ' tab
+        e3 = findFirstOf(tl, start, "`r")
+        e4 = findFirstOf(tl, start, "`n")
+        e5 = findFirstOf(tl, start, """")  ' quote
+        e6 = findFirstOf(tl, start, "'")
+        e7 = findFirstOf(tl, start, "<")
+        e8 = findFirstOf(tl, start, ")")
+        e9 = findFirstOf(tl, start, "]")
+        e10 = findFirstOf(tl, start, "(")
+        e11 = findFirstOf(tl, start, ">")
+        ' choose smallest positive end
+        ending = 0
+        endings = [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11]
+        for i = 0 to endings.count()-1
+            v = endings[i]
+            if v > 0 and (ending = 0 or v < ending) then ending = v
+        end for
+        if ending = 0 then ending = len(tl) + 1
+
+        cand = mid(txt, start, ending - start)
+        if hasMediaExt(cand) then return cand
+
+        start = instr(start + 1, tl, "http")
+    end while
+    return invalid
+end function
+
+' Find index (1-based) of the first occurrence of any character in "chars" at or after "fromPos"
+function findFirstOf(s as string, fromPos as integer, chars as string) as integer
+    if s = invalid or chars = invalid then return 0
+    best = 0
+    for i = 1 to len(chars)
+        ch = mid(chars, i, 1)
+        p = instr(fromPos, s, ch)
+        if p > 0 and (best = 0 or p < best) then best = p
+    end for
+    return best
 end function
