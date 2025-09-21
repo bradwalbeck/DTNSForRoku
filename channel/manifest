@@ -4,4 +4,4 @@ minor_version=0
 build_version=18
 splash_color=#000000
 splash_min_time=1000
-ui_resolutions=hd
+ui_resolutions=uhd,fhd,hd

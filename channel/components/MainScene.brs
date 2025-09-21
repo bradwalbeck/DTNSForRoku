@@ -3,6 +3,20 @@ sub init()
     m.videoList = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
 
+    ' Fit video to current UI resolution (HD/FHD/UHD)
+    di = createObject("roDeviceInfo")
+    ui = di.GetUIResolution()  ' { name: "hd" | "fhd" | "uhd", width: int, height: int }
+    if ui <> invalid then
+        m.videoPlayer.translation = [0, 0]
+        m.videoPlayer.width = ui.width
+        m.videoPlayer.height = ui.height
+    else
+        ' Fallback to 1920x1080 if unavailable
+        m.videoPlayer.translation = [0, 0]
+        m.videoPlayer.width = 1920
+        m.videoPlayer.height = 1080
+    end if
+
     m.videoList.observeField("itemSelected", "onVideoSelected")
     m.videoPlayer.observeField("state", "onVideoStateChanged")
 
