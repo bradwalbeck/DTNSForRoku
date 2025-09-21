@@ -1,44 +1,36 @@
 function ParseFeed(feedString as string) as object
-    xml = createObject("roXMLElement")
     videos = []
-    if xml.parse(feedString)
-        ' The log shows the root element is <channel>.
-        ' Its children are a mix of info tags and <item> tags.
-        for each itemNode in xml.GetChildElements()
-            if itemNode.getName() = "item"
-                ' Found an <item>. Now find <media:group> inside it.
-                mediaGroupNode = invalid
-                for each childOfItem in itemNode.GetChildElements()
-                    if childOfItem.getName() = "media:group"
-                        mediaGroupNode = childOfItem
-                        exit for
-                    end if
-                end for
+    
+    ' Regex to find each <item>...</item> block
+    itemRegex = createObject("roRegex", "<item>(.*?)</item>", "si")
+    itemMatches = itemRegex.Match(feedString)
 
-                if mediaGroupNode <> invalid
-                    ' Found <media:group>. Now find content and thumbnail inside it.
-                    mediaContentNode = invalid
-                    mediaThumbnailNode = invalid
-                    for each childOfMediaGroup in mediaGroupNode.GetChildElements()
-                        if childOfMediaGroup.getName() = "media:content"
-                            mediaContentNode = childOfMediaGroup
-                        else if childOfMediaGroup.getName() = "media:thumbnail"
-                            mediaThumbnailNode = childOfMediaGroup
-                        end if
-                    end for
+    ' Regex for the data inside each item block
+    titleRegex = createObject("roRegex", "<title><!\[CDATA\[(.*?)\]\]></title>", "i")
+    streamRegex = createObject("roRegex", "<media:content.*?url=""(.*?)"".*?>", "i")
+    posterRegex = createObject("roRegex", "<media:thumbnail.*?url=""(.*?)"".*?>", "i")
+    descRegex = createObject("roRegex", "<description><!\[CDATA\[(.*?)\]\]></description>", "si")
 
-                    if mediaContentNode <> invalid and mediaThumbnailNode <> invalid
-                        video = {
-                            title: itemNode.title.getText(),
-                            description: itemNode.description.getText(),
-                            hdPosterUrl: mediaThumbnailNode.getAttributes().url,
-                            streamUrl: mediaContentNode.getAttributes().url
-                        }
-                        videos.push(video)
-                    end if
-                end if
-            end if
-        end for
-    end if
+    for each itemBlock in itemMatches
+        ' itemBlock[0] is the full match, itemBlock[1] is the content inside the tags
+        itemContent = itemBlock[1]
+
+        titleMatch = titleRegex.Match(itemContent)
+        streamMatch = streamRegex.Match(itemContent)
+        posterMatch = posterRegex.Match(itemContent)
+        descMatch = descRegex.Match(itemContent)
+
+        ' Ensure all required data was found before adding the item
+        if titleMatch.count() > 0 and streamMatch.count() > 0 and posterMatch.count() > 0 and descMatch.count() > 0
+            video = {
+                title: titleMatch[0][1],
+                description: descMatch[0][1],
+                hdPosterUrl: posterMatch[0][1],
+                streamUrl: streamMatch[0][1]
+            }
+            videos.push(video)
+        end if
+    end for
+
     return videos
 end function
