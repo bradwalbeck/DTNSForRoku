@@ -1,24 +1,32 @@
 sub init()
     m.status = m.top.findNode("status")
+    m.spinner = m.top.findNode("spinner")
     m.videoList = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
 
-    ' Fit video to current UI resolution (HD/FHD/UHD)
+    ' Fit video and place spinner near center (BusySpinner has no anchorPoint)
     di = createObject("roDeviceInfo")
-    ui = di.GetUIResolution()  ' { name: "hd" | "fhd" | "uhd", width: int, height: int }
+    ui = di.GetUIResolution()
     if ui <> invalid then
         m.videoPlayer.translation = [0, 0]
         m.videoPlayer.width = ui.width
         m.videoPlayer.height = ui.height
-    else
-        ' Fallback to 1920x1080 if unavailable
-        m.videoPlayer.translation = [0, 0]
-        m.videoPlayer.width = 1920
-        m.videoPlayer.height = 1080
+        if m.spinner <> invalid
+            ' approximate center
+            m.spinner.translation = [int(ui.width/2), int(ui.height/2)]
+        end if
     end if
 
     m.videoList.observeField("itemSelected", "onVideoSelected")
     m.videoPlayer.observeField("state", "onVideoStateChanged")
+
+    startFeedLoad()
+end sub
+
+sub startFeedLoad()
+    if m.spinner <> invalid then m.spinner.visible = true
+    if m.status <> invalid then m.status.visible = true
+    m.videoList.visible = false
 
     m.task = createObject("roSGNode", "FeedTask")
     m.task.observeField("result", "onFeedLoaded")
@@ -27,8 +35,10 @@ end sub
 
 sub onFeedLoaded()
     eps = m.task.result
+    if m.spinner <> invalid then m.spinner.visible = false
+
     if eps = invalid or eps.count() = 0
-        if m.status <> invalid then m.status.text = "No videos found"
+        if m.status <> invalid then m.status.text = "No videos found (Press * to refresh)"
         return
     end if
 
@@ -36,8 +46,15 @@ sub onFeedLoaded()
     for i = 0 to eps.count() - 1
         ep = eps[i]
         item = createObject("roSGNode", "ContentNode")
-        item.title = ep.title
+        ' Append date if available
+        if ep.date <> invalid and ep.date <> ""
+            item.title = ep.title + " (" + ep.date + ")"
+        else
+            item.title = ep.title
+        end if
         item.url = ep.url
+        ' Optional: keep thumb on node for future UI
+        if ep.thumb <> invalid then item.SetField("thumb", ep.thumb)
         listContent.appendChild(item)
     end for
 
@@ -84,9 +101,17 @@ end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
     if not press then return false
+
     if key = "back" and m.videoPlayer.visible
         m.videoPlayer.control = "stop"
         return true
     end if
+
+    ' Options (*) to refresh feed when not playing
+    if key = "options" and not m.videoPlayer.visible
+        startFeedLoad()
+        return true
+    end if
+
     return false
 end function

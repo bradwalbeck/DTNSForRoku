@@ -2,7 +2,8 @@
 <component name="MainScene" extends="Scene">
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <children>
-        <Label id="status" translation="[120,60]" text="Loading DTNS…" />
+        <Label id="status" translation="[120,60]" text="Loading DTNS… (Press * to refresh)" />
+        <BusySpinner id="spinner" translation="[960,540]" visible="true" />
         <LabelList id="videoList" translation="[120,120]" itemSize="[1000,60]" itemSpacing="[0,10]" focusable="true" visible="false" />
         <Video id="videoPlayer" translation="[0,0]" visible="false" focusable="true" />
     </children>
