@@ -1,63 +1,89 @@
-<#
-.SYNOPSIS
-   Compresses the 'channel' directory into a zip archive.
+[CmdletBinding()]
+param(
+    [Parameter()][ValidateNotNullOrEmpty()][string]$SourceDir = "c:\Repository\DTNSForRoku\channel",
+    [Parameter()][ValidateNotNullOrEmpty()][string]$OutDir    = "c:\Repository\DTNSForRoku\dist",
+    [Parameter()][ValidateNotNullOrEmpty()][string]$ZipName   = "DTNSForRoku.zip"
+)
 
-.DESCRIPTION
-   This script compresses the files and folders within the 'channel' directory into a zip archive.
-   The archive is saved in the 'builds' folder, and the filename starts with "DTNSForRoku"
-   followed by a random four-digit hexadecimal number.
+$ErrorActionPreference = "Stop"
 
-.EXAMPLE
-   .\compress_script.ps1
-   Compresses the 'channel' directory and saves the archive in the 'builds' folder.
+function Write-Info($msg) { Write-Host "[pack] $msg" }
+function Write-Err($msg)  { Write-Host "[pack] ERROR: $msg" -ForegroundColor Red }
 
-.NOTES
-   - Requires PowerShell 3.0 or later.
-   - The script must be run with appropriate permissions to access the source and destination directories.
-   - If the destination directory does not exist, the script will create it.
+# Unique ZIP name: append 4-digit hex
+$base = [IO.Path]::GetFileNameWithoutExtension($ZipName)
+$ext  = [IO.Path]::GetExtension($ZipName)
+if ([string]::IsNullOrWhiteSpace($ext)) { $ext = ".zip" }
+$suffix = "{0:X4}" -f (Get-Random -Minimum 0 -Maximum 0x10000)
+$zipNameWithSuffix = "$base-$suffix$ext"
 
-#>
-try {
-    #region Configuration
-    $Source = Join-Path -Path (Get-Location) -ChildPath "channel"
-    $Destination = Join-Path -Path (Get-Location) -ChildPath "builds"
-    $RandomHex = [string]::Format('{0:X4}', (Get-Random -Minimum 0 -Maximum 65535))
-    $ArchiveName = "DTNSForRoku_" + $RandomHex + ".zip"
-    $ArchivePath = Join-Path -Path $Destination -ChildPath $ArchiveName
-    #endregion
+# Validate source layout
+if (-not (Test-Path -LiteralPath $SourceDir)) { throw "SourceDir not found: $SourceDir" }
+$manifestPath = Join-Path $SourceDir "manifest"
+if (-not (Test-Path -LiteralPath $manifestPath)) { throw "Manifest not found at: $manifestPath" }
+$sourcePath = Join-Path $SourceDir "source"
+if (-not (Test-Path -LiteralPath $sourcePath)) { throw "source/ folder not found: $sourcePath" }
 
-    #region Logging
-    Write-Host "Source directory: $Source"
-    Write-Host "Destination directory: $Destination"
-    Write-Host "Archive path: $ArchivePath"
-    #endregion
+# Prepare output
+if (-not (Test-Path -LiteralPath $OutDir)) { New-Item -ItemType Directory -Path $OutDir | Out-Null }
+$zipPath = Join-Path $OutDir $zipNameWithSuffix
+if (Test-Path -LiteralPath $zipPath) { Remove-Item -LiteralPath $zipPath -Force }
 
-    #region Compress Archive
-    Write-Host "Starting compression..."
-    try {
-        Compress-Archive -Path $Source\* -DestinationPath $ArchivePath -Force -ErrorAction Stop
-        Write-Host "Compression completed successfully. Archive saved to: $ArchivePath"
-    }
-    catch {
-        Write-Error "Compression failed: $($_.Exception.Message)"
-        throw
-    }
-    #endregion
+# Exclusion patterns (regex on full path)
+$excludeDirPatterns  = @('\.git(\\|$)', '\.vscode(\\|$)', '\.idea(\\|$)', '\.svn(\\|$)', 'node_modules(\\|$)', 'dist(\\|$)', 'build(\\|$)', 'out(\\|$)', 'tmp(\\|$)')
+$excludeFilePatterns = @('\.DS_Store$', 'Thumbs\.db$', '\.zip$', '\.pkg$')
 
-} catch {
-    Write-Host "An error occurred: $($_.Exception.Message)"
+function ShouldSkip($fullPath) {
+    foreach ($rx in $script:excludeDirPatterns)  { if ($fullPath -match $rx) { return $true } }
+    foreach ($rx in $script:excludeFilePatterns) { if ($fullPath -match $rx) { return $true } }
+    return $false
 }
 
-#region How to run the file
-<#
-HOW TO RUN THIS SCRIPT:
+# Ensure ZipFile API available
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-1.  Save the script to a file, for example, compress_script.ps1.
-2.  Open PowerShell.
-3.  Navigate to the directory where you saved the script using the cd command.
-    For example: cd C:\Repository\DTNSForRoku
-4.  Execute the script using: .\compress_script.ps1
-5.  The compressed file will be located in the 'builds' folder within the same directory as the script.
+Write-Info "Creating archive: $zipPath"
+$zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
+try {
+    $srcFull = (Resolve-Path -LiteralPath $SourceDir).Path
+    $srcLen  = $srcFull.Length
 
-#>
-#endregion
+    Get-ChildItem -LiteralPath $srcFull -Recurse -File | ForEach-Object {
+        $full = $_.FullName
+        if (ShouldSkip $full) { return }
+
+        # Relative path inside ZIP (manifest and folders at archive root)
+        $rel = $full.Substring($srcLen).TrimStart('\','/')
+        $rel = $rel -replace '\\','/'
+
+        [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+            $zip, $full, $rel, [System.IO.Compression.CompressionLevel]::Optimal
+        ) | Out-Null
+    }
+}
+finally {
+    $zip.Dispose()
+}
+
+# Validate Roku structure (manifest and source/ at root)
+$hasManifest = $false
+$hasSource   = $false
+$zipRead = [System.IO.Compression.ZipFile]::OpenRead($zipPath)
+try {
+    foreach ($entry in $zipRead.Entries) {
+        if ($entry.FullName -eq "manifest") { $hasManifest = $true }
+        if ($entry.FullName.StartsWith("source/")) { $hasSource = $true }
+        if ($hasManifest -and $hasSource) { break }
+    }
+}
+finally {
+    $zipRead.Dispose()
+}
+
+if (-not $hasManifest -or -not $hasSource) {
+    Write-Err "Validation failed. Expect 'manifest' and 'source/' at ZIP root."
+    throw "Roku ZIP structure invalid: $zipPath"
+}
+
+Write-Info "OK: $zipPath"
+Write-Info "Upload via Roku Development Application Installer."
