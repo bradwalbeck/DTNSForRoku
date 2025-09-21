@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="VideoListItem" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/VideoListItem.brs" />
+    <interface>
+        <field id="itemContent" type="node" onChange="itemContentChanged" />
+    </interface>
+    <children>
+        <Poster 
+            id="poster"
+            width="400"
+            height="225"
+            loadDisplayMode="scaleToFit"
+            failedBitmapUri="pkg:/images/default_poster.png"
+        />
+        <Label 
+            id="title"
+            translation="[0, 235]"
+            width="400"
+            height="40"
+            font="font:MediumBoldSystemFont"
+            color="0xFFFFFFFF"
+            horizAlign="center"
+            wrap="true"
+        />
+        <Rectangle 
+            id="focusRect"
+            width="400"
+            height="275"
+            color="0x00000000"
+            opacity="0"
+        />
+    </children>
+</component>
