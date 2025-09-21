@@ -3,14 +3,7 @@
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <children>
         <Label id="status" translation="[120,60]" text="Loading DTNS…" />
-        <LabelList
-            id="videoList"
-            translation="[120,120]"
-            itemSize="[1000,60]"
-            itemSpacing="[0,10]"
-            focusable="true"
-            visible="false"
-        />
+        <LabelList id="videoList" translation="[120,120]" itemSize="[1000,60]" itemSpacing="[0,10]" focusable="true" visible="false" />
         <Video id="videoPlayer" width="1920" height="1080" visible="false" focusable="true" />
     </children>
 </component>
