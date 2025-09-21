@@ -28,3 +28,17 @@ Please [SUBSCRIBE HERE](http://feeds.feedburner.com/DailyTechNewsShow)
 [Send a message](mailto:feedback+github@welloiledapps.com)
 
 
+project objectives:
+
+Build a minimal Roku SceneGraph video channel that compiles and runs without errors.
+Use only the DTNS RSS feed: https://feeds.feedburner.com/daily_tech_news_show.
+Fetch the feed on a Task thread (roUrlTransfer in a Task component) per Roku docs.
+Parse the RSS XML robustly and extract only video URLs (mp4/HLS) from:
+    enclosure elements with video types or .mp4
+    media:content (and media:group/media:content) if present
+Display the episodes as a simple list (LabelList) showing titles.
+Allow the user to select an episode and play it in a Video node.
+Support basic navigation: back exits playback and returns to the list.
+Handle empty/error cases gracefully (status label/logging), with minimal logging noise.
+Keep the code aligned with Roku sample channel patterns and best practices.
+Acceptance: channel installs, loads episode list (>0 items), selects, and plays a DTNS video successfully.

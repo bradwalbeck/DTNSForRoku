@@ -1,4 +1,5 @@
 sub init()
+    m.status = m.top.findNode("status")
     m.videoList = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
 
@@ -11,19 +12,25 @@ sub init()
 end sub
 
 sub onFeedLoaded()
-    episodes = m.task.result
-    if episodes = invalid or episodes.count() = 0 then return
+    eps = m.task.result
+    if eps = invalid or eps.count() = 0
+        if m.status <> invalid then m.status.text = "No videos found"
+        return
+    end if
 
-    content = createObject("roSGNode", "ContentNode")
-    for each ep in episodes
+    listContent = createObject("roSGNode", "ContentNode")
+    for i = 0 to eps.count() - 1
+        ep = eps[i]
         item = createObject("roSGNode", "ContentNode")
         item.title = ep.title
         item.url = ep.url
-        content.appendChild(item)
+        listContent.appendChild(item)
     end for
 
-    m.episodes = episodes
-    m.videoList.content = content
+    m.episodes = eps
+    if m.status <> invalid then m.status.visible = false
+    m.videoList.content = listContent
+    m.videoList.visible = true
     m.videoList.setFocus(true)
 end sub
 
@@ -32,30 +39,29 @@ sub onVideoSelected()
     if m.episodes = invalid or idx < 0 or idx >= m.episodes.count() then return
 
     ep = m.episodes[idx]
-    videoContent = createObject("roSGNode", "ContentNode")
-    videoContent.title = ep.title
-    videoContent.url = ep.url
+    content = createObject("roSGNode", "ContentNode")
+    content.title = ep.title
+    content.url = ep.url
 
-    ' Infer stream format
-    urlLower = lcase(ep.url)
-    if right(urlLower, 4) = ".mp4"
-        videoContent.streamFormat = "mp4"
-    else if instr(1, urlLower, ".m3u8") > 0
-        videoContent.streamFormat = "hls"
+    u = lcase(ep.url)
+    if right(u, 4) = ".mp4"
+        content.streamFormat = "mp4"
+    else if instr(1, u, ".m3u8") > 0
+        content.streamFormat = "hls"
     else
-        videoContent.streamFormat = "mp4" ' default
+        content.streamFormat = "mp4"
     end if
 
     m.videoList.visible = false
-    m.videoPlayer.content = videoContent
+    m.videoPlayer.content = content
     m.videoPlayer.visible = true
     m.videoPlayer.control = "play"
     m.videoPlayer.setFocus(true)
 end sub
 
 sub onVideoStateChanged()
-    state = m.videoPlayer.state
-    if state = "finished" or state = "error" or state = "stopped"
+    st = m.videoPlayer.state
+    if st = "finished" or st = "error" or st = "stopped"
         m.videoPlayer.visible = false
         m.videoList.visible = true
         m.videoList.setFocus(true)

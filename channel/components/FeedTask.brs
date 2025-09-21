@@ -3,103 +3,99 @@ sub init()
 end sub
 
 sub loadDTNSFeed()
-    http = createObject("roUrlTransfer")
-    http.setURL("https://feeds.feedburner.com/daily_tech_news_show")
-    http.setCertificatesFile("common:/certs/ca-bundle.crt")
-
     result = []
-    res = http.GetToString()
-    if res = invalid or res = "" then
-        m.top.result = result : return
-    end if
+
+    ut = createObject("roUrlTransfer")
+    ut.setURL("https://feeds.feedburner.com/daily_tech_news_show")
+    ut.setCertificatesFile("common:/certs/ca-bundle.crt")
+    res = ut.GetToString()
+    if res = invalid or res = "" then m.top.result = result : return
 
     xml = createObject("roXMLElement")
-    if not xml.parse(res) then
-        m.top.result = result : return
-    end if
+    if not xml.parse(res) then m.top.result = result : return
 
-    ' Normalize root to <rss>
     root = xml
-    if lcase(xml.getName()) <> "rss" and xml.rss <> invalid
-        root = xml.rss
-    end if
+    if lcase(xml.getName()) <> "rss" and xml.rss <> invalid then root = xml.rss
+    if root = invalid or root.channel = invalid then m.top.result = result : return
 
-    if root = invalid or root.channel = invalid
-        m.top.result = result : return
-    end if
+    kids = root.channel.GetChildElements()
+    if kids = invalid or kids.count() = 0 then m.top.result = result : return
 
-    ' Collect <item> nodes
-    chChildren = root.channel.GetChildElements()
-    if chChildren = invalid or chChildren.count() = 0
-        m.top.result = result : return
-    end if
-
-    for i = 0 to chChildren.count() - 1
-        node = chChildren[i]
-        if lcase(node.getName()) = "item"
-            item = parseItem(node)
-            if item <> invalid then result.push(item)
+    for i = 0 to kids.count() - 1
+        n = kids[i]
+        if lcase(n.getName()) = "item"
+            itm = parseItem(n)
+            if itm <> invalid then result.push(itm)
         end if
     end for
 
     m.top.result = result
 end sub
 
-function parseItem(item as object) as object
-    if item = invalid then return invalid
+function parseItem(n)
+    if n = invalid then return invalid
 
-    title = ""
-    if item.title <> invalid
-        t = item.title.getText()
-        if t <> invalid then title = t
+    t = ""
+    if n.title <> invalid
+        tt = n.title.getText()
+        if tt <> invalid then t = tt
     end if
-    if title = "" then return invalid
+    if t = "" then return invalid
 
-    url = findVideoUrl(item)
-    if url = invalid or url = "" then return invalid
+    u = findVideoUrl(n)
+    if u = invalid or u = "" then return invalid
 
-    return { title: title, url: url }
+    return { title: t, url: u }
 end function
 
-function findVideoUrl(item as object) as dynamic
-    ' 1) Check <enclosure> elements for video/mp4 or .mp4
-    encs = getNodes(item, "enclosure")
-    for each enc in encs
-        attrs = enc.getAttributes()
-        if attrs <> invalid and attrs.url <> invalid
-            u = attrs.url : mt = invalid
-            if attrs.type <> invalid then mt = lcase(attrs.type)
-            if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4"
-                return u
-            end if
+function findVideoUrl(n)
+    encs = findChildren(n, "enclosure")
+    for j = 0 to encs.count() - 1
+        e = encs[j]
+        a = e.getAttributes()
+        if a <> invalid and a.url <> invalid
+            u = a.url
+            mt = invalid
+            if a.type <> invalid then mt = lcase(a.type)
+            if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4" then return u
         end if
     end for
 
-    ' 2) Check <media:content> (namespaced) for video/mp4 or .mp4
-    medias = getNodes(item, "media:content")
-    for each m in medias
-        attrs = m.getAttributes()
-        if attrs <> invalid and attrs.url <> invalid
-            u = attrs.url : mt = invalid
-            if attrs.type <> invalid then mt = lcase(attrs.type)
-            if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4"
-                return u
-            end if
+    medias = findChildren(n, "media:content")
+    for j = 0 to medias.count() - 1
+        m = medias[j]
+        a = m.getAttributes()
+        if a <> invalid and a.url <> invalid
+            u = a.url
+            mt = invalid
+            if a.type <> invalid then mt = lcase(a.type)
+            if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4" then return u
         end if
     end for
 
-    ' 3) Fallback: scan description for an .mp4 URL (best-effort)
-    if item.description <> invalid
-        d = item.description.getText()
+    groups = findChildren(n, "media:group")
+    for g = 0 to groups.count() - 1
+        inner = findChildren(groups[g], "media:content")
+        for j = 0 to inner.count() - 1
+            m = inner[j]
+            a = m.getAttributes()
+            if a <> invalid and a.url <> invalid
+                u = a.url
+                mt = invalid
+                if a.type <> invalid then mt = lcase(a.type)
+                if (mt <> invalid and left(mt, 5) = "video") or right(lcase(u), 4) = ".mp4" then return u
+            end if
+        end for
+    end for
+
+    if n.description <> invalid
+        d = n.description.getText()
         if d <> invalid
-            mp4pos = instr(1, lcase(d), ".mp4")
-            if mp4pos > 0
-                ' Walk back to start of URL (http/https)
-                startHttp = instrrev(lcase(left(d, mp4pos)), "http")
-                if startHttp > 0
-                    u = mid(d, startHttp, mp4pos - startHttp + 4)
-                    return u
-                end if
+            dl = lcase(d)
+            p = instr(1, dl, ".mp4")
+            if p > 0
+                s = instrRev(left(dl, p), "http")  ' replace instrrev(...) with instrRev(...)
+                if s > 0 then return mid(d, s, p - s + 4)
             end if
         end if
     end if
@@ -107,19 +103,27 @@ function findVideoUrl(item as object) as dynamic
     return invalid
 end function
 
-function getNodes(parent as object, tagName as string) as object
-    nodes = []
-    ' Property access (may yield single or array)
-    child = invalid
-    ' Try direct property if it exists (e.g., parent.enclosure)
-    ' Use eval-like access via GetChildElements when in doubt
+function findChildren(parent, name)
+    out = []
+    if parent = invalid then return out
     kids = parent.GetChildElements()
-    if kids <> invalid
-        for each k in kids
-            if lcase(k.getName()) = lcase(tagName)
-                nodes.push(k)
-            end if
-        end for
-    end if
-    return nodes
+    if kids = invalid then return out
+    tgt = lcase(name)
+    for i = 0 to kids.count() - 1
+        c = kids[i]
+        if lcase(c.getName()) = tgt then out.push(c)
+    end for
+    return out
+end function
+
+' Helper: last occurrence of substring (returns 0 if not found)
+function instrRev(haystack as string, needle as string) as integer
+    if haystack = invalid or needle = invalid then return 0
+    last = 0
+    idx = instr(1, haystack, needle)
+    while idx > 0
+        last = idx
+        idx = instr(last + 1, haystack, needle)
+    end while
+    return last
 end function
