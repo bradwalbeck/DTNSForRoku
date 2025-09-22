@@ -1,198 +1,187 @@
 sub init()
-    m.top.functionName = "exacute"
+    m.top.functionName = "run"
 end sub
 
-sub exacute()
-    result = []
-    FEED_URL = "https://feeds.feedburner.com/daily_tech_news_show"
-    MAX_ITEMS = 50
+sub run()
+    m.top.error = ""
+    m.top.result = []
 
-    ut = createObject("roUrlTransfer")
-    ut.setCertificatesFile("common:/certs/ca-bundle.crt")
-    ut.setUrl(FEED_URL)
-    ' ut.EnableEncodings(true) ' optional; remove if this causes errors on your device
-    ut.AddHeader("User-Agent", "DTNSForRoku/1.0")
+    ' Allow an optional url field; otherwise use default DTNS feed
+    feedUrl = ""
+    if m.top.lookup("url") <> invalid and m.top.url <> invalid then
+        feedUrl = m.top.url.tostr()
+    end if
+    if feedUrl = "" then feedUrl = "https://feeds.feedburner.com/daily_tech_news_show"
 
-    ' Manual retry (3 attempts, 2s wait)
-    res = invalid
-    for attempt = 1 to 3
-        res = ut.GetToString()
-        if res <> invalid and res <> "" then exit for
-        sleep(2000)
-    end for
-    if res = invalid or res = "" then m.top.result = result : return
+    xfer = createObject("roUrlTransfer")
+    xfer.setCertificatesFile("common:/certs/ca-bundle.crt")
+    xfer.addHeader("User-Agent", "DTNSForRoku/1.0")
+    xfer.enableEncodings(true)
+    xfer.setUrl(feedUrl)
+    data = xfer.getToString()
+
+    if data = invalid or data = "" then
+        m.top.error = "empty feed"
+        return
+    end if
 
     xml = createObject("roXMLElement")
-    if not xml.parse(res) then m.top.result = result : return
+    ok = xml.parse(data)
+    if not ok then
+        m.top.error = "xml parse failed"
+        return
+    end if
 
-    rss = xml
-    if lcase(xml.getName()) <> "rss" and xml.rss <> invalid then rss = xml.rss
-    if rss = invalid or rss.channel = invalid then m.top.result = result : return
+    items = findAllItems(xml)
+    episodes = []
+    for each it in items
+        title = getTextChild(it, "title")
+        url   = extractPlayableUrl(it)
+        descRaw = getTextChild(it, "description")
+        if descRaw = "" then descRaw = getTextChild(it, "content:encoded")
+        desc = stripHtmlTags(descRaw)
 
-    kids = rss.channel.GetChildElements()
-    if kids = invalid or kids.count() = 0 then m.top.result = result : return
-
-    count = 0
-    for i = 0 to kids.count() - 1
-        if count >= MAX_ITEMS then exit for
-        node = kids[i]
-        if lcase(node.getName()) = "item"
-            itm = parseItem(node)
-            if itm <> invalid then
-                result.push(itm)
-                count = count + 1
-            end if
+        if title <> "" and url <> "" then
+            episodes.push({ title: title, url: url, description: desc })
         end if
     end for
 
-    m.top.result = result
+    m.top.result = episodes
 end sub
 
-function parseItem(n as object) as dynamic
-    if n = invalid then return invalid
-
-    t = ""
-    if n.title <> invalid
-        tt = n.title.getText()
-        if tt <> invalid then t = tt
-    end if
-    if t = "" then return invalid
-
-    u = firstVideoUrl(n)
-    if u = invalid or u = "" then
-        ' Fallbacks: feedburner:origEnclosureLink, content:encoded, description, link
-        fb = firstTextOf(n, "feedburner:origEnclosureLink")
-        if fb <> invalid and fb <> "" then u = scanTextForMediaUrl(fb)
-    end if
-    if (u = invalid or u = "") then
-        ce = firstTextOf(n, "content:encoded")
-        if ce <> invalid and ce <> "" then u = scanTextForMediaUrl(ce)
-    end if
-    if (u = invalid or u = "") and n.description <> invalid
-        d = n.description.getText()
-        if d <> invalid then u = scanTextForMediaUrl(d)
-    end if
-    if (u = invalid or u = "") and n.link <> invalid
-        lk = n.link.getText()
-        if lk <> invalid then u = scanTextForMediaUrl(lk)
-    end if
-
-    if u = invalid or u = "" then return invalid
-
-    return { title: t, url: u }
-end function
-
-function firstVideoUrl(item as object) as dynamic
-    if item = invalid then return invalid
-    kids = item.GetChildElements()
-    if kids = invalid then return invalid
-
-    ' 1) enclosure, media:content
-    for i = 0 to kids.count() - 1
-        c = kids[i]
+function findAllItems(root as object) as object
+    list = []
+    if root = invalid then return list
+    for each c in root.getChildElements()
         n = lcase(c.getName())
-        if n = "enclosure" or n = "media:content"
+        if n = "item" then
+            list.push(c)
+        else if n = "channel" then
+            for each i in c.getChildElements()
+                if lcase(i.getName()) = "item" then list.push(i)
+            end for
+        end if
+    end for
+    return list
+end function
+
+function getTextChild(node as object, name as string) as string
+    if node = invalid then return ""
+    lname = lcase(name)
+    for each c in node.getChildElements()
+        if lcase(c.getName()) = lname then
+            b = c.getBody()
+            if b <> invalid then return b.tostr()
+        end if
+    end for
+    return ""
+end function
+
+function extractPlayableUrl(item as object) as string
+    ' enclosure with video
+    for each c in item.getChildElements()
+        if lcase(c.getName()) = "enclosure" then
             a = c.getAttributes()
-            if a <> invalid and a.url <> invalid
-                u = a.url
-                mt = invalid
-                if a.type <> invalid then mt = lcase(a.type)
-                if (mt <> invalid and left(mt, 5) = "video") or hasMediaExt(u) then return u
+            if a <> invalid then
+                u = "" : t = ""
+                if a["url"]  <> invalid then u = a["url"].tostr()
+                if a["type"] <> invalid then t = lcase(a["type"].tostr())
+                if u <> "" and (instr(1, t, "video") > 0 or endsWith(u, ".mp4") or endsWith(u, ".m3u8")) then return u
             end if
         end if
     end for
 
-    ' 2) media:group -> media:content
-    for i = 0 to kids.count() - 1
-        if lcase(kids[i].getName()) = "media:group"
-            inner = kids[i].GetChildElements()
-            if inner <> invalid
-                for j = 0 to inner.count() - 1
-                    if lcase(inner[j].getName()) = "media:content"
-                        a = inner[j].getAttributes()
-                        if a <> invalid and a.url <> invalid
-                            u = a.url
-                            mt = invalid
-                            if a.type <> invalid then mt = lcase(a.type)
-                            if (mt <> invalid and left(mt, 5) = "video") or hasMediaExt(u) then return u
-                        end if
-                    end if
-                end for
+    ' media:content with video
+    for each c in item.getChildElements()
+        n = lcase(c.getName())
+        if n = "media:content" or n = "content" then
+            a = c.getAttributes()
+            if a <> invalid then
+                u = "" : t = "" : m = ""
+                if a["url"]    <> invalid then u = a["url"].tostr()
+                if a["type"]   <> invalid then t = lcase(a["type"].tostr())
+                if a["medium"] <> invalid then m = lcase(a["medium"].tostr())
+                if u <> "" and ((t <> "" and instr(1, t, "video") > 0) or m = "video" or endsWith(u, ".mp4") or endsWith(u, ".m3u8")) then return u
             end if
         end if
     end for
 
-    return invalid
+    ' scan text for .m3u8/.mp4
+    txt = getTextChild(item, "description")
+    if txt = "" then txt = getTextChild(item, "content:encoded")
+    if txt = "" then txt = getTextChild(item, "link")
+    return scanTextForMediaUrl(txt)
 end function
 
-' Get first child text by element name (case-insensitive, supports namespaced like "content:encoded")
-function firstTextOf(parent as object, tagName as string) as dynamic
-    if parent = invalid then return invalid
-    kids = parent.GetChildElements()
-    if kids = invalid then return invalid
-    tgt = lcase(tagName)
-    for i = 0 to kids.count() - 1
-        if lcase(kids[i].getName()) = tgt
-            txt = kids[i].getText()
-            if txt <> invalid then return txt
-        end if
-    end for
-    return invalid
-end function
-
-' Return true if URL string looks like mp4 or m3u8
-function hasMediaExt(u as dynamic) as boolean
-    if u = invalid then return false
-    ul = lcase(u)
-    if right(ul, 4) = ".mp4" then return true
-    if instr(1, ul, ".m3u8") > 0 then return true
-    return false
-end function
-
-' Scan arbitrary text for the first http/https URL containing .mp4 or .m3u8
-function scanTextForMediaUrl(s as dynamic) as dynamic
-    if s = invalid then return invalid
-    txt = s
-    tl  = lcase(s)
-    start = instr(1, tl, "http")
-    while start > 0
-        ' find end at first whitespace or common delimiter
-        e1 = findFirstOf(tl, start, " ")
-        e2 = findFirstOf(tl, start, "`t")  ' tab
-        e3 = findFirstOf(tl, start, "`r")
-        e4 = findFirstOf(tl, start, "`n")
-        e5 = findFirstOf(tl, start, """")  ' quote
-        e6 = findFirstOf(tl, start, "'")
-        e7 = findFirstOf(tl, start, "<")
-        e8 = findFirstOf(tl, start, ")")
-        e9 = findFirstOf(tl, start, "]")
-        e10 = findFirstOf(tl, start, "(")
-        e11 = findFirstOf(tl, start, ">")
-        ' choose smallest positive end
-        ending = 0
-        endings = [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11]
-        for i = 0 to endings.count()-1
-            v = endings[i]
-            if v > 0 and (ending = 0 or v < ending) then ending = v
-        end for
-        if ending = 0 then ending = len(tl) + 1
-
-        cand = mid(txt, start, ending - start)
-        if hasMediaExt(cand) then return cand
-
-        start = instr(start + 1, tl, "http")
+function scanTextForMediaUrl(txt as string) as string
+    if txt = invalid then return ""
+    s = txt
+    i = instr(1, s, "http")
+    while i > 0
+        j = i
+        while j <= len(s)
+            ch = mid(s, j, 1)
+            if ch = " " or ch = chr(10) or ch = chr(13) or ch = """" or ch = "'" or ch = ")" or ch = "(" or ch = "<" or ch = ">" then
+                exit while
+            end if
+            j = j + 1
+        end while
+        u = mid(s, i, j - i)
+        lu = lcase(u)
+        if endsWith(lu, ".m3u8") or endsWith(lu, ".mp4") then return u
+        i = instr(i + 1, s, "http")
     end while
-    return invalid
+    return ""
 end function
 
-' Find index (1-based) of the first occurrence of any character in "chars" at or after "fromPos"
-function findFirstOf(s as string, fromPos as integer, chars as string) as integer
-    if s = invalid or chars = invalid then return 0
-    best = 0
-    for i = 1 to len(chars)
-        ch = mid(chars, i, 1)
-        p = instr(fromPos, s, ch)
-        if p > 0 and (best = 0 or p < best) then best = p
+function endsWith(s as string, suffix as string) as boolean
+    if s = invalid or suffix = invalid then return false
+    ls = len(s) : lf = len(suffix)
+    if lf > ls then return false
+    return mid(s, ls - lf + 1, lf) = suffix
+end function
+
+function stripHtmlTags(s as dynamic) as string
+    if s = invalid then return ""
+    txt = s.tostr()
+    out = ""
+    inTag = false
+    for k = 1 to len(txt)
+        ch = mid(txt, k, 1)
+        if ch = "<" then
+            inTag = true
+        else if ch = ">" then
+            inTag = false
+        else if not inTag then
+            out = out + ch
+        end if
     end for
-    return best
+
+    ' convert CR/LF to spaces
+    tmp = ""
+    for k = 1 to len(out)
+        ch = mid(out, k, 1)
+        if ch = chr(10) or ch = chr(13) then
+            tmp = tmp + " "
+        else
+            tmp = tmp + ch
+        end if
+    end for
+
+    ' collapse spaces and trim both ends (no LTrim/RTrim)
+    res = ""
+    seenSpace = false
+    for k = 1 to len(tmp)
+        ch = mid(tmp, k, 1)
+        isSp = (ch = " ")
+        if isSp then
+            if not seenSpace and len(res) > 0 then res = res + " "
+        else
+            res = res + ch
+        end if
+        seenSpace = isSp
+    end for
+    ' trim trailing space
+    if len(res) > 0 and mid(res, len(res), 1) = " " then res = left(res, len(res) - 1)
+    return res
 end function

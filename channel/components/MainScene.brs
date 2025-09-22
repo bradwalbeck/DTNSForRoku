@@ -1,15 +1,79 @@
 sub init()
-    m.status = m.top.findNode("status")
-    m.videoList = m.top.findNode("videoList")
-    m.videoPlayer = m.top.findNode("videoPlayer")
+    m.videoList    = m.top.findNode("videoList")
+    m.episodeDesc  = m.top.findNode("episodeDescPanel")
+    m.videoPlayer  = m.top.findNode("videoPlayer")
+    m.status       = m.top.findNode("status")  ' add
 
-    fitVideoToUI()  ' ensure perfect fit on HD/FHD/UHD
+    if m.videoList <> invalid then
+        m.videoList.observeField("content", "onListContentChanged")
+        m.videoList.observeField("itemFocused", "onListFocused")
+        m.videoList.observeField("itemSelected", "onVideoSelected")
+    end if
 
-    m.videoList.observeField("itemSelected", "onVideoSelected")
-    m.videoPlayer.observeField("state", "onVideoStateChanged")
+    if m.videoPlayer <> invalid then
+        m.videoPlayer.observeField("state", "onVideoStateChanged")
+        fitVideoToUI()
+    end if
 
-    startFeedLoad()
+    startFeedLoad()  ' add
 end sub
+
+sub onListContentChanged()
+    if m.videoList = invalid then return
+    root = m.videoList.content
+    if root = invalid then
+        showRightDesc(false, "")
+        return
+    end if
+
+    cnt = getChildCountSafe(root)
+    if cnt > 0 then
+        if m.videoList.itemFocused = invalid or m.videoList.itemFocused < 0 then m.videoList.itemFocused = 0
+        m.videoList.visible = true
+        m.videoList.setFocus(true)
+        onListFocused()
+    else
+        showRightDesc(false, "")
+    end if
+end sub
+
+' Update the right-side description when focus changes
+sub onListFocused()
+    if m.videoList = invalid or m.episodeDesc = invalid then return
+    root = m.videoList.content
+    if root = invalid then showRightDesc(false, "") : return
+
+    idx = m.videoList.itemFocused
+    if idx = invalid then showRightDesc(false, "") : return
+
+    cnt = getChildCountSafe(root)
+    if idx < 0 or idx >= cnt then showRightDesc(false, "") : return
+
+    item = root.getChild(idx)
+    if item = invalid then showRightDesc(false, "") : return
+
+    desc = ""
+    if item.doesExist("description") and item.description <> invalid then desc = item.description.tostr()
+    if desc = "" and item.doesExist("shortDescriptionLine2") and item.shortDescriptionLine2 <> invalid then desc = item.shortDescriptionLine2.tostr()
+    if desc = "" and item.doesExist("summary") and item.summary <> invalid then desc = item.summary.tostr()
+
+    if desc <> "" then
+        showRightDesc(true, desc)
+    else
+        showRightDesc(false, "")
+    end if
+end sub
+
+sub showRightDesc(show as boolean, text as string)
+    if m.episodeDesc = invalid then return
+    m.episodeDesc.visible = show
+    if show then m.episodeDesc.text = text
+end sub
+
+function getChildCountSafe(node as object) as integer
+    if node <> invalid and type(node) = "roSGNode" then return node.getChildCount()
+    return 0
+end function
 
 ' Size the Video node to the active UI coordinate space
 sub fitVideoToUI()
@@ -54,7 +118,12 @@ sub onFeedLoaded()
         ep = eps[i]
         item = createObject("roSGNode", "ContentNode")
         item.title = ep.title
-        item.url = ep.url
+        item.url   = ep.url
+        ' carry description into the list item so the UI can show it
+        if ep.lookup("description") <> invalid then
+            item.description = ep.description
+            item.shortDescriptionLine2 = ep.description
+        end if
         listContent.appendChild(item)
     end for
 
@@ -63,6 +132,7 @@ sub onFeedLoaded()
     m.videoList.content = listContent
     m.videoList.visible = true
     m.videoList.setFocus(true)
+    onListFocused() ' seed right-side panel
 end sub
 
 sub onVideoSelected()
