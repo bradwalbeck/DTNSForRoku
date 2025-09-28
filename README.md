@@ -1,4 +1,77 @@
 # DTNSForRoku
+
+A minimal Roku SceneGraph video channel that lists and plays Daily Tech News Show video episodes.
+
+## Features
+- Fetches DTNS video feed (RSS) on a Task thread (FeedTask).
+- Parses titles, publication dates, descriptions, and first playable video URL (enclosure or media:content).
+- Friendly date formatting with optional relative age.
+- Simple navigation: list -> select -> playback. Back returns to list. * (Options) reloads feed.
+- Lightweight UI (LabelList + detail panel + Video) following Roku sample patterns.
+
+## Architecture
+```
+channel/
+  manifest
+  source/
+    main.brs            ' App entry: creates MainScene
+  components/
+    MainScene.xml/.brs  ' UI logic
+    FeedTask.xml/.brs   ' Background feed retrieval & parsing
+  images/
+    icon_focus_hd.png
+    icon_side_hd.png
+    splash_hd.jpg
+    splash_fhd.jpg
+    splash_uhd.jpg
+```
+
+## Icons & Splash (Roku Guidelines)
+- Focus HD icon (recommended 336x210 PNG): images/icon_focus_hd.png
+- Side HD icon (recommended 108x69 PNG): images/icon_side_hd.png
+- (Reused for SD)
+- Splash images: supply HD (1280x720), FHD (1920x1080), UHD (3840x2160) for crisp display.
+Verify dimensions; adjust if different.
+
+## Manifest Versioning
+Increment build_version for every side-load to ensure device refresh:
+```
+major_version.minor_version (feature / minor changes)
+build_version              (every package)
+```
+
+## Networking
+- roUrlTransfer in Task to keep UI responsive.
+- Add simple timeout/stall protection.
+- User-Agent set to differentiate channel.
+
+## Error Handling
+- Task sets error field on: empty feed / parse failure / no items.
+- MainScene observes result + error and updates status label.
+
+## Future Enhancements (Optional)
+- Relative date toggle or show both friendly + relative in date label.
+- ScrollingLabel for very long descriptions.
+- Playback resume (remember last position).
+- Basic search/filter (client-side substring on titles).
+- Caching feed for a short TTL to reduce requests when user re-opens.
+
+## Build & Deploy
+(Existing section retained; ensure deploy script increments build_version or prompt developer.)
+
+## License / Attribution
+- DTNS name/logo belong to Daily Tech News Show / respective owners.
+- Provide attribution for artwork if required.
+- This repository code: (add your license choice, e.g., MIT).
+
+## Testing Checklist
+- Side-load: channel shows icons on Home screen.
+- Load: status "Loading..." then list populates (>0 items).
+- Navigate list: date + description update.
+- Select: video plays; Back returns.
+- Press *: feed reload occurs.
+- Network fail (disconnect) yields error message "* to retry".
+
 DTNSForRoku is a streaming video channel for the [Roku® streaming players as well as Roku TVs™](https://www.roku.com/) that provides the [Daily Tech News Show](http://www.dailytechnewsshow.com/). 
 
 
@@ -24,11 +97,8 @@ Please [SUBSCRIBE HERE](http://feeds.feedburner.com/DailyTechNewsShow)
 [Buy cool DTNS merch!](http://dtns.bigcartel.com/)
 
 
-## Feedback about DTNS For Roku? 
-[Send a message](mailto:feedback+github@welloiledapps.com)
 
-
-project objectives:
+## Project Objectives
 
 Build a minimal Roku SceneGraph video channel that compiles and runs without errors.
 Use only the DTNS RSS feed: https://feeds.feedburner.com/daily_tech_news_show.
@@ -54,7 +124,7 @@ Config (create at project root)
 - File: deploy.config.json
 ```json
 {
-  "deviceIP": "10.210.1.254",
+  "deviceIP": "192.168.1.168",
   "username": "rokudev",
   "password": "your_dev_password"
 }
@@ -67,7 +137,7 @@ Build and deploy
 ```
 - Override config values if needed:
 ```powershell
-.\tools\build_and_deploy.ps1 -DeviceIP 10.210.1.254 -Password your_dev_password
+.\tools\build_and_deploy.ps1 -DeviceIP 192.168.1.168 -Password your_dev_password
 ```
 
 Execution policy

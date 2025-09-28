@@ -3,22 +3,32 @@ sub init()
 end sub
 
 sub execute()
+    m.top.error = ""
     url = m.top.url
     if url = invalid or url = "" then url = "https://feeds.feedburner.com/daily_tech_news_show"
 
     x = createObject("roUrlTransfer")
     x.setCertificatesFile("common:/certs/ca-bundle.crt")
     x.enableEncodings(true)
+    x.setRequest("GET")
     x.setUrl(url)
+    x.addHeader("User-Agent", "DTNSForRoku/1.0")
+    x.setPort(createObject("roMessagePort"))
+    x.setCertificatesDepth(3)
+    x.setMinimumTransferRate(1024, 10) ' basic stall protection
     data = x.getToString()
-    if data = invalid or data = "" then return
+    if data = invalid or data = "" then
+        m.top.error = "empty feed"
+        return
+    end if
 
     xml = createObject("roXMLElement")
-    if not xml.parse(data) then return
+    if not xml.parse(data) then
+        m.top.error = "xml parse"
+        return
+    end if
 
     episodes = []
-
-    ' Collect item nodes (direct or within channel)
     for each c in xml.getChildElements()
         nm = lcase(c.getName())
         if nm = "channel" then
@@ -30,6 +40,9 @@ sub execute()
         end if
     end for
 
+    if episodes.count() = 0 then
+        m.top.error = "no items"
+    end if
     m.top.result = episodes
 end sub
 
@@ -45,6 +58,10 @@ sub processItem(it as object, episodes as object)
 
     rawPub = nodeText(it, "pubDate")
     friendly = friendlyDate(rawPub)
+    rel = relativeAge(rawPub)
+    if friendly <> "" and rel <> "" then
+        friendly = friendly + " • " + rel
+    end if
 
     episodes.push({
         title: title,
@@ -174,4 +191,35 @@ function isNumToken(s as string) as boolean
         if ch < "0" or ch > "9" then return false
     end for
     return true
+end function
+
+function relativeAge(raw as string) as string
+    if raw = invalid or raw = "" then return ""
+    ' Attempt to find YYYY or numeric tokens; simplified parse via friendlyDate again
+    friendly = friendlyDate(raw)
+    if friendly = "" then return ""
+    ' friendly = Mon DD, YYYY
+    y = val(right(friendly,4))
+    monStr = left(friendly,3)
+    dayStr = mid(friendly,5,2)
+    monthMap = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12 }
+    if not monthMap.doesExist(monStr) then return ""
+    m = monthMap[monStr]
+    d = val(dayStr)
+    today = createObject("roDateTime") : today.toLocalTime()
+    diff = dayNumber(today.getYear(), today.getMonth(), today.getDayOfMonth()) - dayNumber(y,m,d)
+    if diff < 0 then return ""
+    if diff = 0 then return "Today"
+    if diff = 1 then return "Yesterday"
+    if diff < 30 then return diff.tostr() + "d ago"
+    if diff < 60 then return "1mo ago"
+    if diff < 365 then return int(diff/30).tostr() + "mo ago"
+    yrs = int(diff / 365)
+    if yrs = 1 then return "1y ago"
+    return yrs.tostr() + "y ago"
+end function
+
+function dayNumber(y as integer, m as integer, d as integer) as integer
+    if m < 3 then y = y - 1 : m = m + 12
+    return 365 * y + y / 4 - y / 100 + y / 400 + ((153 * (m - 3) + 2) / 5) + d - 1
 end function

@@ -1,7 +1,8 @@
 title=DTNS Live
+subtitle=Daily Tech News Show (Video)
 major_version=5
 minor_version=0
-build_version=23
+build_version=24
 
 ui_resolutions=uhd,fhd,hd
 

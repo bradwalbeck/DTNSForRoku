@@ -25,13 +25,30 @@ sub startFeed()
     if m.feedTask = invalid then
         m.feedTask = createObject("roSGNode", "FeedTask")
         m.feedTask.observeField("result", "onFeedResult")
+        m.feedTask.observeField("error", "onFeedError")  ' NEW
     end if
     m.feedTask.control = "run"
 end sub
 
+' NEW error observer
+sub onFeedError()
+    if m.feedTask = invalid then return
+    err = m.feedTask.error
+    if err <> invalid and err <> "" then
+        ' Only show if list not already populated
+        if m.videoList.visible = false then
+            m.status.visible = true
+            m.status.text = "Feed error: " + err + " (* to retry)"
+        end if
+    end if
+end sub
+
 sub onFeedResult()
     eps = m.feedTask.result
-    if eps = invalid or eps.count() = 0 then
+
+    ' If error was set and no episodes, bail early (onFeedError already showed message)
+    if (eps = invalid or eps.count() = 0) then
+        if m.feedTask.error <> "" then return
         m.status.visible = true
         m.status.text = "No episodes (* to retry)"
         return
@@ -42,9 +59,9 @@ sub onFeedResult()
         n = createObject("roSGNode", "ContentNode")
         n.title = ep.title
         n.url   = ep.url
-        n.description = ep.description    ' description only (date separate)
+        n.description = ep.description
         if ep.dateFriendly <> invalid and ep.dateFriendly <> "" then
-            n.releaseDate = ep.dateFriendly ' reuse built-in for date label
+            n.releaseDate = ep.dateFriendly
         end if
         root.appendChild(n)
     end for
