@@ -4,8 +4,6 @@ sub init()
     m.status      = m.top.findNode("status")
 
     m.bg    = m.top.findNode("episodeDescBg")
-    m.dateL = m.top.findNode("episodeDateLabel")
-    m.div   = m.top.findNode("episodeDivider")
     m.descL = m.top.findNode("episodeDescPanel")
 
     m.videoList.observeField("content", "onFeedContentSet")
@@ -13,13 +11,12 @@ sub init()
     m.videoList.observeField("itemSelected", "onItemSelected")
     m.videoPlayer.observeField("state", "onVideoState")
 
-    sizeVideo()
     startFeed()
 end sub
 
 sub startFeed()
     m.status.visible = true
-    m.status.text = "Loading…"
+    m.status.text = "Loading..."
     m.videoList.visible = false
     if m.feedTask = invalid then
         m.feedTask = createObject("roSGNode", "FeedTask")
@@ -42,9 +39,6 @@ sub onFeedResult()
         n.title = ep.title
         n.url   = ep.url
         n.description = ep.description
-        if ep.dateDisplay <> invalid and ep.dateDisplay <> "" then
-            n.releaseDate = ep.dateDisplay
-        end if
         root.appendChild(n)
     end for
 
@@ -58,7 +52,6 @@ sub onFeedResult()
 end sub
 
 sub onFeedContentSet()
-    ' kept empty intentionally (simplified)
 end sub
 
 sub onFocusChanged()
@@ -66,31 +59,31 @@ sub onFocusChanged()
 end sub
 
 sub updateDetails()
-    dt = "" : desc = ""
+    desc = ""
     root = m.videoList.content
     if root <> invalid then
         idx = m.videoList.itemFocused
         if idx <> invalid and idx >= 0 and idx < root.getChildCount() then
             node = root.getChild(idx)
-            if node.doesExist("releaseDate") and node.releaseDate <> invalid then dt = node.releaseDate.tostr()
-            if node.doesExist("description") and node.description <> invalid then desc = node.description.tostr()
+            if node.doesExist("description") and node.description <> invalid then
+                desc = node.description.tostr()
+            end if
         end if
     end if
 
-    showPanel = (dt <> "" or desc <> "")
+    showPanel = (desc <> "")
     m.bg.visible = showPanel
-    m.dateL.visible = (dt <> "")
-    if m.dateL.visible then m.dateL.text = dt else m.dateL.text = ""
-    m.div.visible = (desc <> "" and dt <> "")
-    m.descL.visible = (desc <> "")
-    if m.descL.visible then m.descL.text = desc else m.descL.text = ""
+    m.descL.visible = showPanel
+    if showPanel then
+        m.descL.text = desc
+    else
+        m.descL.text = ""
+    end if
 end sub
 
 sub onItemSelected()
     idx = m.videoList.itemSelected
-    if idx = invalid then return
-    if idx < 0 then return
-    if idx >= m.episodes.count() then return
+    if idx = invalid or idx < 0 or idx >= m.episodes.count() then return
     playEpisode(idx)
 end sub
 
@@ -109,8 +102,6 @@ sub playEpisode(i as integer)
     end if
 
     m.bg.visible = false
-    m.dateL.visible = false
-    m.div.visible = false
     m.descL.visible = false
     m.videoList.visible = false
 
@@ -141,16 +132,3 @@ function onKeyEvent(key as string, press as boolean) as boolean
     end if
     return false
 end function
-
-sub sizeVideo()
-    di = createObject("roDeviceInfo")
-    ui = di.getUIResolution()
-    if ui <> invalid then
-        m.videoPlayer.translation = [0,0]
-        m.videoPlayer.width  = ui.width
-        m.videoPlayer.height = ui.height
-    else
-        m.videoPlayer.width = 1920
-        m.videoPlayer.height = 1080
-    end if
-end sub

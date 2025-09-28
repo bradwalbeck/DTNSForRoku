@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="MainScene" extends="Scene">
+  <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
   <children>
     <Label id="status"
            translation="[120,60]"
            width="1000" height="40"
-           text="Loading…"
+           text="Loading..."
            color="0xFFFFFFFF" />
 
     <LabelList id="videoList"
@@ -20,26 +21,12 @@
                color="0x000000AA"
                visible="false" />
 
-    <Label id="episodeDateLabel"
-           translation="[1188,168]"
-           width="604" height="28"
-           wrap="false" maxLines="1"
-           vertAlign="top"
-           color="0xCCCCCCFF"
-           visible="false" />
-
-    <Rectangle id="episodeDivider"
-               translation="[1188,200]"
-               width="604" height="2"
-               color="0xFFFFFFFF"
-               visible="false" />
-
     <Label id="episodeDescPanel"
-           translation="[1188,214]"
-           width="604" height="604"
-           wrap="true" maxLines="28"
+           translation="[1188,168]"
+           width="604" height="650"
+           wrap="true" maxLines="32"
            horizAlign="left" vertAlign="top"
-           color="0xFFE0E6F2" 
+           color="0xFFFFFFFF"
            visible="false" />
 
     <Video id="videoPlayer"
@@ -47,5 +34,4 @@
            visible="false"
            focusable="true" />
   </children>
-  <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
 </component>

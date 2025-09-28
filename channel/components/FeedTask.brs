@@ -28,13 +28,49 @@ sub execute()
         desc = stripHtml(rawDesc)
 
         rawPub = txt(it, "pubDate")
-        friendly = friendlyDate(rawPub)
+        friendly = ""
+        if rawPub <> "" then
+            ' Inline friendly date: look for numeric day then month abbrev then year
+            parts = []
+            token = ""
+            for i = 1 to len(rawPub)
+                ch = mid(rawPub, i, 1)
+                if ch = " " then
+                    if token <> "" then parts.push(token) : token = ""
+                else
+                    token = token + ch
+                end if
+            end for
+            if token <> "" then parts.push(token)
+
+            mmMap = { jan:"Jan", feb:"Feb", mar:"Mar", apr:"Apr", may:"May", jun:"Jun", jul:"Jul", aug:"Aug", sep:"Sep", oct:"Oct", nov:"Nov", dec:"Dec" }
+            for i = 0 to parts.count()-3
+                dpart = parts[i]
+                if isDayNumber(dpart) then
+                    mkey = lcase(parts[i+1])
+                    ypart = parts[i+2]
+                    if mmMap.doesExist(mkey) and len(ypart) = 4 and isYearNumber(ypart) then
+                        day = dpart
+                        if len(day)=1 then day = "0"+day
+                        friendly = mmMap[mkey] + " " + day + ", " + ypart
+                        exit for
+                    end if
+                end if
+            end for
+            if friendly = "" then friendly = rawPub
+        end if
+
+        prefix = friendly
+        if prefix <> "" then
+            descOut = prefix + chr(10) + desc
+        else
+            descOut = desc
+        end if
 
         episodes.push({
             title: title,
             url: media,
-            description: desc,
-            dateDisplay: friendly
+            description: descOut
         })
     end for
 
@@ -70,7 +106,6 @@ function txt(node as object, name as string) as string
 end function
 
 function playableUrl(item as object) as string
-    ' enclosure first
     for each c in item.getChildElements()
         if lcase(c.getName()) = "enclosure" then
             a = c.getAttributes()
@@ -80,7 +115,6 @@ function playableUrl(item as object) as string
             end if
         end if
     end for
-    ' media:content fallback
     for each c in item.getChildElements()
         if lcase(c.getName()) = "media:content" then
             a = c.getAttributes()
@@ -96,6 +130,9 @@ end function
 function stripHtml(s as dynamic) as string
     if s = invalid then return ""
     t = s.tostr()
+    if instr(1, t, "<") = 0 then
+        return trimWhitespace(t)
+    end if
     out = ""
     inTag = false
     for i = 1 to len(t)
@@ -108,11 +145,14 @@ function stripHtml(s as dynamic) as string
             out = out + ch
         end if
     end for
-    ' collapse whitespace
+    return trimWhitespace(out)
+end function
+
+function trimWhitespace(src as string) as string
     res = ""
     spaceRun = false
-    for i = 1 to len(out)
-        ch = mid(out, i, 1)
+    for i = 1 to len(src)
+        ch = mid(src, i, 1)
         if ch <= " " then
             if not spaceRun and len(res) > 0 then res = res + " "
             spaceRun = true
@@ -125,49 +165,16 @@ function stripHtml(s as dynamic) as string
     return res
 end function
 
-function friendlyDate(raw as string) as string
-    if raw = invalid or raw = "" then return ""
-    parts = splitSpaces(raw)
-    mmMap = { jan:"Jan", feb:"Feb", mar:"Mar", apr:"Apr", may:"May", jun:"Jun", jul:"Jul", aug:"Aug", sep:"Sep", oct:"Oct", nov:"Nov", dec:"Dec" }
-    day = "" : mon = "" : yr = ""
-    for i = 0 to parts.count()-1
-        p = parts[i]
-        if day = "" and isDigits(p) and len(p) <= 2 then
-            day = p
-            if i + 1 < parts.count() then
-                m2 = lcase(parts[i+1])
-                if mmMap.doesExist(m2) then mon = mmMap[m2]
-            end if
-            if i + 2 < parts.count() and isDigits(parts[i+2]) and len(parts[i+2]) = 4 then
-                yr = parts[i+2]
-            end if
-            exit for
-        end if
-    end for
-    if day = "" or mon = "" or yr = "" then return raw
-    if len(day) = 1 then day = "0" + day
-    return mon + " " + day + ", " + yr
-end function
-
-function splitSpaces(raw as string) as object
-    arr = [] : tok = ""
-    for i = 1 to len(raw)
-        ch = mid(raw, i, 1)
-        if ch = " " then
-            if tok <> "" then arr.push(tok) : tok = ""
-        else
-            tok = tok + ch
-        end if
-    end for
-    if tok <> "" then arr.push(tok)
-    return arr
-end function
-
-function isDigits(s as string) as boolean
+function isDayNumber(s as string) as boolean
     if s = invalid or s = "" then return false
     for i = 1 to len(s)
-        ch = mid(s, i, 1)
+        ch = mid(s,i,1)
         if ch < "0" or ch > "9" then return false
     end for
     return true
+end function
+
+function isYearNumber(s as string) as boolean
+    if len(s) <> 4 then return false
+    return isDayNumber(s)
 end function
