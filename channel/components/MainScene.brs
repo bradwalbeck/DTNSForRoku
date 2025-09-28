@@ -100,6 +100,11 @@ sub updateDetails()
         end if
     end if
 
+    maxDescriptionLength = 4000
+    if episodeDescription.len() > maxDescriptionLength then
+        episodeDescription = left(episodeDescription, maxDescriptionLength) + "... [truncated]"
+    end if
+
     showPanel = (episodeDate <> "" or episodeDescription <> "")
     m.descriptionPanel.visible   = showPanel
     m.dateLabel.visible = (episodeDate <> "")
