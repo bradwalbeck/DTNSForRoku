@@ -8,30 +8,22 @@ sub init()
     m.div   = m.top.findNode("episodeDivider")
     m.descL = m.top.findNode("episodeDescPanel")
 
-    if m.videoList <> invalid then
-        m.videoList.observeField("content", "onListContent")
-        m.videoList.observeField("itemFocused", "onFocusChanged")
-        m.videoList.observeField("itemSelected", "onItemSelected")
-    end if
-    if m.videoPlayer <> invalid then
-        m.videoPlayer.observeField("state", "onVideoState")
-        sizeVideo()
-    end if
+    m.videoList.observeField("content", "onFeedContentSet")
+    m.videoList.observeField("itemFocused", "onFocusChanged")
+    m.videoList.observeField("itemSelected", "onItemSelected")
+    m.videoPlayer.observeField("state", "onVideoState")
 
+    sizeVideo()
     startFeed()
 end sub
 
 sub startFeed()
-    if m.status <> invalid then
-        m.status.visible = true
-        m.status.text = "Loading…"
-    end if
-    if m.videoList <> invalid then m.videoList.visible = false
-
+    m.status.visible = true
+    m.status.text = "Loading…"
+    m.videoList.visible = false
     if m.feedTask = invalid then
         m.feedTask = createObject("roSGNode", "FeedTask")
         m.feedTask.observeField("result", "onFeedResult")
-        ' optional: m.feedTask.url = "custom feed"
     end if
     m.feedTask.control = "run"
 end sub
@@ -39,29 +31,19 @@ end sub
 sub onFeedResult()
     eps = m.feedTask.result
     if eps = invalid or eps.count() = 0 then
-        if m.status <> invalid then
-            m.status.visible = true
-            m.status.text = "No episodes (Press * to retry)"
-        end if
+        m.status.visible = true
+        m.status.text = "No episodes (* to retry)"
         return
     end if
 
     root = createObject("roSGNode", "ContentNode")
-    for i = 0 to eps.count() - 1
-        ep = eps[i]
+    for each ep in eps
         n = createObject("roSGNode", "ContentNode")
-        if ep.title <> invalid then n.title = ep.title
-        if ep.url <> invalid then n.url = ep.url
-        if ep.description <> invalid then
-            n.description = ep.description
-            n.shortDescriptionLine2 = ep.description
-        end if
-        if ep.pubDateFriendly <> invalid and ep.pubDateFriendly <> "" then
-            n.releaseDate = ep.pubDateFriendly
-        else if ep.pubDateShort <> invalid and ep.pubDateShort <> "" then
-            n.releaseDate = ep.pubDateShort
-        else if ep.pubDate <> invalid and ep.pubDate <> "" then
-            n.releaseDate = ep.pubDate
+        n.title = ep.title
+        n.url   = ep.url
+        n.description = ep.description
+        if ep.dateDisplay <> invalid and ep.dateDisplay <> "" then
+            n.releaseDate = ep.dateDisplay
         end if
         root.appendChild(n)
     end for
@@ -69,16 +51,14 @@ sub onFeedResult()
     m.episodes = eps
     m.videoList.content = root
     m.videoList.visible = true
-    if m.status <> invalid then m.status.visible = false
-    if m.videoList.itemFocused = invalid or m.videoList.itemFocused < 0 then
-        m.videoList.itemFocused = 0
-    end if
+    m.status.visible = false
+    if m.videoList.itemFocused = invalid or m.videoList.itemFocused < 0 then m.videoList.itemFocused = 0
     m.videoList.setFocus(true)
     updateDetails()
 end sub
 
-sub onListContent()
-    ' not heavily needed; placeholder if dynamic changes happen
+sub onFeedContentSet()
+    ' kept empty intentionally (simplified)
 end sub
 
 sub onFocusChanged()
@@ -86,43 +66,31 @@ sub onFocusChanged()
 end sub
 
 sub updateDetails()
-    hide = true
     dt = "" : desc = ""
-
-    if m.videoList <> invalid then
-        root = m.videoList.content
-        if root <> invalid then
-            idx = m.videoList.itemFocused
-            if idx <> invalid and idx >= 0 and idx < root.getChildCount() then
-                node = root.getChild(idx)
-                if node <> invalid then
-                    if node.doesExist("releaseDate") and node.releaseDate <> invalid then
-                        dt = node.releaseDate.tostr()
-                    end if
-                    if node.doesExist("description") and node.description <> invalid then desc = node.description.tostr()
-                    if desc = "" and node.doesExist("shortDescriptionLine2") and node.shortDescriptionLine2 <> invalid then desc = node.shortDescriptionLine2.tostr()
-                end if
-            end if
+    root = m.videoList.content
+    if root <> invalid then
+        idx = m.videoList.itemFocused
+        if idx <> invalid and idx >= 0 and idx < root.getChildCount() then
+            node = root.getChild(idx)
+            if node.doesExist("releaseDate") and node.releaseDate <> invalid then dt = node.releaseDate.tostr()
+            if node.doesExist("description") and node.description <> invalid then desc = node.description.tostr()
         end if
     end if
 
-    hide = (dt = "" and desc = "")
-
-    if m.bg    <> invalid then m.bg.visible    = not hide
-    if m.dateL <> invalid then
-        m.dateL.visible = (dt <> "")
-        if m.dateL.visible then m.dateL.text = dt else m.dateL.text = ""
-    end if
-    if m.div   <> invalid then m.div.visible   = (desc <> "" and (dt <> ""))
-    if m.descL <> invalid then
-        m.descL.visible = (desc <> "")
-        if m.descL.visible then m.descL.text = desc else m.descL.text = ""
-    end if
+    showPanel = (dt <> "" or desc <> "")
+    m.bg.visible = showPanel
+    m.dateL.visible = (dt <> "")
+    if m.dateL.visible then m.dateL.text = dt else m.dateL.text = ""
+    m.div.visible = (desc <> "" and dt <> "")
+    m.descL.visible = (desc <> "")
+    if m.descL.visible then m.descL.text = desc else m.descL.text = ""
 end sub
 
 sub onItemSelected()
     idx = m.videoList.itemSelected
-    if m.episodes = invalid or idx = invalid or idx < 0 or idx >= m.episodes.count() then return
+    if idx = invalid then return
+    if idx < 0 then return
+    if idx >= m.episodes.count() then return
     playEpisode(idx)
 end sub
 
@@ -130,7 +98,7 @@ sub playEpisode(i as integer)
     ep = m.episodes[i]
     c = createObject("roSGNode", "ContentNode")
     c.title = ep.title
-    c.url = ep.url
+    c.url   = ep.url
     u = lcase(ep.url)
     if right(u,4) = ".mp4" then
         c.streamFormat = "mp4"
@@ -140,13 +108,12 @@ sub playEpisode(i as integer)
         c.streamFormat = "mp4"
     end if
 
-    ' hide detail panel while playing
-    if m.bg <> invalid then m.bg.visible = false
-    if m.dateL <> invalid then m.dateL.visible = false
-    if m.div <> invalid then m.div.visible = false
-    if m.descL <> invalid then m.descL.visible = false
-
+    m.bg.visible = false
+    m.dateL.visible = false
+    m.div.visible = false
+    m.descL.visible = false
     m.videoList.visible = false
+
     m.videoPlayer.content = c
     m.videoPlayer.visible = true
     m.videoPlayer.control = "play"
@@ -180,7 +147,7 @@ sub sizeVideo()
     ui = di.getUIResolution()
     if ui <> invalid then
         m.videoPlayer.translation = [0,0]
-        m.videoPlayer.width = ui.width
+        m.videoPlayer.width  = ui.width
         m.videoPlayer.height = ui.height
     else
         m.videoPlayer.width = 1920
