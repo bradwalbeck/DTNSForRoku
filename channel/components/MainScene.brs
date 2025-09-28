@@ -9,6 +9,7 @@ sub init()
     m.descL = m.top.findNode("episodeDescPanel")
 
     m.lastIndex = -1
+    m.currentIndex = -1   ' NEW: track currently playing index
 
     m.videoList.observeField("content", "onFeedReady")
     m.videoList.observeField("itemFocused", "onFocusChanged")
@@ -119,6 +120,8 @@ end sub
 
 sub playEpisode(i as integer)
     ep = m.episodes[i]
+    m.currentIndex = i     ' NEW: remember index
+
     c = createObject("roSGNode", "ContentNode")
     c.title = ep.title
     c.url   = ep.url
@@ -130,9 +133,10 @@ sub playEpisode(i as integer)
     end if
 
     m.bg.visible = false
-    m.dateL.visible = false
-    m.div.visible = false
+    if m.dateL <> invalid then m.dateL.visible = false
+    if m.div <> invalid then m.div.visible = false
     m.descL.visible = false
+    if m.border <> invalid then m.border.visible = false
     m.videoList.visible = false
 
     m.videoPlayer.content = c
@@ -143,11 +147,20 @@ end sub
 
 sub onVideoState()
     st = m.videoPlayer.state
+    if st = "finished" then
+        ' Auto-play next episode if available
+        if m.currentIndex <> invalid and m.currentIndex >= 0 and m.currentIndex + 1 < m.episodes.count() then
+            playEpisode(m.currentIndex + 1)
+            return
+        end if
+    end if
+
     if st = "finished" or st = "stopped" or st = "error" then
         m.videoPlayer.visible = false
         m.videoList.visible = true
         m.videoList.setFocus(true)
         m.lastIndex = -1
+        m.currentIndex = -1
         updateDetails()
     end if
 end sub
