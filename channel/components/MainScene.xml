@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="MainScene" extends="Scene">
-    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
-    <children>
-        <Label id="status" translation="[120,60]" text="Loading DTNS… (Press * to refresh)" />
-        <Label id="header" translation="[120,120]" text="Episodes" />
-        <LabelList id="videoList" translation="[120,160]" itemSize="[1000,60]" itemSpacing="[0,16]" focusable="true" visible="false" />
-        <!-- Right-side description panel -->
-        <Label id="episodeDescPanel"
-               translation="[1180,160]"
-               width="620"
-               height="680"
-               wrap="true"
-               maxLines="28"
-               horizAlign="left"
-               vertAlign="top"
+  <children>
+    <Label id="status"
+           translation="[120,60]"
+           width="1000" height="40"
+           text="Loading…"
+           color="0xFFFFFFFF" />
+
+    <LabelList id="videoList"
+               translation="[120,160]"
+               itemSize="[1000,60]"
+               itemSpacing="[0,16]"
+               focusable="true"
+               visible="false" />
+
+    <Rectangle id="episodeDescBg"
+               translation="[1170,150]"
+               width="640" height="700"
+               color="0x000000AA"
+               visible="false" />
+
+    <Label id="episodeDateLabel"
+           translation="[1188,168]"
+           width="604" height="28"
+           wrap="false" maxLines="1"
+           vertAlign="top"
+           color="0xCCCCCCFF"
+           visible="false" />
+
+    <Rectangle id="episodeDivider"
+               translation="[1188,200]"
+               width="604" height="2"
                color="0xFFFFFFFF"
                visible="false" />
-        <Video id="videoPlayer" translation="[0,0]" visible="false" focusable="true" />
-    </children>
+
+    <Label id="episodeDescPanel"
+           translation="[1188,214]"
+           width="604" height="604"
+           wrap="true" maxLines="28"
+           horizAlign="left" vertAlign="top"
+           color="0xFFE0E6F2" 
+           visible="false" />
+
+    <Video id="videoPlayer"
+           translation="[0,0]"
+           visible="false"
+           focusable="true" />
+  </children>
+  <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
 </component>
