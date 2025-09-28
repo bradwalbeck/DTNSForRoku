@@ -1,10 +1,15 @@
 title=DTNS Live
 major_version=5
 minor_version=0
-build_version=22
+build_version=23
+
 ui_resolutions=uhd,fhd,hd
-mm_icon_focus_hd=pkg:/images/icon_focus_hd.png   # 336x210 PNG (used when tile is focused/selected)
-mm_icon_side_hd=pkg:/images/icon_side_hd.png     # 248x140 PNG (used in side lists/secondary views)
+
+mm_icon_focus_hd=pkg:/images/icon_focus_hd.png
+mm_icon_side_hd=pkg:/images/icon_side_hd.png
+mm_icon_focus_sd=pkg:/images/icon_focus_hd.png
+mm_icon_side_sd=pkg:/images/icon_side_hd.png
+
 splash_screen_hd=pkg:/images/splash_hd.jpg
 splash_screen_fhd=pkg:/images/splash_fhd.jpg
 splash_screen_uhd=pkg:/images/splash_uhd.jpg
