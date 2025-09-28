@@ -6,7 +6,7 @@
             translation="[0,0]"
             width="1920" height="1080"
             uri="pkg:/images/splash_fhd.jpg"
-            opacity="0.05"
+            opacity="0.1"
             loadDisplayMode="scaleToFill" />
 
     <Label id="status"
