@@ -18,13 +18,14 @@ sub execute()
 
     episodes = []
 
-    ' Collect <item> nodes (direct or inside <channel>)
+    ' Collect item nodes (direct or within channel)
     for each c in xml.getChildElements()
-        if lcase(c.getName()) = "channel" then
+        nm = lcase(c.getName())
+        if nm = "channel" then
             for each i in c.getChildElements()
                 if lcase(i.getName()) = "item" then processItem(i, episodes)
             end for
-        else if lcase(c.getName()) = "item" then
+        else if nm = "item" then
             processItem(c, episodes)
         end if
     end for
@@ -42,15 +43,15 @@ sub processItem(it as object, episodes as object)
     if rawDesc = "" then rawDesc = nodeText(it, "content:encoded")
     desc = stripHtml(rawDesc)
 
-    pub = nodeText(it, "pubDate")
-    if pub <> "" then
-        desc = pub + chr(10) + desc
-    end if
+    rawPub = nodeText(it, "pubDate")
+    friendly = friendlyDate(rawPub)
 
     episodes.push({
         title: title,
         url: media,
-        description: desc
+        description: desc,
+        pubDate: rawPub,
+        dateFriendly: friendly
     })
 end sub
 
@@ -125,4 +126,52 @@ function collapseSpace(src as string) as string
     end for
     if len(res) > 0 and right(res,1) = " " then res = left(res, len(res)-1)
     return res
+end function
+
+' Simple friendly date: "Sep 25, 2025"
+function friendlyDate(raw as string) as string
+    if raw = invalid or raw = "" then return ""
+    ' Tokenize on spaces
+    parts = []
+    tok = ""
+    for i = 1 to len(raw)
+        ch = mid(raw, i, 1)
+        if ch = " " then
+            if tok <> "" then parts.push(tok) : tok = ""
+        else
+            tok = tok + ch
+        end if
+    end for
+    if tok <> "" then parts.push(tok)
+
+    mmMap = { jan:"Jan", feb:"Feb", mar:"Mar", apr:"Apr", may:"May", jun:"Jun", jul:"Jul", aug:"Aug", sep:"Sep", oct:"Oct", nov:"Nov", dec:"Dec" }
+    day = "" : mon = "" : yr = ""
+    for i = 0 to parts.count() - 1
+        p = parts[i]
+        ' Identify numeric day token (1-31)
+        if isNumToken(p) then
+            day = p
+            if i + 1 < parts.count() then
+                mkey = lcase(parts[i + 1])
+                if mmMap.doesExist(mkey) then mon = mmMap[mkey]
+            end if
+            if i + 2 < parts.count() then
+                ytok = parts[i + 2]
+                if len(ytok) = 4 and isNumToken(ytok) then yr = ytok
+            end if
+            exit for
+        end if
+    end for
+    if day = "" or mon = "" or yr = "" then return ""
+    if len(day) = 1 then day = "0" + day
+    return mon + " " + day + ", " + yr
+end function
+
+function isNumToken(s as string) as boolean
+    if s = invalid or s = "" then return false
+    for i = 1 to len(s)
+        ch = mid(s, i, 1)
+        if ch < "0" or ch > "9" then return false
+    end for
+    return true
 end function

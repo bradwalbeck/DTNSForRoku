@@ -2,8 +2,11 @@ sub init()
     m.videoList   = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
     m.status      = m.top.findNode("status")
-    m.bg          = m.top.findNode("episodeDescBg")
-    m.descL       = m.top.findNode("episodeDescPanel")
+
+    m.bg    = m.top.findNode("episodeDescBg")
+    m.dateL = m.top.findNode("episodeDateLabel")
+    m.div   = m.top.findNode("episodeDivider")
+    m.descL = m.top.findNode("episodeDescPanel")
 
     m.lastIndex = -1
 
@@ -39,7 +42,10 @@ sub onFeedResult()
         n = createObject("roSGNode", "ContentNode")
         n.title = ep.title
         n.url   = ep.url
-        n.description = ep.description
+        n.description = ep.description    ' description only (date separate)
+        if ep.dateFriendly <> invalid and ep.dateFriendly <> "" then
+            n.releaseDate = ep.dateFriendly ' reuse built-in for date label
+        end if
         root.appendChild(n)
     end for
 
@@ -49,11 +55,12 @@ sub onFeedResult()
     m.status.visible = false
     if m.videoList.itemFocused = invalid then m.videoList.itemFocused = 0
     m.videoList.setFocus(true)
+    m.lastIndex = -1
     updateDetails()
 end sub
 
 sub onFeedReady()
-    ' no-op (kept for potential future use)
+    ' no-op placeholder
 end sub
 
 sub onFocusChanged()
@@ -65,17 +72,26 @@ sub updateDetails()
     if idx = invalid or idx = m.lastIndex then return
     m.lastIndex = idx
 
+    dateStr = ""
     desc = ""
     root = m.videoList.content
     if root <> invalid and idx >= 0 and idx < root.getChildCount() then
         node = root.getChild(idx)
-        if node.doesExist("description") and node.description <> invalid then desc = node.description.tostr()
+        if node.doesExist("releaseDate") and node.releaseDate <> invalid then
+            dateStr = node.releaseDate.tostr()
+        end if
+        if node.doesExist("description") and node.description <> invalid then
+            desc = node.description.tostr()
+        end if
     end if
 
-    showPanel = (desc <> "")
-    m.bg.visible = showPanel
-    m.descL.visible = showPanel
-    if showPanel then m.descL.text = desc else m.descL.text = ""
+    showPanel = (dateStr <> "" or desc <> "")
+    m.bg.visible   = showPanel
+    m.dateL.visible = (dateStr <> "")
+    if m.dateL.visible then m.dateL.text = dateStr else m.dateL.text = ""
+    m.div.visible  = (desc <> "" and dateStr <> "")
+    m.descL.visible = (desc <> "")
+    if m.descL.visible then m.descL.text = desc else m.descL.text = ""
 end sub
 
 sub onItemSelected()
@@ -97,6 +113,8 @@ sub playEpisode(i as integer)
     end if
 
     m.bg.visible = false
+    m.dateL.visible = false
+    m.div.visible = false
     m.descL.visible = false
     m.videoList.visible = false
 
