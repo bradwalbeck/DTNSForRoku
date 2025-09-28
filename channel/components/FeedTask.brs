@@ -16,86 +16,47 @@ sub execute()
     xml = createObject("roXMLElement")
     if not xml.parse(data) then return
 
-    items = gatherItems(xml)
     episodes = []
-    for each it in items
-        title = txt(it, "title")
-        media = playableUrl(it)
-        if title = "" or media = "" then continue for
 
-        rawDesc = txt(it, "description")
-        if rawDesc = "" then rawDesc = txt(it, "content:encoded")
-        desc = stripHtml(rawDesc)
-
-        rawPub = txt(it, "pubDate")
-        friendly = ""
-        if rawPub <> "" then
-            ' Inline friendly date: look for numeric day then month abbrev then year
-            parts = []
-            token = ""
-            for i = 1 to len(rawPub)
-                ch = mid(rawPub, i, 1)
-                if ch = " " then
-                    if token <> "" then parts.push(token) : token = ""
-                else
-                    token = token + ch
-                end if
+    ' Collect <item> nodes (direct or inside <channel>)
+    for each c in xml.getChildElements()
+        if lcase(c.getName()) = "channel" then
+            for each i in c.getChildElements()
+                if lcase(i.getName()) = "item" then processItem(i, episodes)
             end for
-            if token <> "" then parts.push(token)
-
-            mmMap = { jan:"Jan", feb:"Feb", mar:"Mar", apr:"Apr", may:"May", jun:"Jun", jul:"Jul", aug:"Aug", sep:"Sep", oct:"Oct", nov:"Nov", dec:"Dec" }
-            for i = 0 to parts.count()-3
-                dpart = parts[i]
-                if isDayNumber(dpart) then
-                    mkey = lcase(parts[i+1])
-                    ypart = parts[i+2]
-                    if mmMap.doesExist(mkey) and len(ypart) = 4 and isYearNumber(ypart) then
-                        day = dpart
-                        if len(day)=1 then day = "0"+day
-                        friendly = mmMap[mkey] + " " + day + ", " + ypart
-                        exit for
-                    end if
-                end if
-            end for
-            if friendly = "" then friendly = rawPub
+        else if lcase(c.getName()) = "item" then
+            processItem(c, episodes)
         end if
-
-        prefix = friendly
-        if prefix <> "" then
-            descOut = prefix + chr(10) + desc
-        else
-            descOut = desc
-        end if
-
-        episodes.push({
-            title: title,
-            url: media,
-            description: descOut
-        })
     end for
 
     m.top.result = episodes
 end sub
 
-function gatherItems(root as object) as object
-    r = []
-    if root = invalid then return r
-    for each c in root.getChildElements()
-        n = lcase(c.getName())
-        if n = "channel" then
-            for each i in c.getChildElements()
-                if lcase(i.getName()) = "item" then r.push(i)
-            end for
-        else if n = "item" then
-            r.push(c)
-        end if
-    end for
-    return r
-end function
+sub processItem(it as object, episodes as object)
+    if it = invalid then return
+    title = nodeText(it, "title")
+    media = firstMedia(it)
+    if title = "" or media = "" then return
 
-function txt(node as object, name as string) as string
+    rawDesc = nodeText(it, "description")
+    if rawDesc = "" then rawDesc = nodeText(it, "content:encoded")
+    desc = stripHtml(rawDesc)
+
+    pub = nodeText(it, "pubDate")
+    if pub <> "" then
+        desc = pub + chr(10) + desc
+    end if
+
+    episodes.push({
+        title: title,
+        url: media,
+        description: desc
+    })
+end sub
+
+function nodeText(node as object, tag as string) as string
     if node = invalid then return ""
-    want = lcase(name)
+    want = lcase(tag)
     for each c in node.getChildElements()
         if lcase(c.getName()) = want then
             b = c.getBody()
@@ -105,7 +66,9 @@ function txt(node as object, name as string) as string
     return ""
 end function
 
-function playableUrl(item as object) as string
+function firstMedia(item as object) as string
+    if item = invalid then return ""
+    ' enclosure
     for each c in item.getChildElements()
         if lcase(c.getName()) = "enclosure" then
             a = c.getAttributes()
@@ -115,6 +78,7 @@ function playableUrl(item as object) as string
             end if
         end if
     end for
+    ' media:content
     for each c in item.getChildElements()
         if lcase(c.getName()) = "media:content" then
             a = c.getAttributes()
@@ -130,9 +94,7 @@ end function
 function stripHtml(s as dynamic) as string
     if s = invalid then return ""
     t = s.tostr()
-    if instr(1, t, "<") = 0 then
-        return trimWhitespace(t)
-    end if
+    if instr(1, t, "<") = 0 then return collapseSpace(t)
     out = ""
     inTag = false
     for i = 1 to len(t)
@@ -145,10 +107,10 @@ function stripHtml(s as dynamic) as string
             out = out + ch
         end if
     end for
-    return trimWhitespace(out)
+    return collapseSpace(out)
 end function
 
-function trimWhitespace(src as string) as string
+function collapseSpace(src as string) as string
     res = ""
     spaceRun = false
     for i = 1 to len(src)
@@ -163,18 +125,4 @@ function trimWhitespace(src as string) as string
     end for
     if len(res) > 0 and right(res,1) = " " then res = left(res, len(res)-1)
     return res
-end function
-
-function isDayNumber(s as string) as boolean
-    if s = invalid or s = "" then return false
-    for i = 1 to len(s)
-        ch = mid(s,i,1)
-        if ch < "0" or ch > "9" then return false
-    end for
-    return true
-end function
-
-function isYearNumber(s as string) as boolean
-    if len(s) <> 4 then return false
-    return isDayNumber(s)
 end function

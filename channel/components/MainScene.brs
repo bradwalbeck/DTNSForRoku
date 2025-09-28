@@ -2,11 +2,12 @@ sub init()
     m.videoList   = m.top.findNode("videoList")
     m.videoPlayer = m.top.findNode("videoPlayer")
     m.status      = m.top.findNode("status")
+    m.bg          = m.top.findNode("episodeDescBg")
+    m.descL       = m.top.findNode("episodeDescPanel")
 
-    m.bg    = m.top.findNode("episodeDescBg")
-    m.descL = m.top.findNode("episodeDescPanel")
+    m.lastIndex = -1
 
-    m.videoList.observeField("content", "onFeedContentSet")
+    m.videoList.observeField("content", "onFeedReady")
     m.videoList.observeField("itemFocused", "onFocusChanged")
     m.videoList.observeField("itemSelected", "onItemSelected")
     m.videoPlayer.observeField("state", "onVideoState")
@@ -46,12 +47,13 @@ sub onFeedResult()
     m.videoList.content = root
     m.videoList.visible = true
     m.status.visible = false
-    if m.videoList.itemFocused = invalid or m.videoList.itemFocused < 0 then m.videoList.itemFocused = 0
+    if m.videoList.itemFocused = invalid then m.videoList.itemFocused = 0
     m.videoList.setFocus(true)
     updateDetails()
 end sub
 
-sub onFeedContentSet()
+sub onFeedReady()
+    ' no-op (kept for potential future use)
 end sub
 
 sub onFocusChanged()
@@ -59,26 +61,21 @@ sub onFocusChanged()
 end sub
 
 sub updateDetails()
+    idx = m.videoList.itemFocused
+    if idx = invalid or idx = m.lastIndex then return
+    m.lastIndex = idx
+
     desc = ""
     root = m.videoList.content
-    if root <> invalid then
-        idx = m.videoList.itemFocused
-        if idx <> invalid and idx >= 0 and idx < root.getChildCount() then
-            node = root.getChild(idx)
-            if node.doesExist("description") and node.description <> invalid then
-                desc = node.description.tostr()
-            end if
-        end if
+    if root <> invalid and idx >= 0 and idx < root.getChildCount() then
+        node = root.getChild(idx)
+        if node.doesExist("description") and node.description <> invalid then desc = node.description.tostr()
     end if
 
     showPanel = (desc <> "")
     m.bg.visible = showPanel
     m.descL.visible = showPanel
-    if showPanel then
-        m.descL.text = desc
-    else
-        m.descL.text = ""
-    end if
+    if showPanel then m.descL.text = desc else m.descL.text = ""
 end sub
 
 sub onItemSelected()
@@ -92,10 +89,8 @@ sub playEpisode(i as integer)
     c = createObject("roSGNode", "ContentNode")
     c.title = ep.title
     c.url   = ep.url
-    u = lcase(ep.url)
-    if right(u,4) = ".mp4" then
-        c.streamFormat = "mp4"
-    else if instr(1,u,".m3u8") > 0 then
+    lu = lcase(ep.url)
+    if right(lu,5) = ".m3u8" then
         c.streamFormat = "hls"
     else
         c.streamFormat = "mp4"
@@ -117,6 +112,7 @@ sub onVideoState()
         m.videoPlayer.visible = false
         m.videoList.visible = true
         m.videoList.setFocus(true)
+        m.lastIndex = -1
         updateDetails()
     end if
 end sub
