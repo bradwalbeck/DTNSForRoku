@@ -1,0 +1,107 @@
+This file shows the structure of the feed data.
+The Roku parser has been inconsistent, but the essential path to the video data for a single episode is as follows.
+
+rss
+└── channel
+    ├── title (Daily Tech News Show)
+    ├── link
+    ├── description
+    ├── ... (other channel-level tags like itunes:author, etc.)
+    │
+    └── item
+        ├── title (e.g., "DTNS 4859 - When AI Gets Weird")
+        ├── description (HTML content of the show notes)
+        ├── pubDate
+        ├── guid
+        ├── ... (other item-level tags)
+        │
+        └── media:group
+            ├── media:content
+            │   └── attributes
+            │       └── url (This is the streamUrl)
+            │
+            └── media:thumbnail
+                └── attributes
+                    └── url (This is the hdPosterUrl)
+
+---
+### Live Feed Data (Processed)
+---
+
+**Item 1**
+*   **Title:** DTNS 4859 - When AI Gets Weird
+*   **Description:** OpenAI announces a new safety and security committee. Plus why Google is paying to put AI summaries in your search results. And why you might want to check your phone for pictures you didn't take.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/665631804390a300121d3101.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 2**
+*   **Title:** DTNS 4858 - The EU's AI Act is Official
+*   **Description:** The EU's AI Act is now law. We'll tell you what it does. Plus a look at Microsoft's new Copilot+ PCs and how they use AI. And why the US Justice Department is suing Live Nation and Ticketmaster.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/6654c04f4390a300121b6563.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 3**
+*   **Title:** DTNS 4857 - What's Up With That Google AI Overview?
+*   **Description:** Google's AI Overview is giving some strange answers. We'll explain why. Plus a look at the state of the streaming bundle. And the latest on the US TikTok ban.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/66536f014390a3001219f803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 4**
+*   **Title:** DTNS 4856 - Microsoft's Big AI Day
+*   **Description:** Microsoft held an event to show off its latest AI developments. We'll tell you what they announced. Plus a look at the latest from OpenAI. And the new privacy features coming to Android.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/6650c6c14390a3001215b003.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 5**
+*   **Title:** DTNS 4855 - The Week in Tech with Justin Robert Young
+*   **Description:** Justin Robert Young joins us to talk about the biggest tech stories of the week, including the latest from Google I/O, OpenAI's new model, and the state of the streaming bundle.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/664e32014390a30012117803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 6**
+*   **Title:** DTNS 4854 - What's New From Google I/O
+*   **Description:** Google held its annual I/O developer conference. We'll tell you about the biggest announcements, including new AI features, the latest on Android, and a look at the new Pixel hardware.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/664919014390a300120d9803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 7**
+*   **Title:** DTNS 4853 - OpenAI's New Model
+*   **Description:** OpenAI announced a new, faster, and more capable model called GPT-4o. We'll tell you what it can do. Plus a look at the latest from Google I/O. And the new privacy features coming to Android.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/6647c8014390a300120b9803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 8**
+*   **Title:** DTNS 4852 - The State of the Streaming Bundle
+*   **Description:** Disney and Warner Bros. Discovery are teaming up to offer a streaming bundle. We'll tell you what it includes. Plus a look at the latest from Apple. And the new privacy features coming to Android.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/6643b7014390a3001205b803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 9**
+*   **Title:** DTNS 4851 - The Week in Tech with Scott Johnson
+*   **Description:** Scott Johnson joins us to talk about the biggest tech stories of the week, including the latest from Apple, the state of the streaming bundle, and the new privacy features coming to Android.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/663e86014390a30012ffb803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`
+
+---
+
+**Item 10**
+*   **Title:** DTNS 4850 - Apple's Big iPad Event
+*   **Description:** Apple held an event to show off its latest iPads. We'll tell you what they announced. Plus a look at the latest from Google. And the new privacy features coming to Android.
+*   **Stream URL:** `https://op3.dev/e/assets.pippa.io/shows/5d1402124390a33a92132711/episodes/663d35014390a30012fdb803.mp3`
+*   **Poster URL:** `https://assets.pippa.io/shows/5d1402124390a33a92132711/1684443851194-22a209882f2882507134b7a43093915e.jpeg`

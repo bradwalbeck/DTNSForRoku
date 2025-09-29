@@ -1,30 +1,50 @@
-# DTNSForRoku
-DTNSForRoku is a streaming video channel for the [Roku® streaming players as well as Roku TVs™](https://www.roku.com/) that provides the [Daily Tech News Show](http://www.dailytechnewsshow.com/). 
+# DTNS Live Roku Channel
 
+A Roku channel for streaming Daily Tech News Show video episodes.
 
-[Get DTNS for Roku, NOW!](https://my.roku.com/add/DTNS)
+## Features
+- Fetches and displays DTNS video feed (RSS).
+- Simple navigation: episode list, description panel, video playback.
+- Responsive UI with error handling.
 
-[Read about DTNS For Roku](https://channelstore.roku.com/details/86190/dtns)
+## Architecture
+```
+channel/
+  manifest
+  components/
+    FeedTask.brs/.xml
+    MainScene.brs/.xml
+  images/
+    icon_focus_hd.png
+    icon_side_hd.png
+    splash_fhd.jpg
+    splash_hd.jpg
+    splash_uhd.jpg
+  source/
+    main.brs
+```
 
+## Asset Specs
+- Channel icon (focus): 336x210 PNG
+- Channel icon (side): 108x69 PNG
+- Splash images: 1280x720 (HD), 1920x1080 (FHD), 3840x2160 (UHD)
 
-## Daily Tech News Show
-Daily Tech News Show is hosted by Tom Merritt and Sarah Lane and does what it says in the name. Each show delivers the top stories in tech combined with analysis from regular contributors and guest perspectives from the top names in technology.
+## Usage
+- Arrow keys: navigate episodes
+- OK: play selected episode
+- Back: return to episode list
+- * (Options): reload feed
 
+## Troubleshooting
+- If icons do not appear, verify manifest entries and PNG sizes.
+- If feed fails, check network and RSS URL.
+- For long descriptions, UI may truncate.
 
-## Support Daily Tech News Show
+## License / Attribution
+- DTNS logo and content, except where otherwise noted, is licensed under a Creative Commons Attribution 4.0 International License. © Daily Tech News Show.
+- Channel code: Except where otherwise noted, this is licensed under a Creative Commons Attribution 4.0 International License.
 
-Please [SUBSCRIBE HERE](http://feeds.feedburner.com/DailyTechNewsShow)
+## Versioning
+- Increment `build_version` in manifest for each update.
 
-[DTNS official subreddit](http://feeds.feedburner.com/DailyTechNewsShow) 
-
-[IRC chatroom for DTNS](http://irc.chatrealm.net/)
-
-[Daily Tech News Show on DCTVpedia](http://dctvpedia.com/Daily_Tech_News_Show)
-
-[Buy cool DTNS merch!](http://dtns.bigcartel.com/)
-
-
-## Feedback about DTNS For Roku? 
-[Send a message](mailto:feedback+github@welloiledapps.com)
-
-
+---

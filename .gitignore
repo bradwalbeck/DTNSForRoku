@@ -1,0 +1,4 @@
+prompt.txt
+builds/*
+dist/*
+deploy.config.json

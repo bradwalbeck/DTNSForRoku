@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+  <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+  <children>
+    <Poster id="bgImage"
+            translation="[0,0]"
+            width="1920" height="1080"
+            uri="pkg:/images/splash_fhd.jpg"
+            opacity="0.1"
+            loadDisplayMode="scaleToFill" />
+
+    <Label id="status"
+           translation="[120,60]"
+           width="1000" height="40"
+           text="Loading..."
+           color="0xFFFFFFFF" />
+
+    <LabelList id="videoList"
+               translation="[120,160]"
+               itemSize="[900,60]"
+               itemSpacing="[0,16]"
+               focusable="true"
+               visible="false" />
+
+    <Rectangle id="episodeDescBg"
+               translation="[1090,156]"
+               width="770" height="748"
+               color="0x232A3300"
+               visible="false" />
+
+    <Label id="episodeDateLabel"
+           translation="[1122,180]"
+           width="706" height="34"
+           wrap="false" maxLines="1"
+           horizAlign="left" vertAlign="top"
+           color="0xE3E8EEFF"
+           visible="false" />
+
+    <Rectangle id="episodeDivider"
+               translation="[1122,222]"
+               width="706" height="2"
+               color="0xA5B4C6FF"
+               visible="false" />
+
+    <Label id="episodeDescPanel"
+           translation="[1122,238]"
+           width="706" height="646"
+           wrap="true" maxLines="32"
+           horizAlign="left" vertAlign="top"
+           color="0xF6F8FAFF"
+           visible="false" />
+
+    <Video id="videoPlayer"
+           translation="[0,0]"
+           visible="false"
+           focusable="true" />
+  </children>
+</component>
